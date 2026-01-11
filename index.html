@@ -229,7 +229,7 @@
         }
 
         /* ============================================
-           HERO SECTION - Tampa Bay Sunset
+           HERO SECTION - Image Background
            ============================================ */
         .hero {
             position: relative;
@@ -238,133 +238,43 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            background: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%);
+            background: #1A1A1A;
         }
 
-        /* Animated Sunset Sky */
-        .sunset-sky {
+        /* Hero Background Image */
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Dark Overlay for text readability */
+        .hero-overlay {
             position: absolute;
             inset: 0;
             background: linear-gradient(
-                180deg,
-                rgba(26, 26, 26, 1) 0%,
-                rgba(245, 164, 76, 0.15) 30%,
-                rgba(245, 130, 76, 0.2) 50%,
-                rgba(245, 100, 76, 0.15) 70%,
-                rgba(26, 26, 26, 1) 100%
+                135deg,
+                rgba(0, 0, 0, 0.7) 0%,
+                rgba(0, 0, 0, 0.5) 50%,
+                rgba(0, 0, 0, 0.7) 100%
             );
-            animation: sunsetPulse 15s ease-in-out infinite;
         }
 
-        @keyframes sunsetPulse {
-            0%, 100% { 
-                opacity: 0.6;
-            }
-            50% { 
-                opacity: 1;
-            }
-        }
-
-        /* Tampa Skyline */
-        .skyline-bg {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 60%;
-            pointer-events: none;
-        }
-
-        .skyline-bg svg {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* Sun glow behind skyline */
+        /* Subtle gold accent glow */
         .hero::before {
             content: '';
             position: absolute;
-            bottom: 30%;
+            top: 50%;
             left: 50%;
-            transform: translateX(-50%);
-            width: 300px;
-            height: 150px;
-            background: radial-gradient(ellipse, rgba(245, 164, 76, 0.3) 0%, transparent 70%);
-            animation: sunGlow 10s ease-in-out infinite;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 60%;
+            background: radial-gradient(ellipse, rgba(245, 184, 76, 0.1) 0%, transparent 60%);
             z-index: 1;
-        }
-
-        @keyframes sunGlow {
-            0%, 100% { opacity: 0.5; transform: translateX(-50%) scale(1); }
-            50% { opacity: 0.8; transform: translateX(-50%) scale(1.1); }
-        }
-
-        /* Stage with Podium */
-        .stage-bg {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 45%;
             pointer-events: none;
-            z-index: 2;
-        }
-
-        .stage-bg svg {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* Spotlights */
-        .stage-lights {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            z-index: 3;
-        }
-
-        .spotlight {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(60px);
-            opacity: 0.6;
-            animation: spotPulse 8s ease-in-out infinite;
-        }
-
-        .spotlight-1 {
-            width: 400px;
-            height: 400px;
-            background: var(--spot-gold);
-            top: -10%;
-            left: 20%;
-            animation-delay: 0s;
-        }
-
-        .spotlight-2 {
-            width: 350px;
-            height: 350px;
-            background: var(--spot-orange);
-            top: 5%;
-            right: 15%;
-            animation-delay: 2s;
-        }
-
-        .spotlight-3 {
-            width: 300px;
-            height: 300px;
-            background: var(--spot-gold);
-            bottom: 20%;
-            left: 10%;
-            animation-delay: 4s;
-        }
-
-        @keyframes spotPulse {
-            0%, 100% { opacity: 0.4; transform: scale(1); }
-            50% { opacity: 0.7; transform: scale(1.1); }
         }
 
         /* Hero Content */
@@ -1346,118 +1256,9 @@
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
-        <!-- Sunset Sky Background -->
-        <div class="sunset-sky"></div>
-        
-        <!-- Tampa Skyline -->
-        <div class="skyline-bg">
-            <svg viewBox="0 0 1200 400" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="skylineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" style="stop-color:rgba(245,184,76,0.2)"/>
-                        <stop offset="100%" style="stop-color:rgba(245,164,76,0.05)"/>
-                    </linearGradient>
-                    <linearGradient id="waterReflect" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" style="stop-color:rgba(245,184,76,0.1)"/>
-                        <stop offset="100%" style="stop-color:transparent"/>
-                    </linearGradient>
-                </defs>
-                
-                <!-- Water -->
-                <rect x="0" y="320" width="1200" height="80" fill="url(#waterReflect)"/>
-                
-                <!-- Tampa Skyline -->
-                <!-- Bank of America Plaza -->
-                <rect x="520" y="120" width="40" height="200" fill="url(#skylineGrad)"/>
-                <polygon points="520,120 540,100 560,120" fill="url(#skylineGrad)"/>
-                
-                <!-- Sykes Building -->
-                <rect x="570" y="140" width="35" height="180" fill="url(#skylineGrad)"/>
-                
-                <!-- Tampa City Center -->
-                <rect x="615" y="130" width="45" height="190" fill="url(#skylineGrad)"/>
-                <rect x="625" y="115" width="25" height="20" fill="url(#skylineGrad)"/>
-                
-                <!-- One Tampa City Center -->
-                <rect x="670" y="150" width="38" height="170" fill="url(#skylineGrad)"/>
-                
-                <!-- Park Tower -->
-                <rect x="720" y="160" width="32" height="160" fill="url(#skylineGrad)"/>
-                
-                <!-- Smaller buildings left -->
-                <rect x="450" y="200" width="30" height="120" fill="url(#skylineGrad)"/>
-                <rect x="485" y="180" width="28" height="140" fill="url(#skylineGrad)"/>
-                
-                <!-- Smaller buildings right -->
-                <rect x="760" y="190" width="28" height="130" fill="url(#skylineGrad)"/>
-                <rect x="795" y="210" width="25" height="110" fill="url(#skylineGrad)"/>
-                
-                <!-- Palm trees left -->
-                <path d="M150,320 L155,280 M155,280 Q140,270 125,280 M155,280 Q145,265 130,268 M155,280 Q165,265 180,268 M155,280 Q170,270 185,280" stroke="url(#skylineGrad)" fill="none" stroke-width="3"/>
-                <path d="M200,320 L205,290 M205,290 Q190,280 175,290 M205,290 Q195,275 180,278 M205,290 Q215,275 230,278 M205,290 Q220,280 235,290" stroke="url(#skylineGrad)" fill="none" stroke-width="3"/>
-                
-                <!-- Palm trees right -->
-                <path d="M1000,320 L1005,285 M1005,285 Q990,275 975,285 M1005,285 Q995,270 980,273 M1005,285 Q1015,270 1030,273 M1005,285 Q1020,275 1035,285" stroke="url(#skylineGrad)" fill="none" stroke-width="3"/>
-                <path d="M1050,320 L1055,295 M1055,295 Q1040,285 1025,295 M1055,295 Q1045,280 1030,283 M1055,295 Q1065,280 1080,283 M1055,295 Q1070,285 1085,295" stroke="url(#skylineGrad)" fill="none" stroke-width="3"/>
-                
-                <!-- Water ripple lines -->
-                <line x1="100" y1="350" x2="300" y2="350" stroke="rgba(245,184,76,0.05)" stroke-width="1"/>
-                <line x1="400" y1="360" x2="600" y2="360" stroke="rgba(245,184,76,0.05)" stroke-width="1"/>
-                <line x1="700" y1="345" x2="900" y2="345" stroke="rgba(245,184,76,0.05)" stroke-width="1"/>
-                <line x1="200" y1="370" x2="500" y2="370" stroke="rgba(245,184,76,0.05)" stroke-width="1"/>
-            </svg>
-        </div>
-
-        <!-- Stage with Podium -->
-        <div class="stage-bg">
-            <svg viewBox="0 0 1200 300" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="stageGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" style="stop-color:rgba(20,19,18,0.9)"/>
-                        <stop offset="100%" style="stop-color:rgba(10,10,10,1)"/>
-                    </linearGradient>
-                    <linearGradient id="podiumGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" style="stop-color:rgba(40,35,30,0.9)"/>
-                        <stop offset="100%" style="stop-color:rgba(25,22,18,0.95)"/>
-                    </linearGradient>
-                    <linearGradient id="glassGrad" x1="0%" y1="100%" x2="0%" y2="0%">
-                        <stop offset="0%" style="stop-color:rgba(245,184,76,0.1)"/>
-                        <stop offset="100%" style="stop-color:transparent"/>
-                    </linearGradient>
-                </defs>
-                
-                <!-- Stage Floor -->
-                <rect x="0" y="220" width="1200" height="80" fill="url(#stageGrad)"/>
-                <line x1="0" y1="220" x2="1200" y2="220" stroke="rgba(245,184,76,0.1)" stroke-width="1"/>
-                
-                <!-- Center Podium -->
-                <rect x="560" y="140" width="80" height="80" fill="url(#podiumGrad)" rx="2"/>
-                <rect x="555" y="135" width="90" height="10" fill="url(#podiumGrad)" rx="1"/>
-                
-                <!-- Left Teleprompter -->
-                <g transform="translate(420, 100)">
-                    <rect x="0" y="40" width="60" height="45" fill="url(#podiumGrad)" rx="2"/>
-                    <polygon points="0,85 30,120 60,85" fill="url(#glassGrad)"/>
-                    <rect x="5" y="45" width="50" height="35" fill="rgba(245,184,76,0.05)" rx="1"/>
-                    <rect x="20" y="120" width="20" height="30" fill="url(#podiumGrad)"/>
-                </g>
-                
-                <!-- Right Teleprompter -->
-                <g transform="translate(720, 100)">
-                    <rect x="0" y="40" width="60" height="45" fill="url(#podiumGrad)" rx="2"/>
-                    <polygon points="0,85 30,120 60,85" fill="url(#glassGrad)"/>
-                    <rect x="5" y="45" width="50" height="35" fill="rgba(245,184,76,0.05)" rx="1"/>
-                    <rect x="20" y="120" width="20" height="30" fill="url(#podiumGrad)"/>
-                </g>
-            </svg>
-        </div>
-
-        <!-- Spotlights -->
-        <div class="stage-lights">
-            <div class="spotlight spotlight-1"></div>
-            <div class="spotlight spotlight-2"></div>
-            <div class="spotlight spotlight-3"></div>
-        </div>
+        <!-- Background Image -->
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
 
         <!-- Hero Content -->
         <div class="hero-content">
