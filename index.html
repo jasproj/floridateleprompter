@@ -660,8 +660,8 @@
         .gallery-track {
             display: flex;
             gap: 1rem;
-            animation: galleryScroll 60s linear infinite;
-            width: max-content;
+            width: fit-content;
+            animation: galleryScroll 90s linear infinite;
         }
 
         .gallery-track:hover {
@@ -670,7 +670,7 @@
 
         @keyframes galleryScroll {
             0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            100% { transform: translateX(calc(-300px * 27 - 1rem * 27)); }
         }
 
         .gallery-item {
