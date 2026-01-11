@@ -511,65 +511,31 @@
            SCRIPT FORMATTER
            ============================================ */
         .formatter {
-            padding: 6rem 2rem;
+            padding: 3rem 2rem;
             background: var(--bg-main);
         }
 
-        .formatter-wrapper {
-            max-width: 900px;
+        .formatter-wrapper-compact {
+            max-width: 600px;
             margin: 0 auto;
             background: var(--bg-card);
             border-radius: 12px;
-            padding: 2rem;
+            padding: 1.5rem;
             border: 1px solid rgba(0, 0, 0, 0.08);
             box-shadow: 0 4px 20px rgba(0,0,0,0.06);
         }
 
         .formatter-header {
             text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .formatter-controls {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .formatter-controls label {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .formatter-controls input[type="number"] {
-            width: 60px;
-            padding: 0.5rem;
-            background: var(--bg-section);
-            border: 1px solid rgba(0,0,0,0.1);
-            border-radius: 4px;
-            color: var(--text-primary);
-            font-size: 0.9rem;
-        }
-
-        .formatter-controls select {
-            padding: 0.5rem 1rem;
-            background: var(--bg-section);
-            border: 1px solid rgba(0,0,0,0.1);
-            border-radius: 4px;
-            color: var(--text-primary);
-            font-size: 0.9rem;
+            margin-bottom: 1rem;
         }
 
         .upload-zone {
             border: 2px dashed rgba(245, 184, 76, 0.5);
             border-radius: 8px;
-            padding: 2rem;
+            padding: 1rem;
             text-align: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             cursor: pointer;
             transition: all 0.3s ease;
             background: var(--bg-section);
@@ -585,13 +551,10 @@
             background: rgba(245, 184, 76, 0.15);
         }
 
-        .upload-icon {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
         .upload-text {
             color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
         }
 
         .upload-text strong {
@@ -1673,46 +1636,24 @@
     <!-- Script Formatter -->
     <section class="formatter" id="formatter">
         <div class="container">
-            <div class="formatter-wrapper">
+            <div class="formatter-wrapper-compact">
                 <div class="formatter-header">
                     <span class="section-label">Free Tool</span>
                     <h2 class="section-title">Script Formatter</h2>
-                    <p class="section-subtitle">Format your script for teleprompter display. Upload a file or paste text below.</p>
-                </div>
-                
-                <div class="formatter-controls">
-                    <label>
-                        Font Size:
-                        <input type="number" id="fontSize" value="48" min="24" max="120">px
-                    </label>
-                    <label>
-                        Line Height:
-                        <input type="number" id="lineHeight" value="1.8" min="1" max="3" step="0.1">
-                    </label>
-                    <label>
-                        Text Align:
-                        <select id="textAlign">
-                            <option value="center">Center</option>
-                            <option value="left">Left</option>
-                            <option value="right">Right</option>
-                        </select>
-                    </label>
                 </div>
 
                 <div class="upload-zone" id="uploadZone">
-                    <div class="upload-icon">📄</div>
                     <p class="upload-text">
-                        <strong>Click to upload</strong> or drag and drop<br>
-                        TXT or DOCX files supported
+                        <strong>Click to upload</strong> or drag and drop (TXT or DOCX)
                     </p>
                     <input type="file" id="fileInput" accept=".txt,.docx" style="display:none">
                 </div>
 
-                <textarea class="script-input" id="scriptInput" placeholder="Or paste your script text here..."></textarea>
+                <textarea class="script-input" id="scriptInput" placeholder="Or paste your script here..."></textarea>
 
                 <div class="formatter-actions">
-                    <button class="btn btn-primary" onclick="formatScript()">Format Script</button>
-                    <button class="btn btn-secondary" onclick="copyScript()">Copy to Clipboard</button>
+                    <button class="btn btn-primary" onclick="formatScript()">Format</button>
+                    <button class="btn btn-secondary" onclick="copyScript()">Copy</button>
                     <button class="btn btn-secondary" onclick="clearScript()">Clear</button>
                 </div>
 
@@ -1877,16 +1818,13 @@
                 return;
             }
 
-            const fontSize = document.getElementById('fontSize').value;
-            const lineHeight = document.getElementById('lineHeight').value;
-            const textAlign = document.getElementById('textAlign').value;
-
+            // Fixed settings: 90px, 0.5 line-height, left align
             const output = document.getElementById('scriptOutput');
             const formatted = document.getElementById('formattedScript');
 
-            formatted.style.fontSize = fontSize + 'px';
-            formatted.style.lineHeight = lineHeight;
-            formatted.style.textAlign = textAlign;
+            formatted.style.fontSize = '90px';
+            formatted.style.lineHeight = '0.5';
+            formatted.style.textAlign = 'left';
             formatted.textContent = input.toUpperCase();
 
             output.classList.add('active');
