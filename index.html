@@ -661,7 +661,7 @@
             display: flex;
             gap: 1rem;
             width: fit-content;
-            animation: galleryScroll 90s linear infinite;
+            animation: galleryScroll 180s linear infinite;
         }
 
         .gallery-track:hover {
@@ -887,68 +887,69 @@
            CONTACT
            ============================================ */
         .contact {
-            padding: 6rem 2rem;
+            padding: 4rem 2rem;
             background: var(--bg-section);
         }
 
-        .contact-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            max-width: 1000px;
+        .contact-simple {
+            max-width: 700px;
             margin: 0 auto;
+            text-align: center;
         }
 
-        .contact-info h3 {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .contact-info p {
-            color: var(--text-secondary);
+        .contact-cta {
             margin-bottom: 2rem;
         }
 
-        .contact-details {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+        .contact-cta h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
         }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            color: var(--text-secondary);
-        }
-
-        .contact-item strong {
+        .phone-big {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
             color: var(--gold-dark);
-            min-width: 80px;
+            margin-bottom: 0.5rem;
         }
 
-        .contact-form {
+        .phone-big:hover {
+            color: var(--gold);
+        }
+
+        .contact-email {
+            color: var(--text-secondary);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-email a {
+            color: var(--gold-dark);
+        }
+
+        .contact-location {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .contact-form-compact {
             background: var(--bg-card);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 8px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.06);
         }
 
-        .form-group {
-            margin-bottom: 1.5rem;
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
         }
 
-        .form-group label {
-            display: block;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
+        .contact-form-compact input,
+        .contact-form-compact textarea {
             width: 100%;
             padding: 0.75rem 1rem;
             background: var(--bg-section);
@@ -957,19 +958,21 @@
             color: var(--text-primary);
             font-family: var(--font-body);
             font-size: 1rem;
-            transition: border-color 0.3s ease;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
+        .contact-form-compact input:focus,
+        .contact-form-compact textarea:focus {
             outline: none;
             border-color: var(--gold);
         }
 
-        .form-group textarea {
-            min-height: 120px;
+        .contact-form-compact textarea {
+            margin-bottom: 1rem;
             resize: vertical;
+        }
+
+        .contact-form-compact .btn {
+            width: 100%;
         }
 
         /* ============================================
@@ -1390,59 +1393,6 @@
         </div>
     </section>
 
-    <!-- Script Formatter -->
-    <section class="formatter" id="formatter">
-        <div class="container">
-            <div class="formatter-wrapper">
-                <div class="formatter-header">
-                    <span class="section-label">Free Tool</span>
-                    <h2 class="section-title">Script Formatter</h2>
-                    <p class="section-subtitle">Format your script for teleprompter display. Upload a file or paste text below.</p>
-                </div>
-                
-                <div class="formatter-controls">
-                    <label>
-                        Font Size:
-                        <input type="number" id="fontSize" value="48" min="24" max="120">px
-                    </label>
-                    <label>
-                        Line Height:
-                        <input type="number" id="lineHeight" value="1.8" min="1" max="3" step="0.1">
-                    </label>
-                    <label>
-                        Text Align:
-                        <select id="textAlign">
-                            <option value="center">Center</option>
-                            <option value="left">Left</option>
-                            <option value="right">Right</option>
-                        </select>
-                    </label>
-                </div>
-
-                <div class="upload-zone" id="uploadZone">
-                    <div class="upload-icon">📄</div>
-                    <p class="upload-text">
-                        <strong>Click to upload</strong> or drag and drop<br>
-                        TXT or DOCX files supported
-                    </p>
-                    <input type="file" id="fileInput" accept=".txt,.docx" style="display:none">
-                </div>
-
-                <textarea class="script-input" id="scriptInput" placeholder="Or paste your script text here..."></textarea>
-
-                <div class="formatter-actions">
-                    <button class="btn btn-primary" onclick="formatScript()">Format Script</button>
-                    <button class="btn btn-secondary" onclick="copyScript()">Copy to Clipboard</button>
-                    <button class="btn btn-secondary" onclick="clearScript()">Clear</button>
-                </div>
-
-                <div class="script-output" id="scriptOutput">
-                    <pre id="formattedScript"></pre>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Gallery -->
     <section class="gallery" id="gallery">
         <div class="container">
@@ -1720,6 +1670,59 @@
         </div>
     </section>
 
+    <!-- Script Formatter -->
+    <section class="formatter" id="formatter">
+        <div class="container">
+            <div class="formatter-wrapper">
+                <div class="formatter-header">
+                    <span class="section-label">Free Tool</span>
+                    <h2 class="section-title">Script Formatter</h2>
+                    <p class="section-subtitle">Format your script for teleprompter display. Upload a file or paste text below.</p>
+                </div>
+                
+                <div class="formatter-controls">
+                    <label>
+                        Font Size:
+                        <input type="number" id="fontSize" value="48" min="24" max="120">px
+                    </label>
+                    <label>
+                        Line Height:
+                        <input type="number" id="lineHeight" value="1.8" min="1" max="3" step="0.1">
+                    </label>
+                    <label>
+                        Text Align:
+                        <select id="textAlign">
+                            <option value="center">Center</option>
+                            <option value="left">Left</option>
+                            <option value="right">Right</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="upload-zone" id="uploadZone">
+                    <div class="upload-icon">📄</div>
+                    <p class="upload-text">
+                        <strong>Click to upload</strong> or drag and drop<br>
+                        TXT or DOCX files supported
+                    </p>
+                    <input type="file" id="fileInput" accept=".txt,.docx" style="display:none">
+                </div>
+
+                <textarea class="script-input" id="scriptInput" placeholder="Or paste your script text here..."></textarea>
+
+                <div class="formatter-actions">
+                    <button class="btn btn-primary" onclick="formatScript()">Format Script</button>
+                    <button class="btn btn-secondary" onclick="copyScript()">Copy to Clipboard</button>
+                    <button class="btn btn-secondary" onclick="clearScript()">Clear</button>
+                </div>
+
+                <div class="script-output" id="scriptOutput">
+                    <pre id="formattedScript"></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact -->
     <section class="contact" id="contact">
         <div class="container">
@@ -1727,57 +1730,21 @@
                 <span class="section-label">Get in Touch</span>
                 <h2 class="section-title">Contact Us</h2>
             </div>
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <h3>Let's Talk About Your Project</h3>
-                    <p>Whether you need a single prompter for a corporate video or a full presidential setup for a major event, we're here to help make your production a success.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <strong>Phone:</strong>
-                            <a href="#" class="phone-link">Loading...</a>
-                        </div>
-                        <div class="contact-item">
-                            <strong>Email:</strong>
-                            <a href="mailto:jason@floridateleprompter.com">jason@floridateleprompter.com</a>
-                        </div>
-                        <div class="contact-item">
-                            <strong>Based:</strong>
-                            <span>Tampa Bay, Florida</span>
-                        </div>
-                    </div>
+            <div class="contact-simple">
+                <div class="contact-cta">
+                    <h3>Ready to get started?</h3>
+                    <a href="#" class="phone-link phone-big">Loading...</a>
+                    <p class="contact-email">or email <a href="mailto:jason@floridateleprompter.com">jason@floridateleprompter.com</a></p>
+                    <p class="contact-location">Based in Tampa Bay, Florida • Serving the Southeast</p>
                 </div>
-                <form class="contact-form" action="https://formspree.io/f/mjgkzzrq" method="POST">
+                <form class="contact-form-compact" action="https://formspree.io/f/mjgkzzrq" method="POST">
                     <input type="hidden" name="_subject" value="Florida Teleprompter - New Inquiry">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
+                    <div class="form-row">
+                        <input type="text" name="name" placeholder="Name" required>
+                        <input type="email" name="email" placeholder="Email" required>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                    <div class="form-group">
-                        <label for="service">Service Needed</label>
-                        <select id="service" name="service">
-                            <option value="">Select a service...</option>
-                            <option value="live-events">Live Events</option>
-                            <option value="video">Video Production</option>
-                            <option value="corporate">Corporate</option>
-                            <option value="broadcast">Broadcast</option>
-                            <option value="sports">Sports & Entertainment</option>
-                            <option value="political">Political & Non-Profit</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Project Details</label>
-                        <textarea id="message" name="message" placeholder="Tell us about your event, date, location, and any specific requirements..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
+                    <textarea name="message" placeholder="Tell us about your project..." rows="3"></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
             </div>
         </div>
