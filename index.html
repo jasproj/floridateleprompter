@@ -651,29 +651,42 @@
             background: var(--bg-section);
         }
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
+        .gallery-marquee {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        .gallery-track {
+            display: flex;
             gap: 1rem;
+            animation: galleryScroll 60s linear infinite;
+            width: max-content;
+        }
+
+        .gallery-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes galleryScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
         .gallery-item {
-            aspect-ratio: 4/3;
+            flex-shrink: 0;
+            width: 300px;
+            height: 225px;
             background: var(--bg-card);
             border-radius: 8px;
             overflow: hidden;
             cursor: pointer;
             transition: transform 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            font-size: 0.8rem;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
 
         .gallery-item:hover {
-            transform: scale(1.03);
+            transform: scale(1.05);
         }
 
         .gallery-item img {
@@ -1141,8 +1154,9 @@
                 font-size: 2rem;
             }
 
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .gallery-item {
+                width: 250px;
+                height: 188px;
             }
 
             .contact-wrapper {
@@ -1212,8 +1226,9 @@
                 grid-template-columns: 1fr;
             }
 
-            .gallery-grid {
-                grid-template-columns: 1fr;
+            .gallery-item {
+                width: 200px;
+                height: 150px;
             }
 
             .hero-ctas {
@@ -1289,7 +1304,7 @@
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="img-8.jpg" alt="Live Events teleprompter setup" loading="lazy">
+                        <img src="img-4.jpg" alt="Live Events teleprompter setup" loading="lazy">
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">Live Events</h3>
@@ -1309,7 +1324,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="img-4.jpg" alt="Corporate teleprompter operation" loading="lazy">
+                        <img src="img-8.jpg" alt="Corporate teleprompter operation" loading="lazy">
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">Corporate</h3>
@@ -1435,31 +1450,64 @@
                 <span class="section-label">Our Work</span>
                 <h2 class="section-title">Gallery</h2>
             </div>
-            <div class="gallery-grid">
-                <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="img-1.jpg" alt="Teleprompter operator station at Morton Plant gala" loading="lazy">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="img-2.jpg" alt="Florida Sports Coast stage event" loading="lazy">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="img-3.jpg" alt="Camera-mounted teleprompter for interview" loading="lazy">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="img-4.jpg" alt="Gala ballroom wide shot with staging" loading="lazy">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="img-5.jpg" alt="Floor monitors with podium setup" loading="lazy">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="img-6.jpg" alt="Studio camera teleprompter rig" loading="lazy">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="img-7.jpg" alt="NASCAR Daytona Heritage video shoot" loading="lazy">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="img-8.jpg" alt="Women's Symposium teleprompter operation" loading="lazy">
-                </div>
+        </div>
+        <div class="gallery-marquee">
+            <div class="gallery-track">
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-01.jpg" alt="Professional teleprompter setup" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-02.jpg" alt="Corporate event teleprompter" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-03.jpg" alt="Live event production" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-04.jpg" alt="Ballroom teleprompter setup" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-05.jpg" alt="Conference teleprompter" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-06.jpg" alt="Stage production" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-07.jpg" alt="Video production setup" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-08.jpg" alt="Operator workstation" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-09.jpg" alt="Presidential teleprompter" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-10.jpg" alt="Gala event setup" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-11.jpg" alt="Corporate conference" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-12.jpg" alt="Floor monitor setup" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-13.jpg" alt="Broadcast production" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-14.jpg" alt="Trade show teleprompter" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-15.jpg" alt="Political event setup" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-16.jpg" alt="Studio teleprompter" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-17.jpg" alt="Camera-mounted prompter" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-18.jpg" alt="Multi-monitor setup" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-19.jpg" alt="Event production" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-20.jpg" alt="Nonprofit gala" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-21.jpg" alt="Executive presentation" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-22.jpg" alt="Film production" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-23.jpg" alt="Conference setup" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-24.jpg" alt="Stage monitors" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-25.jpg" alt="Award show production" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-26.jpg" alt="Live broadcast" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-27.jpg" alt="Teleprompter operation" loading="lazy"></div>
+                <!-- Duplicate for seamless loop -->
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-01.jpg" alt="Professional teleprompter setup" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-02.jpg" alt="Corporate event teleprompter" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-03.jpg" alt="Live event production" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-04.jpg" alt="Ballroom teleprompter setup" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-05.jpg" alt="Conference teleprompter" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-06.jpg" alt="Stage production" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-07.jpg" alt="Video production setup" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-08.jpg" alt="Operator workstation" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-09.jpg" alt="Presidential teleprompter" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-10.jpg" alt="Gala event setup" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-11.jpg" alt="Corporate conference" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-12.jpg" alt="Floor monitor setup" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-13.jpg" alt="Broadcast production" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-14.jpg" alt="Trade show teleprompter" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-15.jpg" alt="Political event setup" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-16.jpg" alt="Studio teleprompter" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-17.jpg" alt="Camera-mounted prompter" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-18.jpg" alt="Multi-monitor setup" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-19.jpg" alt="Event production" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-20.jpg" alt="Nonprofit gala" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-21.jpg" alt="Executive presentation" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-22.jpg" alt="Film production" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-23.jpg" alt="Conference setup" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-24.jpg" alt="Stage monitors" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-25.jpg" alt="Award show production" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-26.jpg" alt="Live broadcast" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-27.jpg" alt="Teleprompter operation" loading="lazy"></div>
             </div>
         </div>
     </section>
