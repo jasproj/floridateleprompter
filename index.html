@@ -135,6 +135,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
 
         .logo {
@@ -175,6 +176,29 @@
             display: flex;
             gap: 2rem;
             list-style: none;
+        }
+
+        .nav-links.active {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            gap: 0;
+        }
+
+        .nav-links.active li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-links.active li:last-child {
+            border-bottom: none;
         }
 
         .nav-links a {
@@ -411,7 +435,7 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
             gap: 2rem;
         }
 
@@ -1070,6 +1094,11 @@
 
             .nav-links {
                 display: none;
+                position: absolute;
+            }
+
+            .nav-links.active {
+                display: flex;
             }
 
             .nav-cta {
@@ -1747,7 +1776,7 @@
                 <div class="contact-cta">
                     <h3>Ready to get started?</h3>
                     <a href="#" class="phone-link phone-big">Loading...</a>
-                    <p class="contact-email">or email <a href="mailto:jason@floridateleprompter.com">jason@floridateleprompter.com</a></p>
+                    <p class="contact-email">or email <a href="/cdn-cgi/l/email-protection#563c3725393816303a39243f323722333a332624393b262233247835393b"><span class="__cf_email__" data-cfemail="b6dcd7c5d9d8f6d0dad9c4dfd2d7c2d3dad3c6c4d9dbc6c2d3c498d5d9db">[email&#160;protected]</span></a></p>
                     <p class="contact-location">Based in Tampa Bay, Florida • Serving the Southeast</p>
                 </div>
                 <form class="contact-form-compact" action="https://formspree.io/f/mjgkzzrq" method="POST">
@@ -1816,7 +1845,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
     <script>
         // Header scroll effect
         window.addEventListener('scroll', () => {
@@ -1949,12 +1978,3 @@
             var p2 = '623';
             var p3 = '2652';
             var phoneNum = p1 + '-' + p2 + '-' + p3;
-            var phoneLinks = document.querySelectorAll('.phone-link');
-            phoneLinks.forEach(function(link) {
-                link.href = 'tel:' + p1 + p2 + p3;
-                link.textContent = phoneNum;
-            });
-        })();
-    </script>
-</body>
-</html>
