@@ -252,6 +252,18 @@
             transition: all 0.3s ease;
         }
 
+        .mobile-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
         /* ============================================
            HERO SECTION - Image Background
            ============================================ */
@@ -1339,7 +1351,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="img-26.jpg" alt="Sports event teleprompter" loading="lazy">
+                        <img src="gallery-25.jpg" alt="Sports event teleprompter" loading="lazy">
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">Sports & Entertainment</h3>
@@ -1969,6 +1981,7 @@
 
         // Mobile menu toggle
         document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            this.classList.toggle('active');
             document.querySelector('.nav-links').classList.toggle('active');
         });
 
@@ -1978,3 +1991,20 @@
             var p2 = '623';
             var p3 = '2652';
             var phoneNum = p1 + '-' + p2 + '-' + p3;
+            var phoneLinks = document.querySelectorAll('.phone-link');
+            phoneLinks.forEach(function(link) {
+                link.href = 'tel:+1' + p1 + p2 + p3;
+                link.textContent = phoneNum;
+            });
+        })();
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                document.querySelector('.nav-links').classList.remove('active');
+                document.querySelector('.mobile-toggle').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
