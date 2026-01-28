@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Events Teleprompter Services | Florida Teleprompter</title>
-    <meta name="description" content="Professional teleprompter operators for live events, conferences, and keynotes. Trusted on thousands of high-stakes shows since 1999. Call 727-623-2652.">
+    <title>Last-Minute Teleprompter | Same-Day Availability | Florida Teleprompter</title>
+    <meta name="description" content="Need a teleprompter operator fast? We handle last-minute and emergency bookings. Same-day availability. Call now: 727-623-2652.">
     <meta name="robots" content="noindex">
     
     <!-- Google Analytics -->
@@ -29,11 +29,7 @@
             --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: var(--font-body);
@@ -42,7 +38,6 @@
             line-height: 1.6;
         }
 
-        /* Header - Minimal, no nav */
         .header {
             padding: 1rem 1.5rem;
             display: flex;
@@ -51,22 +46,23 @@
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        .logo-img {
-            height: 50px;
-        }
+        .logo-img { height: 50px; }
 
         .header-phone {
             color: var(--gold);
             font-weight: 700;
             font-size: 1.1rem;
             text-decoration: none;
+            animation: pulse 2s infinite;
         }
 
-        .header-phone:hover {
-            color: var(--gold-dark);
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
         }
 
-        /* Hero */
+        .header-phone:hover { color: var(--gold-dark); }
+
         .hero {
             position: relative;
             padding: 4rem 1.5rem 3rem;
@@ -106,8 +102,8 @@
 
         .hero-badge {
             display: inline-block;
-            background: rgba(245, 184, 76, 0.15);
-            color: var(--gold);
+            background: rgba(220, 53, 69, 0.2);
+            color: #ff6b6b;
             padding: 0.5rem 1rem;
             border-radius: 50px;
             font-size: 0.85rem;
@@ -125,9 +121,7 @@
             margin-bottom: 1rem;
         }
 
-        .hero h1 span {
-            color: var(--gold);
-        }
+        .hero h1 span { color: var(--gold); }
 
         .hero-sub {
             font-size: 1.15rem;
@@ -145,50 +139,35 @@
             align-items: center;
         }
 
-        .btn-primary {
+        .btn-urgent {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
             background: var(--gold);
             color: #000;
-            padding: 1rem 2rem;
+            padding: 1.25rem 2.5rem;
             border-radius: 4px;
             font-weight: 700;
-            font-size: 1.1rem;
-            text-decoration: none;
-            transition: background 0.3s ease;
-            width: 100%;
-            max-width: 320px;
-        }
-
-        .btn-primary:hover {
-            background: var(--gold-dark);
-        }
-
-        .btn-phone {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            color: var(--gold);
-            font-weight: 600;
             font-size: 1.25rem;
             text-decoration: none;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 350px;
         }
 
-        .btn-phone svg {
-            width: 20px;
-            height: 20px;
+        .btn-urgent:hover { 
+            background: var(--gold-dark);
+            transform: scale(1.02);
         }
+
+        .btn-urgent svg { width: 24px; height: 24px; }
 
         .hero-qualifier {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
-            margin-top: -0.5rem;
         }
 
-        /* Trust Bar */
         .trust-bar {
             background: var(--bg-card);
             padding: 1.5rem;
@@ -202,11 +181,8 @@
             font-size: 0.9rem;
         }
 
-        .trust-text strong {
-            color: var(--text-primary);
-        }
+        .trust-text strong { color: var(--text-primary); }
 
-        /* Value Props */
         .value-section {
             padding: 3rem 1.5rem;
             max-width: 700px;
@@ -221,9 +197,7 @@
             color: var(--text-primary);
         }
 
-        .value-list {
-            list-style: none;
-        }
+        .value-list { list-style: none; }
 
         .value-list li {
             display: flex;
@@ -250,41 +224,51 @@
             font-size: 0.95rem;
         }
 
-        /* Testimonial */
-        .testimonial-section {
+        .cta-block {
             background: var(--bg-card);
             padding: 2.5rem 1.5rem;
             text-align: center;
+            border: 2px solid var(--gold);
+            margin: 2rem 1.5rem;
+            border-radius: 8px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .testimonial-quote {
-            font-size: 1.25rem;
-            font-style: italic;
-            color: var(--text-primary);
-            max-width: 600px;
-            margin: 0 auto 1rem;
+        .cta-block h2 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
         }
 
-        .testimonial-author {
-            color: var(--gold);
-            font-weight: 600;
-        }
-
-        .testimonial-role {
+        .cta-block p {
             color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-block .btn-urgent {
+            margin-bottom: 1rem;
+        }
+
+        .cta-block .form-link {
+            color: var(--text-secondary);
             font-size: 0.9rem;
         }
 
-        /* Form Section */
+        .cta-block .form-link a {
+            color: var(--gold);
+        }
+
         .form-section {
-            padding: 3rem 1.5rem;
+            padding: 2rem 1.5rem;
             max-width: 500px;
             margin: 0 auto;
         }
 
         .form-section h2 {
             font-family: var(--font-display);
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             text-align: center;
             margin-bottom: 0.5rem;
         }
@@ -329,14 +313,7 @@
 
         .lead-form textarea {
             resize: vertical;
-            min-height: 100px;
-        }
-
-        .form-noobligation {
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
+            min-height: 80px;
         }
 
         .lead-form button {
@@ -352,11 +329,8 @@
             transition: background 0.3s ease;
         }
 
-        .lead-form button:hover {
-            background: var(--gold-dark);
-        }
+        .lead-form button:hover { background: var(--gold-dark); }
 
-        /* Footer - Minimal */
         .footer {
             padding: 2rem 1.5rem;
             text-align: center;
@@ -377,11 +351,8 @@
             font-size: 0.85rem;
         }
 
-        .footer-text a {
-            color: var(--text-secondary);
-        }
+        .footer-text a { color: var(--text-secondary); }
 
-        /* Sticky Mobile CTA */
         .sticky-cta {
             display: none;
             position: fixed;
@@ -390,7 +361,6 @@
             right: 0;
             z-index: 9999;
             background: var(--gold);
-            padding: 0;
         }
 
         .sticky-cta a {
@@ -405,82 +375,56 @@
             text-decoration: none;
         }
 
-        .sticky-cta svg {
-            width: 20px;
-            height: 20px;
-        }
+        .sticky-cta svg { width: 20px; height: 20px; }
 
         @media (max-width: 768px) {
-            .sticky-cta {
-                display: block;
-            }
-
-            body {
-                padding-bottom: 60px;
-            }
-
-            .hero h1 {
-                font-size: 1.75rem;
-            }
-
-            .header-phone {
-                font-size: 0.95rem;
-            }
+            .sticky-cta { display: block; }
+            body { padding-bottom: 60px; }
+            .hero h1 { font-size: 1.75rem; }
+            .header-phone { font-size: 0.95rem; }
+            .cta-block { margin: 2rem 1rem; }
         }
 
         @media (max-width: 480px) {
-            .hero {
-                padding: 2rem 1rem;
-            }
-
-            .hero h1 {
-                font-size: 1.5rem;
-            }
-
-            .value-section,
-            .form-section {
-                padding: 2rem 1rem;
-            }
+            .hero { padding: 2rem 1rem; }
+            .hero h1 { font-size: 1.5rem; }
+            .value-section, .form-section { padding: 2rem 1rem; }
+            .btn-urgent { font-size: 1.1rem; padding: 1rem 2rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header - No Navigation -->
     <header class="header">
         <img src="logo.png" alt="Florida Teleprompter" class="logo-img">
         <a href="tel:727-623-2652" class="header-phone">727-623-2652</a>
     </header>
 
-    <!-- Hero -->
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <div class="hero-badge">Live Event Specialists</div>
-            <h1>Professional Teleprompter Operators & Equipment for Live Events — <span>No Second Takes</span></h1>
-            <p class="hero-sub">Conferences, keynotes, and high-stakes shows. Our operators stay in sync with the room and keep talent composed when it matters most.</p>
+            <div class="hero-badge">⚡ Same-Day Available</div>
+            <h1>Need a Teleprompter Operator <span>Fast?</span></h1>
+            <p class="hero-sub">We handle last-minute and emergency bookings. 25+ years of staying calm under pressure.</p>
             <div class="hero-cta">
-                <a href="#form" class="btn-primary">Check Availability for Your Event</a>
-                <p class="hero-qualifier">For conferences, keynotes, corporate events, and live productions</p>
-                <a href="tel:727-623-2652" class="btn-phone">
+                <a href="tel:727-623-2652" class="btn-urgent">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                     </svg>
-                    727-623-2652
+                    Call Now: 727-623-2652
                 </a>
+                <p class="hero-qualifier">Same-day and short-notice events welcome. Availability confirmed in minutes.</p>
             </div>
         </div>
     </section>
 
-    <!-- Trust Bar -->
     <div class="trust-bar">
-        <p class="trust-text"><strong>Trusted by Disney, ESPN, WWE, and Fortune 500 production teams.</strong> Serving the Southeast since 1999.</p>
+        <p class="trust-text"><strong>Trusted by Disney, ESPN, and production teams across Florida.</strong> We've handled thousands of last-minute calls.</p>
     </div>
 
-    <!-- Value Props -->
     <section class="value-section">
-        <h2>Why Production Teams Choose Us</h2>
+        <h2>Why We Handle Emergencies Better</h2>
         <ul class="value-list">
             <li>
                 <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -488,8 +432,8 @@
                     <polyline points="12 6 12 12 16 14"/>
                 </svg>
                 <div class="value-content">
-                    <h3>Real-Time Operator Control</h3>
-                    <p>We adjust pace and flow live — not just roll text. Your speakers stay natural and confident.</p>
+                    <h3>Speed</h3>
+                    <p>We answer fast, confirm fast, and show up ready. No waiting, no back-and-forth.</p>
                 </div>
             </li>
             <li>
@@ -497,8 +441,8 @@
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                 </svg>
                 <div class="value-content">
-                    <h3>25+ Years Under Pressure</h3>
-                    <p>Thousands of live events. Zero do-overs. We've seen every curveball and handled it.</p>
+                    <h3>Experience</h3>
+                    <p>25+ years means we've seen every possible scenario. Nothing rattles us.</p>
                 </div>
             </li>
             <li>
@@ -506,55 +450,45 @@
                     <polyline points="20 6 9 17 4 12"/>
                 </svg>
                 <div class="value-content">
-                    <h3>On-Site Reliability</h3>
-                    <p>We arrive early, test everything twice, and always bring backup equipment — so nothing fails on show day.</p>
-                </div>
-            </li>
-            <li>
-                <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                    <line x1="8" y1="21" x2="16" y2="21"/>
-                    <line x1="12" y1="17" x2="12" y2="21"/>
-                </svg>
-                <div class="value-content">
-                    <h3>Presidential Glass & Camera-Mount Systems</h3>
-                    <p>Full equipment for any stage setup — conferences, ballrooms, outdoor venues.</p>
+                    <h3>Calm Under Pressure</h3>
+                    <p>Your emergency doesn't become our emergency. We show up composed and ready to work.</p>
                 </div>
             </li>
         </ul>
     </section>
 
-    <!-- Testimonial -->
-    <section class="testimonial-section">
-        <p class="testimonial-quote">"Florida Teleprompter is our go-to for high-pressure live events. Smooth operations every time."</p>
-        <p class="testimonial-author">Andrew Lee</p>
-        <p class="testimonial-role">Producer, Roundhouse Creative</p>
-    </section>
+    <div class="cta-block">
+        <h2>Don't Wait — Call Now</h2>
+        <p>The sooner you call, the sooner we can confirm.</p>
+        <a href="tel:727-623-2652" class="btn-urgent">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            727-623-2652
+        </a>
+        <p class="form-link">Or <a href="#form">send a quick message</a> if you can't call right now</p>
+    </div>
 
-    <!-- Form Section -->
     <section class="form-section" id="form">
-        <h2>Check Availability</h2>
-        <p class="form-response">Most inquiries answered same business day. Last-minute events welcome.</p>
+        <h2>Can't Call Right Now?</h2>
+        <p class="form-response">Send details and we'll get back to you ASAP.</p>
         <form class="lead-form" action="https://formspree.io/f/mjgkzzrq" method="POST">
-            <input type="hidden" name="_subject" value="Live Events Landing Page Inquiry">
-            <input type="hidden" name="source" value="landing-live-events">
+            <input type="hidden" name="_subject" value="🚨 URGENT: Last-Minute Landing Page Inquiry">
+            <input type="hidden" name="source" value="landing-urgent">
             <input type="text" name="name" placeholder="Name" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="tel" name="phone" placeholder="Phone (optional)">
-            <textarea name="message" placeholder="Tell us about your event (date, location, type)..."></textarea>
+            <input type="tel" name="phone" placeholder="Phone (fastest way to reach you)" required>
+            <input type="email" name="email" placeholder="Email">
+            <textarea name="message" placeholder="When do you need us? (date, time, location)"></textarea>
             <input type="text" name="_gotcha" style="display:none">
-            <p class="form-noobligation">No obligation. Quick confirmation of availability.</p>
-            <button type="submit">Check Availability</button>
+            <button type="submit">Send Urgent Request</button>
         </form>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <a href="tel:727-623-2652" class="footer-phone">727-623-2652</a>
         <p class="footer-text">Florida Teleprompter · Tampa Bay, FL · <a href="https://floridateleprompter.com">floridateleprompter.com</a></p>
     </footer>
 
-    <!-- Sticky Mobile CTA -->
     <div class="sticky-cta">
         <a href="tel:727-623-2652">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
