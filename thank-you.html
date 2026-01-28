@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Message Received | Florida Teleprompter</title>
+    <title>Thank You | Florida Teleprompter</title>
     <meta name="robots" content="noindex">
     
     <!-- Google Analytics -->
@@ -13,25 +13,12 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-98H2KMQ0CY');
-      
-      // GA4 Form Submission Event
-      gtag('event', 'form_submission', {
-        'event_category': 'Lead',
-        'event_label': 'Landing Page Form'
-      });
     </script>
 
     <!-- Google Ads Conversion Tracking -->
-    <!-- REPLACE WITH YOUR CONVERSION ID AND LABEL -->
-    <!--
     <script>
-      gtag('event', 'conversion', {
-        'send_to': 'AW-XXXXXXXXX/XXXXXXXXXXXXXXXXXXX',
-        'value': 1.0,
-        'currency': 'USD'
-      });
+      gtag('event', 'conversion', {'send_to': 'AW-17849179981/3Hx4CP3ryu4bEM2-k79C'});
     </script>
-    -->
 
     <style>
         :root {
@@ -41,15 +28,12 @@
             --bg-card: #141416;
             --text-primary: #FFFFFF;
             --text-secondary: rgba(255,255,255,0.8);
+            --text-muted: rgba(255,255,255,0.6);
             --font-display: Arial, 'Helvetica Neue', sans-serif;
             --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: var(--font-body);
@@ -69,9 +53,7 @@
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        .logo-img {
-            height: 50px;
-        }
+        .logo-img { height: 50px; }
 
         .header-phone {
             color: var(--gold);
@@ -80,20 +62,22 @@
             text-decoration: none;
         }
 
+        .header-phone:hover { color: var(--gold-dark); }
+
         .main {
             flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 3rem 1.5rem;
+            text-align: center;
         }
 
-        .confirmation {
-            text-align: center;
+        .content {
             max-width: 600px;
         }
 
-        .check-icon {
+        .checkmark {
             width: 80px;
             height: 80px;
             background: rgba(245, 184, 76, 0.15);
@@ -101,100 +85,92 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
+            margin: 0 auto 2rem;
         }
 
-        .check-icon svg {
+        .checkmark svg {
             width: 40px;
             height: 40px;
-            stroke: var(--gold);
+            color: var(--gold);
         }
 
-        .confirmation h1 {
+        h1 {
             font-family: var(--font-display);
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 1rem;
         }
 
-        .confirmation p {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .response-time {
-            background: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 8px;
-            padding: 1.25rem;
-            margin-bottom: 2rem;
-        }
-
-        .response-time strong {
+        h1 span {
             color: var(--gold);
         }
 
-        .cta-block {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 2rem;
+        .message {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
         }
 
-        .cta-block p {
+        .next-steps {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .next-steps h2 {
             font-size: 1rem;
+            font-weight: 600;
             margin-bottom: 1rem;
+            color: var(--gold);
         }
 
-        .btn-phone {
+        .next-steps p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-phone {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 0.5rem;
-            background: var(--gold);
-            color: #000;
-            padding: 1rem 2rem;
-            border-radius: 8px;
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 1.25rem;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: background 0.2s;
+            margin-top: 1rem;
         }
 
-        .btn-phone:hover {
-            background: var(--gold-dark);
+        .cta-phone:hover {
+            color: var(--gold-dark);
         }
 
-        .btn-phone svg {
+        .cta-phone svg {
             width: 20px;
             height: 20px;
         }
 
         .footer {
-            padding: 1.5rem;
+            padding: 2rem 1.5rem;
             text-align: center;
             border-top: 1px solid rgba(255,255,255,0.1);
-            color: rgba(255,255,255,0.5);
+        }
+
+        .footer-text {
+            color: var(--text-muted);
             font-size: 0.85rem;
         }
 
-        .footer a {
-            color: var(--gold);
-            text-decoration: none;
+        .footer-text a {
+            color: var(--text-secondary);
         }
 
         @media (max-width: 480px) {
-            .confirmation h1 {
-                font-size: 1.5rem;
-            }
-
-            .check-icon {
-                width: 60px;
-                height: 60px;
-            }
-
-            .check-icon svg {
-                width: 30px;
-                height: 30px;
-            }
+            h1 { font-size: 1.5rem; }
+            .message { font-size: 1rem; }
         }
     </style>
 </head>
@@ -206,35 +182,34 @@
     </header>
 
     <main class="main">
-        <div class="confirmation">
-            <div class="check-icon">
+        <div class="content">
+            <div class="checkmark">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <polyline points="20 6 9 17 4 12"/>
                 </svg>
             </div>
+            <h1>Thank You — <span>We Got It!</span></h1>
+            <p class="message">Your request has been received. Most inquiries are answered the same business day.</p>
             
-            <h1>Message Received</h1>
-            <p>Thanks for reaching out. We've got your details and will be in touch shortly.</p>
-            
-            <div class="response-time">
-                <strong>Most inquiries answered same business day.</strong><br>
-                We'll confirm availability and follow up with next steps.
+            <div class="next-steps">
+                <h2>What Happens Next</h2>
+                <p>✓ We'll review your event details</p>
+                <p>✓ Check operator & equipment availability</p>
+                <p>✓ Get back to you within a few hours</p>
             </div>
 
-            <div class="cta-block">
-                <p>Need to talk sooner?</p>
-                <a href="tel:727-623-2652" class="btn-phone">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                    </svg>
-                    Call 727-623-2652
-                </a>
-            </div>
+            <p class="message">Need an answer faster?</p>
+            <a href="tel:727-623-2652" class="cta-phone">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                Call 727-623-2652
+            </a>
         </div>
     </main>
 
     <footer class="footer">
-        <a href="https://floridateleprompter.com">Florida Teleprompter</a> · Part of the National Teleprompter Network
+        <p class="footer-text">Florida Teleprompter · Tampa Bay, FL · <a href="https://floridateleprompter.com">floridateleprompter.com</a></p>
     </footer>
 
 </body>
