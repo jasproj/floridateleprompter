@@ -1,1 +1,1695 @@
-1
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teleprompter Services Tampa Bay | Professional Operators | Florida Teleprompter</title>
+    <meta name="description" content="Professional teleprompter services in Tampa Bay. Experienced operators for live events, corporate video, broadcast TV, and political events in Tampa, St. Petersburg, Clearwater since 1999.">
+    <link rel="canonical" href="https://floridateleprompter.com/teleprompter-tampa-bay/">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-98H2KMQ0CY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-98H2KMQ0CY');
+    </script>
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Teleprompter Services in Tampa Bay">
+    <meta property="og:description" content="Professional teleprompter operators in Tampa Bay for live events, corporate video, and broadcast. Based in Tampa since 1999.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://floridateleprompter.com/teleprompter-tampa-bay/">
+    <meta property="og:image" content="https://floridateleprompter.com/og-image.jpg">
+    
+    <!-- Schema.org - Service Type -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Teleprompter Services",
+        "areaServed": {
+            "@type": "Place",
+            "name": "Tampa Bay, FL"
+        },
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Florida Teleprompter",
+            "url": "https://floridateleprompter.com",
+            "telephone": "+1-727-623-2652",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Temple Terrace",
+                "addressLocality": "Tampa",
+                "addressRegion": "FL",
+                "postalCode": "33617",
+                "addressCountry": "US"
+            }
+        }
+    }
+    </script>
+
+    <style>
+        /* ============================================
+           CSS VARIABLES - Florida Palette (Light Theme)
+           ============================================ */
+        :root {
+            /* Brand Colors */
+            --gold: #F5B84C;
+            --gold-light: #F7C76E;
+            --gold-dark: #D9A43E;
+            --sunset-orange: #F5A44C;
+            --sunset-red: #F5644C;
+            
+            /* Backgrounds */
+            --bg-main: #E8E6E3;
+            --bg-section: #F5F3F0;
+            --bg-card: #FFFFFF;
+            --bg-elevated: #FFFFFF;
+            
+            /* Text */
+            --text-primary: #1A1A1A;
+            --text-secondary: #4A4A4A;
+            --text-muted: #6B6B6B;
+            
+            /* Spotlights - adjusted for light theme */
+            --spot-gold: rgba(245, 184, 76, 0.25);
+            --spot-orange: rgba(245, 164, 76, 0.2);
+            
+            /* Typography */
+            --font-display: Arial, 'Helvetica Neue', sans-serif;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        /* ============================================
+           RESET & BASE
+           ============================================ */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--gold-light);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ============================================
+           HEADER & NAVIGATION
+           ============================================ */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            background: linear-gradient(180deg, rgba(232,230,227,0.98) 0%, rgba(232,230,227,0.9) 100%);
+            transition: background 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+
+        .nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: var(--bg-void);
+        }
+
+        .logo-img {
+            height: 100px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links.active {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            gap: 0;
+        }
+
+        .nav-links.active li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-links.active li:last-child {
+            border-bottom: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-dark);
+        }
+
+        .nav-phone {
+            font-weight: 600;
+            color: var(--gold-dark) !important;
+        }
+
+        .nav-cta {
+            background: var(--gold);
+            color: var(--text-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--gold-dark);
+            color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ============================================
+           HERO SECTION - Image Background
+           ============================================ */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #1A1A1A;
+        }
+
+        /* Hero Background Image */
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Dark Overlay for text readability */
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(0, 0, 0, 0.7) 0%,
+                rgba(0, 0, 0, 0.5) 50%,
+                rgba(0, 0, 0, 0.7) 100%
+            );
+        }
+
+        /* Subtle gold accent glow */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 60%;
+            background: radial-gradient(ellipse, rgba(245, 184, 76, 0.1) 0%, transparent 60%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Hero Content */
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 2rem;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(245, 184, 76, 0.2);
+            border: 1px solid rgba(245, 184, 76, 0.5);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-badge::before {
+            content: '★';
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+            color: #FFFFFF;
+        }
+
+        .hero-title .highlight {
+            color: var(--gold);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.85);
+            max-width: 700px;
+            margin: 0 auto 1rem;
+            line-height: 1.7;
+        }
+
+        .hero-proof {
+            font-size: 0.95rem;
+            color: var(--gold);
+            margin: 0 auto 2rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: #1A1A1A;
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(245, 184, 76, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #FFFFFF;
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        /* ============================================
+           SERVICES SECTION
+           ============================================ */
+        .services {
+            padding: 6rem 2rem;
+            background: var(--bg-section);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            color: var(--gold-dark);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 220px;
+            background: var(--bg-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-content {
+            padding: 1.5rem;
+        }
+
+        .service-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--gold-dark);
+        }
+
+        .service-types {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .service-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .service-best {
+            font-size: 0.85rem;
+            color: var(--gold-dark);
+            font-weight: 600;
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .services-cta {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .services-cta p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .services-cta a {
+            color: var(--gold-dark);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        /* ============================================
+           STATS SECTION
+           ============================================ */
+        .stats {
+            padding: 4rem 2rem;
+            background: linear-gradient(180deg, var(--bg-section) 0%, var(--bg-main) 100%);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: var(--gold-dark);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* ============================================
+           SCRIPT FORMATTER
+           ============================================ */
+        .formatter {
+            padding: 3rem 2rem;
+            background: var(--bg-main);
+        }
+
+        .formatter-wrapper-compact {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .formatter-header {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .formatter-cta-hint {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        .formatter-cta-hint a {
+            color: var(--gold-dark);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .upload-zone {
+            border: 2px dashed rgba(245, 184, 76, 0.5);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--bg-section);
+        }
+
+        .upload-zone:hover {
+            border-color: var(--gold);
+            background: rgba(245, 184, 76, 0.08);
+        }
+
+        .upload-zone.dragover {
+            border-color: var(--gold);
+            background: rgba(245, 184, 76, 0.15);
+        }
+
+        .upload-text {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .upload-text strong {
+            color: var(--gold-dark);
+        }
+
+        .script-input {
+            width: 100%;
+            min-height: 200px;
+            padding: 1rem;
+            background: var(--bg-section);
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            resize: vertical;
+            margin-bottom: 1.5rem;
+        }
+
+        .script-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .formatter-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .script-output {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: var(--bg-section);
+            border-radius: 8px;
+            display: none;
+        }
+
+        .script-output.active {
+            display: block;
+        }
+
+        .script-output pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: var(--font-body);
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: var(--text-primary);
+        }
+
+        /* ============================================
+           GALLERY
+           ============================================ */
+        .gallery {
+            padding: 6rem 2rem;
+            background: var(--bg-section);
+        }
+
+        .gallery-marquee {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        .gallery-track {
+            display: flex;
+            gap: 1rem;
+            width: fit-content;
+            animation: galleryScroll 180s linear infinite;
+        }
+
+        .gallery-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes galleryScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-300px * 25 - 1rem * 25)); }
+        }
+
+        .gallery-item {
+            flex-shrink: 0;
+            width: 300px;
+            height: 225px;
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ============================================
+           TESTIMONIALS
+           ============================================ */
+        .testimonials {
+            padding: 6rem 2rem;
+            background: var(--bg-main);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--gold);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .testimonial-company {
+            font-size: 0.85rem;
+            color: var(--gold-dark);
+        }
+
+        /* ============================================
+           CLIENTS
+           ============================================ */
+        /* ============================================
+           CLIENTS TICKER
+           ============================================ */
+        .clients-ticker {
+            padding: 4rem 0;
+            background: #1A1A1A;
+            overflow: hidden;
+        }
+
+        .ticker-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 0 2rem;
+        }
+
+        .ticker-header .section-label {
+            color: var(--gold);
+        }
+
+        .ticker-header .section-title {
+            color: #FFFFFF;
+        }
+
+        .ticker-wrapper {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ticker-wrapper::before,
+        .ticker-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100px;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .ticker-wrapper::before {
+            left: 0;
+            background: linear-gradient(90deg, #1A1A1A 0%, transparent 100%);
+        }
+
+        .ticker-wrapper::after {
+            right: 0;
+            background: linear-gradient(90deg, transparent 0%, #1A1A1A 100%);
+        }
+
+        .ticker-track {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            animation: ticker 60s linear infinite;
+            width: max-content;
+        }
+
+        .ticker-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes ticker {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .ticker-item {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.9);
+            white-space: nowrap;
+            padding: 0 1rem;
+        }
+
+        .ticker-divider {
+            color: var(--gold);
+            font-size: 1rem;
+            padding: 0 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .ticker-item {
+                font-size: 1.1rem;
+                padding: 0 0.75rem;
+            }
+
+            .ticker-divider {
+                font-size: 0.8rem;
+                padding: 0 0.5rem;
+            }
+
+            .ticker-track {
+                animation-duration: 45s;
+            }
+        }
+
+        /* ============================================
+           COVERAGE / CITIES
+           ============================================ */
+        .coverage {
+            padding: 6rem 2rem;
+            background: var(--bg-main);
+        }
+
+        .coverage-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .coverage-text h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .coverage-text p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .cities-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+
+        .city-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .city-item::before {
+            content: '→';
+            color: var(--gold-dark);
+        }
+
+        /* ============================================
+           CONTACT
+           ============================================ */
+        .contact {
+            padding: 4rem 2rem;
+            background: var(--bg-section);
+        }
+
+        .contact-simple {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-cta {
+            margin-bottom: 2rem;
+        }
+
+        .contact-cta h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .phone-big {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .phone-big:hover {
+            color: var(--gold);
+        }
+
+        .contact-email {
+            color: var(--text-secondary);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-email a {
+            color: var(--gold-dark);
+        }
+
+        .contact-location {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .contact-form-compact {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-form-compact input,
+        .contact-form-compact textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: var(--bg-section);
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 4px;
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            font-size: 1rem;
+        }
+
+        .contact-form-compact input:focus,
+        .contact-form-compact textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .contact-form-compact textarea {
+            margin-bottom: 1rem;
+            resize: vertical;
+        }
+
+        .contact-form-compact .btn {
+            width: 100%;
+        }
+
+        .form-response-time {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer {
+            background: #1A1A1A;
+            padding: 4rem 2rem 2rem;
+            border-top: none;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            max-width: 300px;
+        }
+
+        .footer-links h4 {
+            color: var(--gold);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom a {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .network-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(245, 184, 76, 0.15);
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--gold);
+        }
+
+        /* ============================================
+           LIGHTBOX
+           ============================================ */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.95);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 8px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 0.75rem 1rem;
+            }
+
+            .nav {
+                gap: 0.5rem;
+            }
+
+            .logo-img {
+                height: 60px;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-cta {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero {
+                min-height: 100svh;
+                padding-top: 80px;
+            }
+
+            .hero-content {
+                padding: 1rem;
+            }
+
+            .hero-badge {
+                font-size: 0.75rem;
+                padding: 0.4rem 0.8rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+                line-height: 1.2;
+                margin-bottom: 1rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .gallery-item {
+                width: 250px;
+                height: 188px;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .coverage-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-brand {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-brand p {
+                text-align: center;
+            }
+
+            .services {
+                padding: 4rem 1rem;
+            }
+
+            .formatter {
+                padding: 4rem 1rem;
+            }
+
+            .formatter-wrapper {
+                padding: 1.5rem;
+            }
+
+            .formatter-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .testimonials {
+                padding: 4rem 1rem;
+            }
+
+            .contact {
+                padding: 4rem 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-img {
+                height: 50px;
+            }
+
+            .nav-cta {
+                padding: 0.4rem 0.75rem;
+                font-size: 0.75rem;
+            }
+
+            .hero-title {
+                font-size: 1.75rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item {
+                width: 200px;
+                height: 150px;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .cities-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Sticky Mobile CTA Bar */
+        .sticky-mobile-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            background: var(--gold);
+            padding: 0;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+        }
+
+        .sticky-cta-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            width: 100%;
+            padding: 1rem;
+            color: #000;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+        }
+
+        .sticky-cta-btn svg {
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .sticky-mobile-cta {
+                display: block;
+            }
+
+            body {
+                padding-bottom: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <a href="/" class="logo">
+                <img src="/logo.png" alt="Florida Teleprompter" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/#formatter">Script Tool</a></li>
+                <li><a href="/#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="tel:7276232652" class="nav-phone">727-623-2652</a></li>
+            </ul>
+            <a href="#contact" class="nav-cta">Check Availability</a>
+            <button class="mobile-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg" style="background-image: url('/hero-bg.jpg');"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">Based in Tampa Bay Since 1999</div>
+            <h1 class="hero-title">
+                Teleprompter Services in<br>
+                <span class="highlight">Tampa Bay</span>
+            </h1>
+            <p class="hero-subtitle">
+                Florida Teleprompter provides professional teleprompter services throughout Tampa Bay, including Tampa, St. Petersburg, and Clearwater. We support live events, corporate video production, broadcast television, and political speaking engagements with experienced operators and broadcast-grade equipment.
+            </p>
+            <p class="hero-proof">Trusted by Disney, ESPN, WWE, and Fortune 500 producers.</p>
+            <div class="hero-ctas">
+                <a href="#contact" class="btn btn-primary">Check Availability</a>
+                <a href="tel:7276232652" class="btn btn-secondary">Call 727-623-2652</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1000s</div>
+                    <div class="stat-label">Shows Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">Live</div>
+                    <div class="stat-label">No-Redo Events</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">Local</div>
+                    <div class="stat-label">Tampa Bay Based</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Tampa Bay Services</span>
+                <h2 class="section-title">Professional Teleprompter Services in Tampa Bay</h2>
+                <p class="section-subtitle">Expert teleprompting for every production environment in the Tampa Bay area</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="/img-4.jpg" alt="Live event teleprompter Tampa Bay" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Live Event Teleprompter Services</h3>
+                        <p class="service-types">Conferences • Conventions • Political Rallies • Galas</p>
+                        <p class="service-desc">We provide live event teleprompter services across Tampa Bay for conferences, conventions, political rallies, galas, and high-visibility productions. Our operators manage pacing in real time and adapt instantly to changes on stage.</p>
+                        <p class="service-best">Best for: Tampa Convention Center, Amalie Arena, Raymond James Stadium events</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="/img-5.jpg" alt="Corporate teleprompter Tampa" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Corporate Teleprompter Services</h3>
+                        <p class="service-types">Town Halls • Earnings Calls • Executive Communications</p>
+                        <p class="service-desc">Tampa Bay companies rely on us for executive messaging, town halls, earnings calls, and internal broadcasts. We work directly with speakers to ensure confident, natural delivery.</p>
+                        <p class="service-best">Best for: Fortune 500 headquarters, corporate campuses, hotel ballrooms</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="/img-6.jpg" alt="Broadcast teleprompter operator Tampa Bay" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Broadcast Teleprompter Operators</h3>
+                        <p class="service-types">News Programs • Studio Productions • Live Television</p>
+                        <p class="service-desc">From studio productions to live television, our Tampa Bay teleprompter operators understand timing, cueing, and the demands of broadcast environments.</p>
+                        <p class="service-best">Best for: Tampa Bay news stations, production studios, remote broadcasts</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="/img-7.jpg" alt="Video production teleprompter St. Petersburg" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Video Production Teleprompter Services</h3>
+                        <p class="service-types">Commercials • Corporate Videos • Social Media • Streaming</p>
+                        <p class="service-desc">Commercials, branded content, corporate videos, and social media shoots throughout Tampa Bay. Our camera-mount prompters integrate with any production setup.</p>
+                        <p class="service-best">Best for: Production studios in Ybor, Westshore, and Pinellas</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="/img-8.jpg" alt="Political teleprompter Tampa Bay" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Political Teleprompter Services</h3>
+                        <p class="service-types">Campaign Events • Speeches • Press Conferences</p>
+                        <p class="service-desc">Presidential-style glass teleprompters for campaign events and public addresses throughout Tampa Bay. Discrete setups. Experienced operators. Zero margin for error.</p>
+                        <p class="service-best">Best for: Campaign rallies, press conferences, government events</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="/img-9.jpg" alt="Sports entertainment teleprompter Tampa" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Sports &amp; Entertainment Teleprompter Services</h3>
+                        <p class="service-types">Press Conferences • Halftime Shows • Celebrity Appearances</p>
+                        <p class="service-desc">We've prompted for Tampa Bay Buccaneers, Lightning, Rays, and major entertainment events. Our operators thrive under the pressure of live sports and celebrity appearances.</p>
+                        <p class="service-best">Best for: Amalie Arena, Tropicana Field, Raymond James Stadium</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coverage Section -->
+    <section class="coverage">
+        <div class="container">
+            <div class="coverage-content">
+                <div class="coverage-text">
+                    <h3>Serving All of Tampa Bay</h3>
+                    <p>We're based in Temple Terrace and serve the entire Tampa Bay metropolitan area. No travel fees within 50 miles of downtown Tampa.</p>
+                </div>
+                <div class="cities-list">
+                    <div class="city-item">Tampa</div>
+                    <div class="city-item">St. Petersburg</div>
+                    <div class="city-item">Clearwater</div>
+                    <div class="city-item">Brandon</div>
+                    <div class="city-item">Lakeland</div>
+                    <div class="city-item">Sarasota</div>
+                    <div class="city-item">Bradenton</div>
+                    <div class="city-item">Plant City</div>
+                    <div class="city-item">Temple Terrace</div>
+                    <div class="city-item">Wesley Chapel</div>
+                    <div class="city-item">New Port Richey</div>
+                    <div class="city-item">Tarpon Springs</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Tampa Bay Clients</span>
+                <h2 class="section-title">What Local Clients Say</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The Production Crew's go-to for the best teleprompter service in the Bay Area! Easy to work with and always delivers the best possible service!"</p>
+                    <p class="testimonial-author">RJ Vida</p>
+                    <p class="testimonial-company">The Production Crew, Tampa</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Always a pleasure working with Florida Teleprompter. Professional, reliable, and great with clients."</p>
+                    <p class="testimonial-author">Andrew Lee</p>
+                    <p class="testimonial-company">Roundhouse Creative</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"We love having you."</p>
+                    <p class="testimonial-author">Ryan Reynolds</p>
+                    <p class="testimonial-company">Equality Florida</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venues Section -->
+    <section class="services" style="background: var(--bg-main);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Experience</span>
+                <h2 class="section-title">Tampa Bay Venues We've Worked</h2>
+                <p class="section-subtitle">Over 25 years, we've prompted at virtually every major venue in Tampa Bay</p>
+            </div>
+            <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div class="service-card" style="text-align: center; padding: 1.5rem;">
+                    <h3 class="service-title" style="margin-bottom: 0;">Tampa Convention Center</h3>
+                </div>
+                <div class="service-card" style="text-align: center; padding: 1.5rem;">
+                    <h3 class="service-title" style="margin-bottom: 0;">Amalie Arena</h3>
+                </div>
+                <div class="service-card" style="text-align: center; padding: 1.5rem;">
+                    <h3 class="service-title" style="margin-bottom: 0;">Raymond James Stadium</h3>
+                </div>
+                <div class="service-card" style="text-align: center; padding: 1.5rem;">
+                    <h3 class="service-title" style="margin-bottom: 0;">The Vinoy Renaissance</h3>
+                </div>
+                <div class="service-card" style="text-align: center; padding: 1.5rem;">
+                    <h3 class="service-title" style="margin-bottom: 0;">JW Marriott Water Street</h3>
+                </div>
+                <div class="service-card" style="text-align: center; padding: 1.5rem;">
+                    <h3 class="service-title" style="margin-bottom: 0;">Tampa Marriott Waterside</h3>
+                </div>
+                <div class="service-card" style="text-align: center; padding: 1.5rem;">
+                    <h3 class="service-title" style="margin-bottom: 0;">Mahaffey Theater</h3>
+                </div>
+                <div class="service-card" style="text-align: center; padding: 1.5rem;">
+                    <h3 class="service-title" style="margin-bottom: 0;">Straz Center</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-simple">
+            <div class="contact-cta">
+                <h3>Book a Tampa Bay Teleprompter Operator</h3>
+                <a href="tel:7276232652" class="phone-big">727-623-2652</a>
+                <p class="contact-email">Email: <a href="mailto:jason@floridateleprompter.com">jason@floridateleprompter.com</a></p>
+                <p class="contact-location">Based in Tampa Bay • Serving Florida & Nationwide</p>
+            </div>
+            <form class="contact-form-compact" action="https://formspree.io/f/mdkqplqp" method="POST">
+                <input type="text" name="_gotcha" style="display:none">
+                <input type="hidden" name="_subject" value="Tampa Bay Teleprompter Inquiry">
+                <div class="form-row">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-row">
+                    <input type="tel" name="phone" placeholder="Phone">
+                    <input type="text" name="date" placeholder="Event Date">
+                </div>
+                <textarea name="message" rows="3" placeholder="Tell us about your Tampa Bay production..."></textarea>
+                <button type="submit" class="btn btn-primary">Request Quote</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="/logo.png" alt="Florida Teleprompter" style="height: 60px; filter: brightness(0) invert(1);">
+                <p>Professional teleprompter services in Tampa Bay and throughout Florida since 1999.</p>
+                <a href="https://nationalteleprompter.com" class="network-badge">Part of the National Teleprompter Network</a>
+            </div>
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="/#services">Live Events</a></li>
+                    <li><a href="/#services">Corporate</a></li>
+                    <li><a href="/#services">Broadcast</a></li>
+                    <li><a href="/#services">Political</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Coverage</h4>
+                <ul>
+                    <li><a href="/teleprompter-tampa-bay/">Tampa Bay</a></li>
+                    <li><a href="/teleprompter-orlando/">Orlando</a></li>
+                    <li><a href="/teleprompter-miami/">Miami</a></li>
+                    <li><a href="/">Statewide</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="/#contact">Contact</a></li>
+                    <li><a href="/privacy.html">Privacy</a></li>
+                    <li><a href="/terms.html">Terms</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Florida Teleprompter LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Sticky Mobile CTA -->
+    <div class="sticky-mobile-cta">
+        <a href="tel:7276232652" class="sticky-cta-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+            Call Now: 727-623-2652
+        </a>
+    </div>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
