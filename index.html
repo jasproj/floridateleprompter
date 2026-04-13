@@ -163,7 +163,7 @@
         }
 
         .logo-img {
-            height: 60px;
+            height: 120px;
             width: auto;
         }
 
@@ -689,105 +689,100 @@
         }
 
         /* ============================================
-           SCRIPT FORMATTER
+           PROMPTERQ PROMO
            ============================================ */
-        .formatter {
-            padding: 4rem 2rem;
+        .prompterq-promo {
+            padding: 6rem 2rem;
             background: var(--bg-card);
+            border-top: 1px solid var(--border-subtle);
         }
 
-        .formatter-wrapper {
-            max-width: 700px;
+        .promo-wrapper {
+            max-width: 1000px;
             margin: 0 auto;
-            background: var(--bg-elevated);
-            border: 1px solid var(--border-subtle);
-            border-radius: 12px;
-            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
         }
 
-        .formatter-header {
-            text-align: center;
+        .promo-content {
+            
+        }
+
+        .promo-badge {
+            display: inline-block;
+            background: rgba(245, 184, 76, 0.1);
+            border: 1px solid var(--border-gold);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .promo-content h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .promo-content h2 span {
+            color: var(--gold);
+        }
+
+        .promo-content p {
+            color: var(--text-secondary);
             margin-bottom: 1.5rem;
+            line-height: 1.7;
         }
 
-        .formatter-cta-hint {
-            font-size: 0.95rem;
+        .promo-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .promo-features li {
             color: var(--text-secondary);
-            margin-top: 0.5rem;
+            padding: 0.4rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
         }
 
-        .formatter-cta-hint a {
+        .promo-features li::before {
+            content: '✓';
             color: var(--gold);
-            font-weight: 600;
+            font-weight: bold;
         }
 
-        .upload-zone {
-            border: 2px dashed var(--border-gold);
-            border-radius: 8px;
-            padding: 1.5rem;
-            text-align: center;
-            margin-bottom: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            background: var(--bg-glass);
-        }
-
-        .upload-zone:hover {
-            background: rgba(245, 184, 76, 0.05);
-        }
-
-        .upload-text {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .upload-text strong {
-            color: var(--gold);
-        }
-
-        .script-input {
-            width: 100%;
-            min-height: 150px;
-            padding: 1rem;
-            background: var(--bg-void);
-            border: 1px solid var(--border-subtle);
-            border-radius: 8px;
-            color: var(--text-primary);
-            font-family: var(--font-body);
-            font-size: 1rem;
-            resize: vertical;
-            margin-bottom: 1rem;
-        }
-
-        .script-input::placeholder {
-            color: var(--text-muted);
-        }
-
-        .formatter-actions {
+        .promo-ctas {
             display: flex;
             gap: 1rem;
-            justify-content: center;
+            flex-wrap: wrap;
         }
 
-        .script-output {
-            margin-top: 1.5rem;
-            padding: 1.5rem;
-            background: #000;
-            border-radius: 8px;
-            display: none;
+        .promo-screenshot {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-subtle);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
         }
 
-        .script-output.active {
+        .promo-screenshot img {
+            width: 100%;
             display: block;
         }
 
-        .script-output pre {
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            font-family: var(--font-body);
-            font-size: 1.5rem;
-            line-height: 1.8;
-            color: var(--gold);
+        @media (max-width: 768px) {
+            .promo-wrapper {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .promo-screenshot {
+                order: -1;
+            }
         }
 
         /* ============================================
@@ -914,7 +909,7 @@
         }
 
         .footer-brand .logo-img {
-            height: 50px;
+            height: 100px;
             margin-bottom: 1rem;
         }
 
@@ -1136,7 +1131,7 @@
 
         @media (max-width: 480px) {
             .logo-img {
-                height: 45px;
+                height: 80px;
             }
 
             .hero-ctas {
@@ -1168,7 +1163,7 @@
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#formatter">Script Tool</a></li>
+                <li><a href="#software">Software</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="tel:727-623-2652" class="nav-phone">727-623-2652</a></li>
             </ul>
@@ -1461,28 +1456,28 @@
         </div>
     </section>
 
-    <!-- Script Formatter -->
-    <section class="formatter" id="formatter">
-        <div class="container">
-            <div class="formatter-wrapper">
-                <div class="formatter-header">
-                    <span class="section-label">Free Tool</span>
-                    <h2 class="section-title">Script Formatter</h2>
-                    <p class="formatter-cta-hint">Need an operator to run this live? <a href="#contact">We do that every day.</a></p>
+    <!-- PrompterQ Promo -->
+    <section class="prompterq-promo" id="software">
+        <div class="promo-wrapper">
+            <div class="promo-content">
+                <span class="promo-badge">Our Software</span>
+                <h2>Meet <span>PrompterQ</span></h2>
+                <p>Professional teleprompter software built by operators, for operators. The same tool we use on shows for Disney, ESPN, and Fortune 500 clients — now available to you.</p>
+                <ul class="promo-features">
+                    <li>36 cue markers for instant navigation</li>
+                    <li>Multi-script run list for complex shows</li>
+                    <li>Session save/load — pick up where you left off</li>
+                    <li>Mirror, flip, and display modes built-in</li>
+                    <li>DOCX import — drag, drop, prompt</li>
+                    <li>60fps smooth scroll with live speed control</li>
+                </ul>
+                <div class="promo-ctas">
+                    <a href="prompterq.html" class="btn btn-primary">Learn More</a>
+                    <a href="prompterq.html#pricing" class="btn btn-secondary">$99 One-Time</a>
                 </div>
-                <div class="upload-zone" id="uploadZone">
-                    <p class="upload-text"><strong>Click to upload</strong> or drag and drop (TXT or DOCX)</p>
-                    <input type="file" id="fileInput" accept=".txt,.docx" style="display:none">
-                </div>
-                <textarea class="script-input" id="scriptInput" placeholder="Or paste your script here..."></textarea>
-                <div class="formatter-actions">
-                    <button class="btn btn-primary" onclick="formatScript()">Format</button>
-                    <button class="btn btn-secondary" onclick="copyScript()">Copy</button>
-                    <button class="btn btn-secondary" onclick="clearScript()">Clear</button>
-                </div>
-                <div class="script-output" id="scriptOutput">
-                    <pre id="formattedScript"></pre>
-                </div>
+            </div>
+            <div class="promo-screenshot">
+                <img src="prompterq-main.png" alt="PrompterQ Interface">
             </div>
         </div>
     </section>
@@ -1577,7 +1572,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
     <script>
         // Mobile menu toggle
         document.querySelector('.mobile-toggle').addEventListener('click', function() {
@@ -1592,63 +1586,6 @@
                 document.querySelector('.mobile-toggle').classList.remove('active');
             });
         });
-
-        // File upload
-        const uploadZone = document.getElementById('uploadZone');
-        const fileInput = document.getElementById('fileInput');
-        const scriptInput = document.getElementById('scriptInput');
-
-        uploadZone.addEventListener('click', () => fileInput.click());
-        uploadZone.addEventListener('dragover', e => { e.preventDefault(); uploadZone.style.borderColor = 'var(--gold)'; });
-        uploadZone.addEventListener('dragleave', () => { uploadZone.style.borderColor = ''; });
-        uploadZone.addEventListener('drop', e => {
-            e.preventDefault();
-            uploadZone.style.borderColor = '';
-            handleFile(e.dataTransfer.files[0]);
-        });
-        fileInput.addEventListener('change', e => handleFile(e.target.files[0]));
-
-        function handleFile(file) {
-            if (!file) return;
-            if (file.name.endsWith('.txt')) {
-                const reader = new FileReader();
-                reader.onload = e => { scriptInput.value = e.target.result; };
-                reader.readAsText(file);
-            } else if (file.name.endsWith('.docx')) {
-                const reader = new FileReader();
-                reader.onload = e => {
-                    mammoth.extractRawText({ arrayBuffer: e.target.result })
-                        .then(result => { scriptInput.value = result.value; })
-                        .catch(err => alert('Error reading DOCX: ' + err.message));
-                };
-                reader.readAsArrayBuffer(file);
-            }
-        }
-
-        function formatScript() {
-            const input = scriptInput.value.trim();
-            if (!input) { alert('Please enter or upload a script first.'); return; }
-            const output = document.getElementById('scriptOutput');
-            const formatted = document.getElementById('formattedScript');
-            formatted.style.fontSize = '90px';
-            formatted.style.lineHeight = '0.5';
-            formatted.textContent = input.toUpperCase();
-            output.classList.add('active');
-            output.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function copyScript() {
-            const formatted = document.getElementById('formattedScript');
-            if (!formatted.textContent) { alert('Please format a script first.'); return; }
-            navigator.clipboard.writeText(formatted.textContent);
-            alert('Copied!');
-        }
-
-        function clearScript() {
-            scriptInput.value = '';
-            document.getElementById('scriptOutput').classList.remove('active');
-            document.getElementById('formattedScript').textContent = '';
-        }
 
         // Lightbox
         function openLightbox(el) {
