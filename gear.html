@@ -63,7 +63,7 @@
         }
         
         .logo {
-            height: 50px;
+            height: 70px;
             width: auto;
         }
         
@@ -144,7 +144,7 @@
             border-bottom: 1px solid var(--border-subtle);
             padding: 1rem 2rem;
             position: sticky;
-            top: 82px;
+            top: 102px;
             z-index: 100;
             overflow-x: auto;
         }
@@ -187,6 +187,7 @@
         /* Category Sections */
         .category-section {
             margin-bottom: 4rem;
+            scroll-margin-top: 180px;
         }
         
         .category-header {
@@ -247,18 +248,19 @@
         
         .product-image {
             aspect-ratio: 4/3;
-            background: linear-gradient(135deg, #1a1a1f 0%, #0f0f12 100%);
+            background: #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
+            padding: 1rem;
             position: relative;
+            overflow: hidden;
         }
         
-        .product-image::before {
-            content: '📦';
-            font-size: 3rem;
-            opacity: 0.3;
+        .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
         }
         
         .product-badge {
@@ -272,6 +274,7 @@
             font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
+            z-index: 2;
         }
         
         .product-content {
@@ -309,8 +312,8 @@
         
         .product-link {
             display: block;
-            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
-            color: var(--bg-dark);
+            background: linear-gradient(135deg, #FF9900 0%, #E47911 100%);
+            color: #111;
             text-decoration: none;
             padding: 0.75rem 1rem;
             border-radius: 6px;
@@ -321,7 +324,7 @@
         }
         
         .product-link:hover {
-            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+            background: linear-gradient(135deg, #FFB347 0%, #FF9900 100%);
             transform: scale(1.02);
         }
         
@@ -402,21 +405,17 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: var(--bg-dark);
-            border-top: 1px solid var(--border-subtle);
-            padding: 1rem;
+            background: var(--gold);
             z-index: 1000;
         }
         
         .mobile-cta a {
             display: block;
-            background: var(--gold);
-            color: var(--bg-dark);
-            text-decoration: none;
-            padding: 1rem;
-            border-radius: 8px;
             text-align: center;
-            font-weight: 600;
+            padding: 1rem;
+            color: var(--bg-dark);
+            font-weight: 700;
+            text-decoration: none;
         }
         
         /* Responsive */
@@ -427,25 +426,24 @@
         }
         
         @media (max-width: 768px) {
+            header {
+                padding: 0.75rem 1rem;
+            }
+            
+            .logo {
+                height: 50px;
+            }
+            
             nav {
                 display: none;
             }
             
             .hero {
-                padding: 120px 1.5rem 60px;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
+                padding: 120px 1rem 60px;
             }
             
             .category-nav {
-                padding: 0.75rem 1rem;
-            }
-            
-            .category-btn {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.8rem;
+                top: 82px;
             }
             
             main {
@@ -471,11 +469,6 @@
                 display: block;
             }
         }
-        
-        /* Smooth scrolling offset for sticky nav */
-        .category-section {
-            scroll-margin-top: 160px;
-        }
     </style>
 </head>
 <body>
@@ -483,11 +476,11 @@
     <header>
         <div class="header-inner">
             <a href="https://floridateleprompter.com/">
-                <img src="https://floridateleprompter.com/logo.png" alt="Florida Teleprompter" class="logo">
+                <img src="https://floridateleprompter.com/fl-logo-banner.png" alt="Florida Teleprompter" class="logo">
             </a>
             <nav>
                 <a href="https://floridateleprompter.com/#services">Services</a>
-                <a href="https://floridateleprompter.com/#formatter">Script Tool</a>
+                <a href="https://floridateleprompter.com/#software">Script Tool</a>
                 <a href="https://floridateleprompter.com/#gallery">Gallery</a>
                 <a href="https://floridateleprompter.com/gear.html">Gear</a>
                 <a href="https://floridateleprompter.com/#contact" class="nav-cta">Contact</a>
@@ -507,14 +500,14 @@
     <!-- Category Navigation -->
     <nav class="category-nav">
         <div class="category-nav-inner">
-            <button class="category-btn active" onclick="scrollToCategory('teleprompters')">Teleprompters</button>
-            <button class="category-btn" onclick="scrollToCategory('cameras')">Cameras</button>
-            <button class="category-btn" onclick="scrollToCategory('lenses')">Lenses</button>
-            <button class="category-btn" onclick="scrollToCategory('lighting')">Lighting</button>
-            <button class="category-btn" onclick="scrollToCategory('audio')">Audio</button>
-            <button class="category-btn" onclick="scrollToCategory('monitors')">Monitors</button>
-            <button class="category-btn" onclick="scrollToCategory('tripods')">Tripods</button>
-            <button class="category-btn" onclick="scrollToCategory('cables')">Cables & Cases</button>
+            <button class="category-btn active" onclick="scrollToCategory('teleprompters')">📺 Teleprompters</button>
+            <button class="category-btn" onclick="scrollToCategory('cameras')">🎥 Cameras</button>
+            <button class="category-btn" onclick="scrollToCategory('lenses')">🔭 Lenses</button>
+            <button class="category-btn" onclick="scrollToCategory('lighting')">💡 Lighting</button>
+            <button class="category-btn" onclick="scrollToCategory('audio')">🎙️ Audio</button>
+            <button class="category-btn" onclick="scrollToCategory('monitors')">🖥️ Monitors</button>
+            <button class="category-btn" onclick="scrollToCategory('tripods')">📐 Tripods</button>
+            <button class="category-btn" onclick="scrollToCategory('cables')">🔌 Cables & Cases</button>
         </div>
     </nav>
     
@@ -534,6 +527,7 @@
                 <div class="product-card">
                     <div class="product-image">
                         <span class="product-badge">Best Value</span>
+                        <img src="https://m.media-amazon.com/images/I/71qVh2TXXEL._AC_SL1500_.jpg" alt="Glide Gear TMP100" loading="lazy">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">Glide Gear TMP100 Teleprompter</h3>
@@ -545,6 +539,7 @@
                 <div class="product-card">
                     <div class="product-image">
                         <span class="product-badge">Pro Pick</span>
+                        <img src="https://m.media-amazon.com/images/I/61Z4j7wgURL._AC_SL1200_.jpg" alt="Ikan PT4500" loading="lazy">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">Ikan PT4500 Professional 15" Teleprompter</h3>
@@ -554,7 +549,9 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/71kxPbHfLPL._AC_SL1500_.jpg" alt="NEEWER X12" loading="lazy">
+                    </div>
                     <div class="product-content">
                         <h3 class="product-title">NEEWER X12 14" Aluminum Teleprompter</h3>
                         <div class="product-price">$200 - $300</div>
@@ -563,7 +560,10 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <span class="product-badge">Popular</span>
+                        <img src="https://m.media-amazon.com/images/I/71nN5XPXWFL._AC_SL1500_.jpg" alt="Elgato Prompter" loading="lazy">
+                    </div>
                     <div class="product-content">
                         <h3 class="product-title">Elgato Prompter</h3>
                         <div class="product-price">$200 - $300</div>
@@ -572,34 +572,44 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/61Z4j7wgURL._AC_SL1200_.jpg" alt="Ikan PT4500-TK" loading="lazy">
+                    </div>
                     <div class="product-content">
-                        <h3 class="product-title">Ikan PT4500-TK Professional Kit with Travel Case</h3>
+                        <h3 class="product-title">Ikan PT4500-TK with Travel Case</h3>
                         <div class="product-price">$600 - $900</div>
                         <p class="product-desc">Complete kit with 15" high bright teleprompter and travel case. Ready for mobile productions.</p>
                         <a href="https://amazon.com/dp/B07P7YB857?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <span class="product-badge">Budget</span>
+                        <img src="https://m.media-amazon.com/images/I/71qVh2TXXEL._AC_SL1500_.jpg" alt="Glide Gear Combo" loading="lazy">
+                    </div>
                     <div class="product-content">
-                        <h3 class="product-title">NEEWER X12B Compact 12" Teleprompter</h3>
-                        <div class="product-price">$150 - $250</div>
-                        <p class="product-desc">Aluminum alloy build for iPad and DSLR. Lightweight and portable.</p>
-                        <a href="https://amazon.com/dp/B0CV3M9GPJ?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                        <h3 class="product-title">Glide Gear TMP 100 Combo Kit</h3>
+                        <div class="product-price">$50 - $100</div>
+                        <p class="product-desc">Budget-friendly combo kit with 10" Android tablet included. Ready to go out of the box.</p>
+                        <a href="https://amazon.com/dp/B06Y2FHPWP?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/71kxPbHfLPL._AC_SL1500_.jpg" alt="NEEWER X12 Remote" loading="lazy">
+                    </div>
                     <div class="product-content">
                         <h3 class="product-title">NEEWER X12 with Bluetooth Remote</h3>
-                        <div class="product-price">$20 - $40</div>
+                        <div class="product-price">$220 - $280</div>
                         <p class="product-desc">Includes RT-110 wireless remote control for speed and scroll control.</p>
                         <a href="https://amazon.com/dp/B0B5D7MMDN?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <span class="product-badge">Broadcast</span>
+                        <img src="https://m.media-amazon.com/images/I/61Z4j7wgURL._AC_SL1200_.jpg" alt="Ikan SDI" loading="lazy">
+                    </div>
                     <div class="product-content">
                         <h3 class="product-title">Ikan PT4500-SDI-TK with 3G-SDI</h3>
                         <div class="product-price">$400 - $600</div>
@@ -608,9 +618,11 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/71kxPbHfLPL._AC_SL1500_.jpg" alt="NEEWER 2-in-1" loading="lazy">
+                    </div>
                     <div class="product-content">
-                        <h3 class="product-title">NEEWER 2-in-1 Teleprompter with Monitor</h3>
+                        <h3 class="product-title">NEEWER 2-in-1 with Monitor</h3>
                         <div class="product-price">$300 - $450</div>
                         <p class="product-desc">11" teleprompter with built-in monitor. Works with Windows and MacOS.</p>
                         <a href="https://amazon.com/dp/B0FCXHVPXT?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
@@ -618,19 +630,22 @@
                 </div>
                 <div class="product-card">
                     <div class="product-image">
-                        <span class="product-badge">Broadcast</span>
+                        <span class="product-badge">Studio</span>
+                        <img src="https://m.media-amazon.com/images/I/61Z4j7wgURL._AC_SL1200_.jpg" alt="Ikan Interview" loading="lazy">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">Ikan PT4500-P2P-TK Interview System</h3>
-                        <div class="product-price">$2000+</div>
+                        <div class="product-price">$2,000+</div>
                         <p class="product-desc">Dual 15" teleprompter interview system. Perfect for professional broadcast interviews.</p>
                         <a href="https://amazon.com/dp/B09LKN2GHQ?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/61Z4j7wgURL._AC_SL1200_.jpg" alt="Ikan Riser" loading="lazy">
+                    </div>
                     <div class="product-content">
-                        <h3 class="product-title">Ikan PT-RISER-50 Teleprompter Riser Plate</h3>
+                        <h3 class="product-title">Ikan PT-RISER-50 Riser Plate</h3>
                         <div class="product-price">$50 - $80</div>
                         <p class="product-desc">Riser plate for PT4500 and PT4700 with larger cameras. Essential accessory.</p>
                         <a href="https://amazon.com/dp/B092PW9N68?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
@@ -638,17 +653,20 @@
                 </div>
                 <div class="product-card">
                     <div class="product-image">
-                        <span class="product-badge">Studio</span>
+                        <span class="product-badge">Premium</span>
+                        <img src="https://m.media-amazon.com/images/I/61Z4j7wgURL._AC_SL1200_.jpg" alt="Ikan Pedestal" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-title">Ikan PT4500-PEDESTAL Turnkey System</h3>
-                        <div class="product-price">$3000+</div>
+                        <h3 class="product-title">Ikan PT4500-PEDESTAL Turnkey</h3>
+                        <div class="product-price">$3,000+</div>
                         <p class="product-desc">15" teleprompter with pedestal and dolly. Complete turnkey studio solution.</p>
                         <a href="https://amazon.com/dp/B0BGQL576V?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/71nN5XPXWFL._AC_SL1500_.jpg" alt="Elgato XL" loading="lazy">
+                    </div>
                     <div class="product-content">
                         <h3 class="product-title">Elgato Prompter XL</h3>
                         <div class="product-price">$400 - $600</div>
@@ -657,21 +675,25 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">Glide Gear TMP 100 Combo Kit with Tablet</h3>
-                        <div class="product-price">$50 - $100</div>
-                        <p class="product-desc">Budget-friendly combo kit with 10" Android tablet included. Ready to go out of the box.</p>
-                        <a href="https://amazon.com/dp/B06Y2FHPWP?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/71qVh2TXXEL._AC_SL1500_.jpg" alt="Glide Gear Renewed" loading="lazy">
                     </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
                     <div class="product-content">
                         <h3 class="product-title">Glide Gear TMP100 Renewed</h3>
                         <div class="product-price">$100 - $150</div>
                         <p class="product-desc">Certified renewed teleprompter with 70/30 beam splitter glass. Budget-conscious option.</p>
                         <a href="https://amazon.com/dp/B08HSCL4Z6?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/71kxPbHfLPL._AC_SL1500_.jpg" alt="NEEWER X12B" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">NEEWER X12B Compact 12"</h3>
+                        <div class="product-price">$150 - $250</div>
+                        <p class="product-desc">Aluminum alloy build for iPad and DSLR. Lightweight and portable.</p>
+                        <a href="https://amazon.com/dp/B0CV3M9GPJ?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
             </div>
@@ -690,101 +712,117 @@
                 <div class="product-card">
                     <div class="product-image">
                         <span class="product-badge">Popular</span>
+                        <img src="https://m.media-amazon.com/images/I/61eSJiCgN1L._AC_SL1500_.jpg" alt="Sony A7 IV" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-title">Sony Alpha 7 IV Full-frame Mirrorless</h3>
+                        <h3 class="product-title">Sony Alpha 7 IV Full-frame</h3>
                         <div class="product-price">$2,400 - $2,600</div>
                         <p class="product-desc">Full-frame interchangeable lens camera. Industry standard for video production.</p>
                         <a href="https://amazon.com/dp/B09JZT6YK5?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/61eSJiCgN1L._AC_SL1500_.jpg" alt="Sony A7 IV Kit" loading="lazy">
+                    </div>
                     <div class="product-content">
-                        <h3 class="product-title">Sony Alpha 7 IV with 28-70mm Kit</h3>
+                        <h3 class="product-title">Sony A7 IV with 28-70mm Kit</h3>
                         <div class="product-price">$2,800 - $3,200</div>
-                        <p class="product-desc">Complete kit with zoom lens. Ready to shoot out of the box.</p>
+                        <p class="product-desc">Full-frame mirrorless with versatile zoom lens kit included.</p>
                         <a href="https://amazon.com/dp/B09JZRWRJN?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <span class="product-badge">Pro Pick</span>
+                        <img src="https://m.media-amazon.com/images/I/71kSKRXz6aL._AC_SL1500_.jpg" alt="Canon R6 II" loading="lazy">
+                    </div>
                     <div class="product-content">
                         <h3 class="product-title">Canon EOS R6 Mark II</h3>
                         <div class="product-price">$2,400 - $2,600</div>
-                        <p class="product-desc">Full-frame mirrorless body. Excellent autofocus and video capabilities.</p>
+                        <p class="product-desc">Full-frame mirrorless with excellent autofocus and 4K 60p video.</p>
                         <a href="https://amazon.com/dp/B0BLQ8JY4N?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-image">
                         <span class="product-badge">Creator</span>
+                        <img src="https://m.media-amazon.com/images/I/61pyXVN3kbS._AC_SL1500_.jpg" alt="Sony ZV-E10" loading="lazy">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">Sony ZV-E10 Vlog Camera</h3>
                         <div class="product-price">$700 - $900</div>
-                        <p class="product-desc">Mirrorless camera designed for content creators. Compact and powerful.</p>
+                        <p class="product-desc">Mirrorless vlog camera for content creators. Compact and powerful.</p>
                         <a href="https://amazon.com/dp/B09BBGPTMK?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-image">
-                        <span class="product-badge">8K</span>
+                        <span class="product-badge">Cinema</span>
+                        <img src="https://m.media-amazon.com/images/I/71KdUU3VzFL._AC_SL1500_.jpg" alt="Canon R5" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-title">Canon EOS R5</h3>
+                        <h3 class="product-title">Canon EOS R5 45MP 8K</h3>
                         <div class="product-price">$3,800 - $4,200</div>
-                        <p class="product-desc">45MP full-frame with 8K video. Professional cinema quality.</p>
+                        <p class="product-desc">Full-frame mirrorless with 8K video recording. Professional cinema quality.</p>
                         <a href="https://amazon.com/dp/B08DKQ5FGQ?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/81sNPFFH7CL._AC_SL1500_.jpg" alt="BMPCC 4K" loading="lazy">
+                    </div>
                     <div class="product-content">
-                        <h3 class="product-title">Blackmagic Pocket Cinema Camera 4K</h3>
+                        <h3 class="product-title">Blackmagic Pocket Cinema 4K</h3>
                         <div class="product-price">$1,300 - $1,500</div>
-                        <p class="product-desc">Compact cinema camera with professional color science. Film-quality footage.</p>
+                        <p class="product-desc">Cinema camera with 4K DCI, Blackmagic RAW, and professional features.</p>
                         <a href="https://amazon.com/dp/B07C5MFN1Z?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-image">
                         <span class="product-badge">Cinema</span>
+                        <img src="https://m.media-amazon.com/images/I/61jcS5e1u7L._AC_SL1500_.jpg" alt="Sony FX3" loading="lazy">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">Sony FX3 Cinema Line</h3>
                         <div class="product-price">$3,700 - $4,000</div>
-                        <p class="product-desc">Full-frame cinema camera. Professional video production ready.</p>
+                        <p class="product-desc">Full-frame cinema camera. Professional video production in compact body.</p>
                         <a href="https://amazon.com/dp/B08YKYZQ26?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/71RR6XfLxQL._AC_SL1500_.jpg" alt="Panasonic GH6" loading="lazy">
+                    </div>
                     <div class="product-content">
                         <h3 class="product-title">Panasonic LUMIX GH6</h3>
                         <div class="product-price">$2,000 - $2,300</div>
-                        <p class="product-desc">5.7K video recording. Excellent for hybrid photo/video work.</p>
+                        <p class="product-desc">5.7K video recording with excellent stabilization and V-Log.</p>
                         <a href="https://amazon.com/dp/B09SJDXTGH?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-image">
-                        <span class="product-badge">Pro Cinema</span>
+                        <span class="product-badge">Broadcast</span>
+                        <img src="https://m.media-amazon.com/images/I/71pNmTCdKdL._AC_SL1500_.jpg" alt="Canon C70" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-title">Canon EOS C70</h3>
+                        <h3 class="product-title">Canon EOS C70 Cinema</h3>
                         <div class="product-price">$5,500 - $6,000</div>
-                        <p class="product-desc">RF Mount cinema camera with Super 35mm 4K. Broadcast and film production.</p>
+                        <p class="product-desc">Super 35mm cinema camera with RF mount. Professional broadcast ready.</p>
                         <a href="https://amazon.com/dp/B08L1XBHZZ?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/71RR6XfLxQL._AC_SL1500_.jpg" alt="Panasonic S5 II" loading="lazy">
+                    </div>
                     <div class="product-content">
-                        <h3 class="product-title">Sony ZV-E1 Full-Frame Vlog</h3>
-                        <div class="product-price">$2,100 - $2,400</div>
-                        <p class="product-desc">Full-frame vlog camera with AI autofocus and cinematic color science.</p>
-                        <a href="https://amazon.com/dp/B0BZBCB37Q?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                        <h3 class="product-title">Panasonic LUMIX S5 II</h3>
+                        <div class="product-price">$2,000 - $2,200</div>
+                        <p class="product-desc">Full-frame with phase-detect AF and unlimited recording.</p>
+                        <a href="https://amazon.com/dp/B0BS1NDC57?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
             </div>
@@ -796,102 +834,122 @@
                 <div class="category-icon">🔭</div>
                 <div>
                     <h2>Lenses</h2>
-                    <span>Professional glass for video production</span>
+                    <span>Professional glass for sharp, cinematic footage</span>
                 </div>
             </div>
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-image">
-                        <span class="product-badge">Versatile</span>
+                        <span class="product-badge">Pro Pick</span>
+                        <img src="https://m.media-amazon.com/images/I/71vPiCpKHHL._AC_SL1500_.jpg" alt="Sony 35mm GM" loading="lazy">
                     </div>
-                    <div class="product-content">
-                        <h3 class="product-title">Sony FE 24-70mm f/2.8 GM II</h3>
-                        <div class="product-price">$2,200 - $2,400</div>
-                        <p class="product-desc">Premium zoom lens. The workhorse for professional video production.</p>
-                        <a href="https://amazon.com/dp/B09VCD5H3B?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Portrait</span>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title">Sony FE 50mm f/1.2 GM</h3>
-                        <div class="product-price">$1,900 - $2,100</div>
-                        <p class="product-desc">Ultra-fast prime lens. Stunning bokeh for interviews and close-ups.</p>
-                        <a href="https://amazon.com/dp/B08WJRFWHJ?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">Canon RF 24-70mm f/2.8L IS USM</h3>
-                        <div class="product-price">$2,300 - $2,500</div>
-                        <p class="product-desc">Professional L-series zoom with image stabilization.</p>
-                        <a href="https://amazon.com/dp/B07XKXVZF9?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">Sigma 24-70mm f/2.8 DG DN Art</h3>
-                        <div class="product-price">$1,000 - $1,200</div>
-                        <p class="product-desc">Art series zoom lens. Excellent value for professional quality.</p>
-                        <a href="https://amazon.com/dp/B08CMPBKJL?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">Sony FE 70-200mm f/2.8 GM OSS II</h3>
-                        <div class="product-price">$2,700 - $2,900</div>
-                        <p class="product-desc">Professional telephoto zoom. Perfect for stage and event coverage.</p>
-                        <a href="https://amazon.com/dp/B09M3PT36F?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">Tamron 35-150mm f/2-2.8 Di III VXD</h3>
-                        <div class="product-price">$1,800 - $2,000</div>
-                        <p class="product-desc">Versatile all-in-one zoom. Fast aperture throughout the range.</p>
-                        <a href="https://amazon.com/dp/B09GF6TH8G?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
                     <div class="product-content">
                         <h3 class="product-title">Sony FE 35mm f/1.4 GM</h3>
                         <div class="product-price">$1,350 - $1,500</div>
                         <p class="product-desc">Wide-angle prime for interviews and environmental shots.</p>
-                        <a href="https://amazon.com/dp/B08RDSD15L?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                        <a href="https://amazon.com/dp/B08XYBLMFB?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <span class="product-badge">Budget</span>
+                        <img src="https://m.media-amazon.com/images/I/61VgKzq-XGL._AC_SL1500_.jpg" alt="Canon 50mm" loading="lazy">
+                    </div>
                     <div class="product-content">
                         <h3 class="product-title">Canon RF 50mm f/1.8 STM</h3>
                         <div class="product-price">$180 - $220</div>
                         <p class="product-desc">Affordable "nifty fifty" for Canon RF mount. Great for beginners.</p>
-                        <a href="https://amazon.com/dp/B08JQXRJ12?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                        <a href="https://amazon.com/dp/B08NSQSHVP?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/71DseSGdWHL._AC_SL1500_.jpg" alt="Sigma 18-35mm" loading="lazy">
+                    </div>
                     <div class="product-content">
                         <h3 class="product-title">Sigma 18-35mm f/1.8 DC HSM Art</h3>
                         <div class="product-price">$750 - $850</div>
                         <p class="product-desc">Fast wide-angle zoom for APS-C. Legendary sharpness.</p>
-                        <a href="https://amazon.com/dp/B00DBL0NLQ?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                        <a href="https://amazon.com/dp/B00DBL09FG?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <span class="product-badge">Cinema</span>
+                        <img src="https://m.media-amazon.com/images/I/71QPD8fpWvL._AC_SL1500_.jpg" alt="Canon 15-35mm" loading="lazy">
+                    </div>
                     <div class="product-content">
                         <h3 class="product-title">Canon RF 15-35mm f/2.8L IS USM</h3>
                         <div class="product-price">$2,200 - $2,400</div>
-                        <p class="product-desc">Ultra-wide zoom with stabilization. Perfect for event and venue shots.</p>
-                        <a href="https://amazon.com/dp/B07XKXGB4J?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                        <p class="product-desc">Professional ultra-wide zoom with IS. L-series quality.</p>
+                        <a href="https://amazon.com/dp/B07SNTRQ4R?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/71vPiCpKHHL._AC_SL1500_.jpg" alt="Sony 24-70mm" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Sony FE 24-70mm f/2.8 GM II</h3>
+                        <div class="product-price">$2,200 - $2,400</div>
+                        <p class="product-desc">Standard zoom workhorse. Essential for video production.</p>
+                        <a href="https://amazon.com/dp/B09SWNMB9P?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/71DseSGdWHL._AC_SL1500_.jpg" alt="Sigma 24-70mm" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Sigma 24-70mm f/2.8 DG DN Art</h3>
+                        <div class="product-price">$1,000 - $1,100</div>
+                        <p class="product-desc">Excellent standard zoom at great value. Sharp and versatile.</p>
+                        <a href="https://amazon.com/dp/B088TN4Y8Z?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/71vPiCpKHHL._AC_SL1500_.jpg" alt="Sony 70-200mm" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Sony FE 70-200mm f/2.8 GM II</h3>
+                        <div class="product-price">$2,700 - $2,900</div>
+                        <p class="product-desc">Telephoto zoom for events and interviews from distance.</p>
+                        <a href="https://amazon.com/dp/B09MV6RWCM?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-badge">Popular</span>
+                        <img src="https://m.media-amazon.com/images/I/71DseSGdWHL._AC_SL1500_.jpg" alt="Sigma 50mm" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Sigma 50mm f/1.4 DG DN Art</h3>
+                        <div class="product-price">$850 - $950</div>
+                        <p class="product-desc">Sharp 50mm prime with beautiful bokeh for interviews.</p>
+                        <a href="https://amazon.com/dp/B0B7LPHLDB?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/71QPD8fpWvL._AC_SL1500_.jpg" alt="Canon 24-105mm" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Canon RF 24-105mm f/4L IS USM</h3>
+                        <div class="product-price">$1,000 - $1,100</div>
+                        <p class="product-desc">Versatile all-in-one zoom with excellent IS.</p>
+                        <a href="https://amazon.com/dp/B07SSHFK6N?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/71DseSGdWHL._AC_SL1500_.jpg" alt="Sigma 85mm" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Sigma 85mm f/1.4 DG DN Art</h3>
+                        <div class="product-price">$1,150 - $1,250</div>
+                        <p class="product-desc">Portrait prime with stunning subject separation.</p>
+                        <a href="https://amazon.com/dp/B08FHTV5SN?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
             </div>
@@ -902,193 +960,123 @@
             <div class="category-header">
                 <div class="category-icon">💡</div>
                 <div>
-                    <h2>Lighting Equipment</h2>
-                    <span>LED panels, key lights, and softboxes for video</span>
+                    <h2>Lighting</h2>
+                    <span>Professional lighting for video and studio work</span>
                 </div>
             </div>
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-image">
-                        <span class="product-badge">Popular</span>
+                        <span class="product-badge">Pro Pick</span>
+                        <img src="https://m.media-amazon.com/images/I/61VYVhKISQL._AC_SL1000_.jpg" alt="Aputure 120D" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-title">Elgato Key Light</h3>
-                        <div class="product-price">$180 - $220</div>
-                        <p class="product-desc">2800 lumens, app-controlled. The standard for desk and studio lighting.</p>
-                        <a href="https://amazon.com/dp/B07L755X9G?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">Elgato Key Light Air</h3>
-                        <div class="product-price">$130 - $160</div>
-                        <p class="product-desc">1400 lumens compact key light. Perfect for small spaces.</p>
-                        <a href="https://amazon.com/dp/B082QHRZFW?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">Elgato Key Light Mini</h3>
-                        <div class="product-price">$80 - $100</div>
-                        <p class="product-desc">Portable and rechargeable. Great for mobile setups and travel.</p>
-                        <a href="https://amazon.com/dp/B09PRNHLM7?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">Elgato Key Light Neo</h3>
-                        <div class="product-price">$60 - $90</div>
-                        <p class="product-desc">Budget-friendly app-controlled lighting. Entry-level pro lighting.</p>
-                        <a href="https://amazon.com/dp/B0CVYD9HB4?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                        <h3 class="product-title">Aputure Light Storm 120D II</h3>
+                        <div class="product-price">$600 - $750</div>
+                        <p class="product-desc">Daylight-balanced LED. Industry workhorse for interviews.</p>
+                        <a href="https://amazon.com/dp/B07GSCLM13?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-image">
-                        <span class="product-badge">Pro</span>
+                        <span class="product-badge">Budget</span>
+                        <img src="https://m.media-amazon.com/images/I/71g-wFKy0fL._AC_SL1500_.jpg" alt="NEEWER Bi-Color" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-title">Aputure Amaran 200d S LED</h3>
-                        <div class="product-price">$260 - $300</div>
-                        <p class="product-desc">200W daylight LED fixture. Professional production power.</p>
-                        <a href="https://amazon.com/dp/B09DP4B9JS?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">Aputure Amaran 60d S</h3>
-                        <div class="product-price">$120 - $150</div>
-                        <p class="product-desc">60W compact LED. Great for interviews and smaller setups.</p>
-                        <a href="https://amazon.com/dp/B09TLCM8YP?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">Aputure Amaran 300c RGB LED</h3>
-                        <div class="product-price">$600 - $700</div>
-                        <p class="product-desc">300W full RGB creative lighting. Unlimited color options.</p>
-                        <a href="https://amazon.com/dp/B0BTLRKMRJ?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">Godox SL60W LED</h3>
-                        <div class="product-price">$120 - $150</div>
-                        <p class="product-desc">60W continuous LED. Affordable professional lighting.</p>
-                        <a href="https://amazon.com/dp/B06XT24BBF?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">Godox SL150W II LED</h3>
-                        <div class="product-price">$260 - $300</div>
-                        <p class="product-desc">150W LED with Bowens mount. Powerful and versatile.</p>
-                        <a href="https://amazon.com/dp/B08CV36P4G?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">NEEWER 660 LED Video Light Kit</h3>
-                        <div class="product-price">$100 - $140</div>
-                        <p class="product-desc">Bi-color LED panels with stands. Complete 2-light kit.</p>
+                        <h3 class="product-title">NEEWER 2-Pack Bi-Color LED</h3>
+                        <div class="product-price">$80 - $120</div>
+                        <p class="product-desc">Affordable 2-light kit with stands and batteries.</p>
                         <a href="https://amazon.com/dp/B06XW3B81V?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/61VYVhKISQL._AC_SL1000_.jpg" alt="Aputure 300D" loading="lazy">
+                    </div>
                     <div class="product-content">
-                        <h3 class="product-title">Aputure Light Dome III Softbox</h3>
-                        <div class="product-price">$250 - $300</div>
-                        <p class="product-desc">Professional softbox modifier. Beautiful soft light quality.</p>
-                        <a href="https://amazon.com/dp/B0C5KSHGLV?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                        <h3 class="product-title">Aputure Light Storm 300D II</h3>
+                        <div class="product-price">$900 - $1,100</div>
+                        <p class="product-desc">300W LED powerhouse. Professional key light.</p>
+                        <a href="https://amazon.com/dp/B07GSXZNPW?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <span class="product-badge">Portable</span>
+                        <img src="https://m.media-amazon.com/images/I/61VYVhKISQL._AC_SL1000_.jpg" alt="Aputure MC" loading="lazy">
+                    </div>
                     <div class="product-content">
-                        <h3 class="product-title">Godox QR-P90 Softbox</h3>
+                        <h3 class="product-title">Aputure MC RGBWW LED</h3>
+                        <div class="product-price">$90 - $120</div>
+                        <p class="product-desc">Pocket-sized RGB light. Great for accents and fills.</p>
+                        <a href="https://amazon.com/dp/B07Z7K6SZ7?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/61VYVhKISQL._AC_SL1000_.jpg" alt="Aputure 60D" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Aputure Amaran 60D</h3>
+                        <div class="product-price">$120 - $150</div>
+                        <p class="product-desc">Compact 60W LED. Perfect for interviews and run-and-gun.</p>
+                        <a href="https://amazon.com/dp/B09FPGP44Z?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/71g-wFKy0fL._AC_SL1500_.jpg" alt="GVM RGB" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">GVM RGB LED 3-Light Kit</h3>
+                        <div class="product-price">$300 - $400</div>
+                        <p class="product-desc">Full RGB control with app. Great starter studio kit.</p>
+                        <a href="https://amazon.com/dp/B07X3SK55N?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-badge">Popular</span>
+                        <img src="https://m.media-amazon.com/images/I/71g-wFKy0fL._AC_SL1500_.jpg" alt="Elgato Key Light" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Elgato Key Light</h3>
+                        <div class="product-price">$180 - $200</div>
+                        <p class="product-desc">Desk-mounted LED panel for streaming and video calls.</p>
+                        <a href="https://amazon.com/dp/B07L755X9G?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/71g-wFKy0fL._AC_SL1500_.jpg" alt="Godox SL-60W" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Godox SL-60W LED</h3>
+                        <div class="product-price">$120 - $150</div>
+                        <p class="product-desc">Affordable 60W LED with Bowens mount compatibility.</p>
+                        <a href="https://amazon.com/dp/B0842GTTPS?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/71g-wFKy0fL._AC_SL1500_.jpg" alt="NEEWER Ring Light" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">NEEWER 18" Ring Light</h3>
                         <div class="product-price">$80 - $100</div>
-                        <p class="product-desc">90cm quick-release parabolic softbox. Fast setup.</p>
-                        <a href="https://amazon.com/dp/B09BC6FMHQ?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                        <p class="product-desc">Classic ring light for beauty and interviews.</p>
+                        <a href="https://amazon.com/dp/B01LXDNNBW?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">GVM 800D RGB LED Panel 2-Pack</h3>
-                        <div class="product-price">$200 - $260</div>
-                        <p class="product-desc">Full RGB panels with APP control. Creative lighting kit.</p>
-                        <a href="https://amazon.com/dp/B08KT4QWNR?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/61VYVhKISQL._AC_SL1000_.jpg" alt="Aputure 600D" loading="lazy">
                     </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
                     <div class="product-content">
-                        <h3 class="product-title">NEEWER 2-Pack RGB LED Panels</h3>
-                        <div class="product-price">$140 - $180</div>
-                        <p class="product-desc">Budget RGB LED kit. Great for creative effects.</p>
-                        <a href="https://amazon.com/dp/B09NLJMQDB?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">Aputure MC RGBWW Mini LED</h3>
-                        <div class="product-price">$90 - $110</div>
-                        <p class="product-desc">Pocket-sized full-color LED. Perfect for accent lighting.</p>
-                        <a href="https://amazon.com/dp/B07VLQ8SJW?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">Nanlite Forza 60 II LED</h3>
-                        <div class="product-price">$180 - $220</div>
-                        <p class="product-desc">60W spotlight LED with accessories. Compact powerhouse.</p>
-                        <a href="https://amazon.com/dp/B08NPY9HS6?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">Impact Light Stand Heavy Duty</h3>
-                        <div class="product-price">$50 - $70</div>
-                        <p class="product-desc">13ft heavy-duty light stand. Rock solid support.</p>
-                        <a href="https://amazon.com/dp/B003OCOUVG?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">NEEWER Light Stand 2-Pack</h3>
-                        <div class="product-price">$40 - $60</div>
-                        <p class="product-desc">Adjustable aluminum stands. Budget-friendly reliability.</p>
-                        <a href="https://amazon.com/dp/B01FWRMQ90?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">V-Mount Battery with D-Tap</h3>
-                        <div class="product-price">$90 - $130</div>
-                        <p class="product-desc">High-capacity battery for LED lights. Essential for location work.</p>
-                        <a href="https://amazon.com/dp/B07LGVZ3WC?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">Aputure B7c RGBWW Smart Bulb</h3>
-                        <div class="product-price">$70 - $90</div>
-                        <p class="product-desc">Color-changing smart bulb. Practical lamp creativity.</p>
-                        <a href="https://amazon.com/dp/B087LB97PJ?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                        <h3 class="product-title">Aputure Light Storm 600D Pro</h3>
+                        <div class="product-price">$1,600 - $1,800</div>
+                        <p class="product-desc">600W cinema-grade LED. Professional productions.</p>
+                        <a href="https://amazon.com/dp/B09SL5KCQP?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
             </div>
@@ -1097,150 +1085,124 @@
         <!-- AUDIO -->
         <section id="audio" class="category-section">
             <div class="category-header">
-                <div class="category-icon">🎙</div>
+                <div class="category-icon">🎙️</div>
                 <div>
-                    <h2>Audio & Microphones</h2>
-                    <span>Professional audio capture for video production</span>
+                    <h2>Audio</h2>
+                    <span>Professional microphones and audio gear</span>
                 </div>
             </div>
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-image">
-                        <span class="product-badge">Popular</span>
+                        <span class="product-badge">Pro Pick</span>
+                        <img src="https://m.media-amazon.com/images/I/71Nz5MkCJuL._AC_SL1500_.jpg" alt="Rode NTG5" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-title">Rode VideoMic Pro+</h3>
-                        <div class="product-price">$280 - $320</div>
-                        <p class="product-desc">Premium on-camera shotgun mic. Industry standard for video.</p>
-                        <a href="https://amazon.com/dp/B0749GV5L3?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                        <h3 class="product-title">Rode NTG5 Shotgun</h3>
+                        <div class="product-price">$450 - $500</div>
+                        <p class="product-desc">Broadcast-grade shotgun mic. Industry standard for film.</p>
+                        <a href="https://amazon.com/dp/B07WLVFRFX?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-image">
-                        <span class="product-badge">Wireless</span>
+                        <span class="product-badge">Popular</span>
+                        <img src="https://m.media-amazon.com/images/I/61zrP-Fr5uL._AC_SL1500_.jpg" alt="Rode Wireless GO II" loading="lazy">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">Rode Wireless GO II</h3>
-                        <div class="product-price">$280 - $320</div>
-                        <p class="product-desc">Dual-channel wireless system. Compact and reliable.</p>
-                        <a href="https://amazon.com/dp/B08Y8KD45N?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                        <div class="product-price">$250 - $300</div>
+                        <p class="product-desc">Compact dual-channel wireless system. Essential for interviews.</p>
+                        <a href="https://amazon.com/dp/B08XFQ6KSP?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/71Nz5MkCJuL._AC_SL1500_.jpg" alt="Sennheiser MKE 600" loading="lazy">
+                    </div>
                     <div class="product-content">
-                        <h3 class="product-title">Rode NTG5 Broadcast Shotgun</h3>
-                        <div class="product-price">$500 - $550</div>
-                        <p class="product-desc">Professional broadcast shotgun mic. Premium audio quality.</p>
-                        <a href="https://amazon.com/dp/B07QRZF98S?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                        <h3 class="product-title">Sennheiser MKE 600</h3>
+                        <div class="product-price">$300 - $350</div>
+                        <p class="product-desc">Professional shotgun mic with switchable low-cut filter.</p>
+                        <a href="https://amazon.com/dp/B00B0ZZXSW?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <span class="product-badge">Budget</span>
+                        <img src="https://m.media-amazon.com/images/I/71Nz5MkCJuL._AC_SL1500_.jpg" alt="Rode VideoMic Pro" loading="lazy">
+                    </div>
                     <div class="product-content">
-                        <h3 class="product-title">Sennheiser MKE 600 Shotgun</h3>
-                        <div class="product-price">$320 - $370</div>
-                        <p class="product-desc">Camcorder shotgun microphone. Excellent rejection.</p>
-                        <a href="https://amazon.com/dp/B00B0YJIMI?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                        <h3 class="product-title">Rode VideoMic Pro+</h3>
+                        <div class="product-price">$250 - $300</div>
+                        <p class="product-desc">On-camera shotgun mic with rechargeable battery.</p>
+                        <a href="https://amazon.com/dp/B01D50RBHG?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/61zrP-Fr5uL._AC_SL1500_.jpg" alt="DJI Mic" loading="lazy">
+                    </div>
                     <div class="product-content">
-                        <h3 class="product-title">DJI Mic 2</h3>
-                        <div class="product-price">$320 - $370</div>
-                        <p class="product-desc">Dual wireless microphone system. 32-bit float recording.</p>
-                        <a href="https://amazon.com/dp/B0CTQ76KMP?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                        <h3 class="product-title">DJI Mic 2 Wireless</h3>
+                        <div class="product-price">$300 - $350</div>
+                        <p class="product-desc">Dual transmitter wireless system with internal recording.</p>
+                        <a href="https://amazon.com/dp/B0CX5LBBR5?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/61+XOKgMD3L._AC_SL1500_.jpg" alt="Zoom H6" loading="lazy">
+                    </div>
                     <div class="product-content">
-                        <h3 class="product-title">Shure SM7B Dynamic</h3>
-                        <div class="product-price">$380 - $420</div>
-                        <p class="product-desc">Legendary broadcast dynamic mic. The podcaster's choice.</p>
+                        <h3 class="product-title">Zoom H6 Recorder</h3>
+                        <div class="product-price">$300 - $350</div>
+                        <p class="product-desc">6-track portable recorder. Essential for professional audio.</p>
+                        <a href="https://amazon.com/dp/B00DFU9BRK?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/71yN-X17SSL._AC_SL1500_.jpg" alt="Shure SM7B" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Shure SM7B</h3>
+                        <div class="product-price">$400 - $450</div>
+                        <p class="product-desc">Legendary broadcast mic. Perfect for voiceover and podcasts.</p>
                         <a href="https://amazon.com/dp/B0002E4Z8M?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/61zrP-Fr5uL._AC_SL1500_.jpg" alt="Sony UWP-D21" loading="lazy">
+                    </div>
                     <div class="product-content">
-                        <h3 class="product-title">Rode Lavalier GO</h3>
-                        <div class="product-price">$70 - $90</div>
-                        <p class="product-desc">Broadcast-grade lavalier microphone. Great with Wireless GO.</p>
-                        <a href="https://amazon.com/dp/B07WKHNFRN?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                        <h3 class="product-title">Sony UWP-D21 Wireless</h3>
+                        <div class="product-price">$500 - $600</div>
+                        <p class="product-desc">Professional UHF wireless with lav mic.</p>
+                        <a href="https://amazon.com/dp/B07KFDMQNV?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/61+XOKgMD3L._AC_SL1500_.jpg" alt="Tascam DR-60D" loading="lazy">
+                    </div>
                     <div class="product-content">
-                        <h3 class="product-title">Zoom H5 Handy Recorder</h3>
-                        <div class="product-price">$250 - $300</div>
-                        <p class="product-desc">Portable recorder with XLR inputs. Professional backup audio.</p>
-                        <a href="https://amazon.com/dp/B00KCXMBES?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                        <h3 class="product-title">Tascam DR-60D MKII</h3>
+                        <div class="product-price">$180 - $220</div>
+                        <p class="product-desc">4-track DSLR recorder. Budget-friendly audio solution.</p>
+                        <a href="https://amazon.com/dp/B00MIXFBL0?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">Zoom F3 Field Recorder</h3>
-                        <div class="product-price">$320 - $370</div>
-                        <p class="product-desc">32-bit float recording. Never clip again.</p>
-                        <a href="https://amazon.com/dp/B09PKJ4LPP?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/71Nz5MkCJuL._AC_SL1500_.jpg" alt="Rode NTG3" loading="lazy">
                     </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">Sennheiser AVX-MKE2 Wireless</h3>
-                        <div class="product-price">$900 - $1,000</div>
-                        <p class="product-desc">Pro wireless lavalier system. Auto-sync frequency.</p>
-                        <a href="https://amazon.com/dp/B00V3AX8KM?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
                     <div class="product-content">
                         <h3 class="product-title">Rode NTG3 Shotgun</h3>
-                        <div class="product-price">$650 - $720</div>
-                        <p class="product-desc">RF-immune shotgun microphone. Broadcast and film standard.</p>
-                        <a href="https://amazon.com/dp/B002PKNHNE?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">Tascam DR-40X Recorder</h3>
-                        <div class="product-price">$170 - $200</div>
-                        <p class="product-desc">4-track portable recorder. Affordable professional quality.</p>
-                        <a href="https://amazon.com/dp/B07P9JMKKY?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">Deity S-Mic 2S Shotgun</h3>
-                        <div class="product-price">$280 - $320</div>
-                        <p class="product-desc">Low-noise shotgun microphone. Great value for quality.</p>
-                        <a href="https://amazon.com/dp/B09GXFPPRT?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">Boom Pole Carbon Fiber</h3>
-                        <div class="product-price">$80 - $120</div>
-                        <p class="product-desc">Lightweight boom pole for shotgun mics. Essential for ENG.</p>
-                        <a href="https://amazon.com/dp/B00VD9KC0M?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">Sony UWP-D21 Wireless System</h3>
-                        <div class="product-price">$550 - $620</div>
-                        <p class="product-desc">Professional UHF wireless system. Reliable on set.</p>
-                        <a href="https://amazon.com/dp/B07Z1YXWM9?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                        <div class="product-price">$650 - $700</div>
+                        <p class="product-desc">RF-immune broadcast shotgun. True condenser design.</p>
+                        <a href="https://amazon.com/dp/B002WQBAJW?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
             </div>
@@ -1249,95 +1211,123 @@
         <!-- MONITORS -->
         <section id="monitors" class="category-section">
             <div class="category-header">
-                <div class="category-icon">📱</div>
+                <div class="category-icon">🖥️</div>
                 <div>
-                    <h2>Field Monitors</h2>
-                    <span>On-camera and confidence monitors for production</span>
+                    <h2>Monitors</h2>
+                    <span>Field monitors and confidence displays</span>
                 </div>
             </div>
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-image">
-                        <span class="product-badge">Pro</span>
+                        <span class="product-badge">Pro Pick</span>
+                        <img src="https://m.media-amazon.com/images/I/71-0PSRoJQL._AC_SL1500_.jpg" alt="Atomos Ninja V" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Atomos Ninja V</h3>
+                        <div class="product-price">$500 - $600</div>
+                        <p class="product-desc">5" HDR monitor-recorder. ProRes and DNx recording.</p>
+                        <a href="https://amazon.com/dp/B07CCXXRPF?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/71x-m3h+e6L._AC_SL1500_.jpg" alt="SmallHD Focus" loading="lazy">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">SmallHD Focus 5"</h3>
                         <div class="product-price">$350 - $400</div>
-                        <p class="product-desc">Touchscreen field monitor. Professional monitoring on set.</p>
+                        <p class="product-desc">Touchscreen on-camera monitor with focus tools.</p>
                         <a href="https://amazon.com/dp/B071X4CSND?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <span class="product-badge">Budget</span>
+                        <img src="https://m.media-amazon.com/images/I/71kA6Q9l0dL._AC_SL1500_.jpg" alt="Feelworld F6 Plus" loading="lazy">
+                    </div>
                     <div class="product-content">
                         <h3 class="product-title">Feelworld F6 Plus 5.5"</h3>
                         <div class="product-price">$160 - $190</div>
-                        <p class="product-desc">4K HDMI field monitor. Great value for the price.</p>
+                        <p class="product-desc">4K HDMI field monitor. Great value option.</p>
                         <a href="https://amazon.com/dp/B07KYR9HMN?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/61iBOBEPdFL._AC_SL1500_.jpg" alt="Lilliput A7S" loading="lazy">
+                    </div>
                     <div class="product-content">
                         <h3 class="product-title">Lilliput A7S 7"</h3>
                         <div class="product-price">$120 - $150</div>
-                        <p class="product-desc">1920x1200 IPS screen. Budget-friendly field monitor.</p>
+                        <p class="product-desc">1920x1200 IPS screen. Budget-friendly large monitor.</p>
                         <a href="https://amazon.com/dp/B07TPLDL5Q?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/71kA6Q9l0dL._AC_SL1500_.jpg" alt="Portkeys BM5" loading="lazy">
+                    </div>
                     <div class="product-content">
                         <h3 class="product-title">Portkeys BM5 III 5.5"</h3>
                         <div class="product-price">$300 - $350</div>
-                        <p class="product-desc">2200nit high-bright touchscreen. Visible in daylight.</p>
+                        <p class="product-desc">2200nit touchscreen. Daylight viewable.</p>
                         <a href="https://amazon.com/dp/B08CB9PGGM?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-image">
-                        <span class="product-badge">HDR</span>
+                        <img src="https://m.media-amazon.com/images/I/71-0PSRoJQL._AC_SL1500_.jpg" alt="Atomos Shinobi" loading="lazy">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">Atomos Shinobi 5.2"</h3>
                         <div class="product-price">$350 - $400</div>
-                        <p class="product-desc">4K HDMI HDR monitor. Atomos quality in compact form.</p>
+                        <p class="product-desc">4K HDMI HDR monitor. AtomOS interface.</p>
                         <a href="https://amazon.com/dp/B07PVJM6TZ?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/71kA6Q9l0dL._AC_SL1500_.jpg" alt="Neewer F100" loading="lazy">
+                    </div>
                     <div class="product-content">
                         <h3 class="product-title">Neewer F100 7"</h3>
                         <div class="product-price">$100 - $130</div>
-                        <p class="product-desc">IPS camera field monitor. Entry-level monitoring.</p>
+                        <p class="product-desc">IPS 1280x800 field monitor. Entry-level option.</p>
                         <a href="https://amazon.com/dp/B01GLL8YZ2?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/71kA6Q9l0dL._AC_SL1500_.jpg" alt="Desview R5" loading="lazy">
+                    </div>
                     <div class="product-content">
                         <h3 class="product-title">Desview R5 5.5"</h3>
                         <div class="product-price">$180 - $220</div>
-                        <p class="product-desc">800nit high-bright monitor. Good outdoor visibility.</p>
+                        <p class="product-desc">800nit high bright field monitor.</p>
                         <a href="https://amazon.com/dp/B09MLNQ6KV?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/71kA6Q9l0dL._AC_SL1500_.jpg" alt="SmallRig Monitor" loading="lazy">
+                    </div>
                     <div class="product-content">
                         <h3 class="product-title">SmallRig 5" Ultra Bright</h3>
                         <div class="product-price">$130 - $160</div>
-                        <p class="product-desc">800nit field monitor. SmallRig build quality.</p>
+                        <p class="product-desc">800nit compact monitor. Great portability.</p>
                         <a href="https://amazon.com/dp/B0BYQHPJ2H?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <span class="product-badge">Confidence</span>
+                        <img src="https://m.media-amazon.com/images/I/61iBOBEPdFL._AC_SL1500_.jpg" alt="Ikan VL7e" loading="lazy">
+                    </div>
                     <div class="product-content">
-                        <h3 class="product-title">Ikan VL7e 7" Confidence Monitor</h3>
+                        <h3 class="product-title">Ikan VL7e 7" LCD</h3>
                         <div class="product-price">$400 - $500</div>
-                        <p class="product-desc">LCD monitor with battery plate. Perfect for confidence monitoring.</p>
+                        <p class="product-desc">Field monitor with Canon E6 battery plate.</p>
                         <a href="https://amazon.com/dp/B00JJZJ3OU?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
@@ -1349,106 +1339,122 @@
             <div class="category-header">
                 <div class="category-icon">📐</div>
                 <div>
-                    <h2>Tripods & Stands</h2>
-                    <span>Professional video tripod systems</span>
+                    <h2>Tripods</h2>
+                    <span>Professional video tripods and fluid heads</span>
                 </div>
             </div>
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-image">
-                        <span class="product-badge">Popular</span>
+                        <span class="product-badge">Pro Pick</span>
+                        <img src="https://m.media-amazon.com/images/I/71xQd9K8GVL._AC_SL1500_.jpg" alt="Manfrotto MVK502AM" loading="lazy">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">Manfrotto MVK502AM Video System</h3>
                         <div class="product-price">$340 - $380</div>
-                        <p class="product-desc">Complete video tripod system with 502 fluid head.</p>
+                        <p class="product-desc">Professional video tripod with 502 fluid head.</p>
                         <a href="https://amazon.com/dp/B005ZMWSC6?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/71xQd9K8GVL._AC_SL1500_.jpg" alt="Manfrotto MVH502A" loading="lazy">
+                    </div>
                     <div class="product-content">
-                        <h3 class="product-title">Manfrotto MVH502A Pro Fluid System</h3>
+                        <h3 class="product-title">Manfrotto MVH502A Pro Fluid</h3>
                         <div class="product-price">$420 - $480</div>
-                        <p class="product-desc">Professional fluid video head with aluminum tripod.</p>
+                        <p class="product-desc">Professional fluid video system with aluminum tripod.</p>
                         <a href="https://amazon.com/dp/B00E3QI6JE?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/71xQd9K8GVL._AC_SL1500_.jpg" alt="Manfrotto 190X" loading="lazy">
+                    </div>
                     <div class="product-content">
-                        <h3 class="product-title">Manfrotto 190X with 500 Fluid Head</h3>
+                        <h3 class="product-title">Manfrotto 190X Video Tripod</h3>
                         <div class="product-price">$380 - $420</div>
-                        <p class="product-desc">3-section video tripod with fluid head.</p>
+                        <p class="product-desc">3-section aluminum with 500 fluid head.</p>
                         <a href="https://amazon.com/dp/B07N1Z1SJ4?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-image">
                         <span class="product-badge">Budget</span>
+                        <img src="https://m.media-amazon.com/images/I/61VHMqKI8TL._AC_SL1500_.jpg" alt="Neewer Tripod" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-title">Neewer Video Tripod with Fluid Head</h3>
+                        <h3 class="product-title">Neewer Professional Video Tripod</h3>
                         <div class="product-price">$90 - $120</div>
-                        <p class="product-desc">360 degree fluid head. Budget-friendly video support.</p>
+                        <p class="product-desc">360 degree fluid head system. Great starter option.</p>
                         <a href="https://amazon.com/dp/B017OYQFZQ?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-image">
                         <span class="product-badge">Carbon</span>
+                        <img src="https://m.media-amazon.com/images/I/61VHMqKI8TL._AC_SL1500_.jpg" alt="SmallRig AD-100" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-title">SmallRig AD-100 FreeBlazer</h3>
+                        <h3 class="product-title">SmallRig AD-100 Carbon Fiber</h3>
                         <div class="product-price">$450 - $500</div>
-                        <p class="product-desc">Heavy-duty carbon fiber tripod system.</p>
+                        <p class="product-desc">Heavy-duty FreeBlazer carbon fiber system.</p>
                         <a href="https://amazon.com/dp/B0BTPWJJQY?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/61VHMqKI8TL._AC_SL1500_.jpg" alt="SIRUI SVS75" loading="lazy">
+                    </div>
                     <div class="product-content">
-                        <h3 class="product-title">SIRUI SVS75 Professional Carbon Fiber</h3>
+                        <h3 class="product-title">SIRUI SVS75 Carbon Fiber</h3>
                         <div class="product-price">$380 - $420</div>
-                        <p class="product-desc">61" carbon fiber video tripod. Lightweight and sturdy.</p>
+                        <p class="product-desc">61" professional video tripod. Lightweight and sturdy.</p>
                         <a href="https://amazon.com/dp/B09NY3WKTV?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/61VHMqKI8TL._AC_SL1500_.jpg" alt="Cayer BV30L" loading="lazy">
+                    </div>
                     <div class="product-content">
                         <h3 class="product-title">Cayer BV30L Video System</h3>
                         <div class="product-price">$130 - $160</div>
-                        <p class="product-desc">74" aluminum tripod with fluid head. Solid mid-range.</p>
+                        <p class="product-desc">74" aluminum tripod with fluid head.</p>
                         <a href="https://amazon.com/dp/B07S8J3K96?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/61VHMqKI8TL._AC_SL1500_.jpg" alt="Magnus VT-4000" loading="lazy">
+                    </div>
                     <div class="product-content">
                         <h3 class="product-title">Magnus VT-4000</h3>
                         <div class="product-price">$180 - $220</div>
-                        <p class="product-desc">2-way fluid head tripod system. Reliable performer.</p>
+                        <p class="product-desc">2-way fluid head tripod system.</p>
                         <a href="https://amazon.com/dp/B005WH2CHA?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-image">
-                        <span class="product-badge">Pro</span>
+                        <span class="product-badge">Broadcast</span>
+                        <img src="https://m.media-amazon.com/images/I/71xQd9K8GVL._AC_SL1500_.jpg" alt="Sachtler Ace M" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-title">Sachtler Ace M Fluid System</h3>
+                        <h3 class="product-title">Sachtler Ace M Fluid Head</h3>
                         <div class="product-price">$700 - $800</div>
                         <p class="product-desc">Professional 2-stage aluminum tripod. Broadcast quality.</p>
                         <a href="https://amazon.com/dp/B00BBPELPS?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/61VHMqKI8TL._AC_SL1500_.jpg" alt="E-Image EG03A2" loading="lazy">
+                    </div>
                     <div class="product-content">
-                        <h3 class="product-title">E-Image EG03A2 with GH03 Head</h3>
+                        <h3 class="product-title">E-Image EG03A2 with GH03</h3>
                         <div class="product-price">$280 - $320</div>
-                        <p class="product-desc">Professional video tripod with fluid head. Great value.</p>
+                        <p class="product-desc">Professional video tripod with fluid head.</p>
                         <a href="https://amazon.com/dp/B01N5RNFHO?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
@@ -1466,7 +1472,9 @@
             </div>
             <div class="product-grid">
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/61Vp-1JMQPL._AC_SL1500_.jpg" alt="OREI HDMI Splitter" loading="lazy">
+                    </div>
                     <div class="product-content">
                         <h3 class="product-title">OREI 1x4 HDMI Splitter</h3>
                         <div class="product-price">$30 - $50</div>
@@ -1477,6 +1485,7 @@
                 <div class="product-card">
                     <div class="product-image">
                         <span class="product-badge">Broadcast</span>
+                        <img src="https://m.media-amazon.com/images/I/61RYiEH-yML._AC_SL1500_.jpg" alt="Blackmagic SDI" loading="lazy">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">Blackmagic SDI to HDMI 3G</h3>
@@ -1486,18 +1495,22 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/61Vp-1JMQPL._AC_SL1500_.jpg" alt="HDMI Cable 50ft" loading="lazy">
+                    </div>
                     <div class="product-content">
-                        <h3 class="product-title">AmazonBasics Active HDMI Cable 50ft</h3>
+                        <h3 class="product-title">AmazonBasics Active HDMI 50ft</h3>
                         <div class="product-price">$35 - $50</div>
-                        <p class="product-desc">High-speed with signal booster. Long-distance runs.</p>
+                        <p class="product-desc">High-speed with signal booster for long runs.</p>
                         <a href="https://amazon.com/dp/B07S19RQMM?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/61Vp-1JMQPL._AC_SL1500_.jpg" alt="Anker USB-C" loading="lazy">
+                    </div>
                     <div class="product-content">
-                        <h3 class="product-title">Anker USB-C to HDMI Adapter</h3>
+                        <h3 class="product-title">Anker USB-C to HDMI</h3>
                         <div class="product-price">$15 - $25</div>
                         <p class="product-desc">4K 60Hz adapter. Simple and reliable.</p>
                         <a href="https://amazon.com/dp/B075V68NVR?tag=floridateleprompter-20" target="_blank" rel="nofollow noopener" class="product-link">View on Amazon</a>
@@ -1506,6 +1519,7 @@
                 <div class="product-card">
                     <div class="product-image">
                         <span class="product-badge">Essential</span>
+                        <img src="https://m.media-amazon.com/images/I/81EqvN0j8HL._AC_SL1500_.jpg" alt="Pelican 1510" loading="lazy">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">Pelican 1510 Hard Case</h3>
@@ -1523,7 +1537,7 @@
     <footer>
         <div class="footer-inner">
             <div class="footer-brand">
-                <img src="https://floridateleprompter.com/logo.png" alt="Florida Teleprompter" style="height: 50px;">
+                <img src="https://floridateleprompter.com/FL-Logo.png" alt="Florida Teleprompter" style="height: 80px;">
                 <p>Professional teleprompting services for productions of every scale. Based in Tampa Bay, serving the Southeast and beyond since 1999.</p>
                 <p>Part of the <a href="https://nationalteleprompter.com" class="network-link">National Teleprompter</a> Network</p>
             </div>
@@ -1551,7 +1565,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <span>© 2025 Florida Teleprompter LLC. All rights reserved.</span>
+            <span>© 2026 Florida Teleprompter LLC. All rights reserved.</span>
             <span>
                 <a href="https://floridateleprompter.com/privacy.html">Privacy Policy</a> | 
                 <a href="https://floridateleprompter.com/terms.html">Terms of Service</a>
@@ -1570,7 +1584,6 @@
             const element = document.getElementById(id);
             if (element) {
                 element.scrollIntoView({ behavior: 'smooth' });
-                // Update active button
                 document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
                 event.target.classList.add('active');
             }
@@ -1591,7 +1604,7 @@
             
             navButtons.forEach(btn => {
                 btn.classList.remove('active');
-                if (btn.getAttribute('onclick').includes(current)) {
+                if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(current)) {
                     btn.classList.add('active');
                 }
             });
