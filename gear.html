@@ -23,15 +23,8 @@
             --border-active: rgba(245, 184, 76, 0.4);
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -41,10 +34,8 @@
             min-height: 100vh;
         }
         
-        /* Header */
         header {
-            background: rgba(10, 10, 12, 0.95);
-            backdrop-filter: blur(10px);
+            background: #0a0a0c;
             border-bottom: 1px solid var(--border-subtle);
             position: fixed;
             top: 0;
@@ -62,67 +53,24 @@
             align-items: center;
         }
         
-        .logo {
-            height: 70px;
-            width: auto;
-        }
+        .logo { height: 70px; width: auto; }
         
-        nav {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
+        nav { display: flex; gap: 2rem; align-items: center; }
+        nav a { color: var(--text-secondary); text-decoration: none; font-size: 0.95rem; transition: color 0.2s; }
+        nav a:hover { color: var(--gold); }
+        .nav-cta { background: var(--gold); color: var(--bg-dark); padding: 0.6rem 1.2rem; border-radius: 4px; font-weight: 600; }
+        .nav-cta:hover { background: var(--gold-light); color: var(--bg-dark); }
         
-        nav a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-        
-        nav a:hover {
-            color: var(--gold);
-        }
-        
-        .nav-cta {
-            background: var(--gold);
-            color: var(--bg-dark);
-            padding: 0.6rem 1.2rem;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-        
-        .nav-cta:hover {
-            background: var(--gold-light);
-            color: var(--bg-dark);
-        }
-        
-        /* Hero */
         .hero {
             padding: 140px 2rem 80px;
             text-align: center;
             background: linear-gradient(180deg, rgba(245,184,76,0.08) 0%, transparent 50%);
         }
         
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
+        .hero h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; margin-bottom: 1rem; }
+        .hero h1 span { color: var(--gold); }
+        .hero p { font-size: 1.15rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto 2rem; }
         
-        .hero h1 span {
-            color: var(--gold);
-        }
-        
-        .hero p {
-            font-size: 1.15rem;
-            color: var(--text-secondary);
-            max-width: 700px;
-            margin: 0 auto 2rem;
-        }
-        
-        /* FTC Disclosure */
         .ftc-disclosure {
             background: rgba(245, 184, 76, 0.1);
             border: 1px solid var(--border-subtle);
@@ -133,12 +81,8 @@
             font-size: 0.9rem;
             color: var(--text-secondary);
         }
+        .ftc-disclosure strong { color: var(--gold); }
         
-        .ftc-disclosure strong {
-            color: var(--gold);
-        }
-        
-        /* Category Navigation */
         .category-nav {
             background: var(--bg-card);
             border-bottom: 1px solid var(--border-subtle);
@@ -170,25 +114,15 @@
             white-space: nowrap;
         }
         
-        .category-btn:hover,
-        .category-btn.active {
+        .category-btn:hover, .category-btn.active {
             background: var(--gold);
             border-color: var(--gold);
             color: var(--bg-dark);
         }
         
-        /* Main Content */
-        main {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
+        main { max-width: 1400px; margin: 0 auto; padding: 3rem 2rem; }
         
-        /* Category Sections */
-        .category-section {
-            margin-bottom: 4rem;
-            scroll-margin-top: 180px;
-        }
+        .category-section { margin-bottom: 4rem; scroll-margin-top: 180px; }
         
         .category-header {
             display: flex;
@@ -210,26 +144,15 @@
             font-size: 1.5rem;
         }
         
-        .category-header h2 {
-            font-size: 1.75rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
+        .category-header h2 { font-size: 1.75rem; font-weight: 600; }
+        .category-header span { color: var(--text-muted); font-size: 0.95rem; font-weight: 400; }
         
-        .category-header span {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            font-weight: 400;
-        }
-        
-        /* Product Grid */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 1.5rem;
         }
         
-        /* Product Card */
         .product-card {
             background: var(--bg-card);
             border: 1px solid var(--border-subtle);
@@ -248,19 +171,18 @@
         
         .product-image {
             aspect-ratio: 4/3;
-            background: #ffffff;
+            background: linear-gradient(135deg, #1a1a1f 0%, #252530 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 1rem;
+            padding: 1.5rem;
             position: relative;
             overflow: hidden;
         }
         
-        .product-image img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
+        .product-image .icon {
+            font-size: 4rem;
+            opacity: 0.6;
         }
         
         .product-badge {
@@ -287,7 +209,6 @@
         .product-title {
             font-size: 1rem;
             font-weight: 600;
-            color: var(--text-primary);
             margin-bottom: 0.5rem;
             line-height: 1.4;
             display: -webkit-box;
@@ -296,19 +217,8 @@
             overflow: hidden;
         }
         
-        .product-price {
-            color: var(--gold);
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-        }
-        
-        .product-desc {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
-            flex: 1;
-        }
+        .product-price { color: var(--gold); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .product-desc { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; flex: 1; }
         
         .product-link {
             display: block;
@@ -328,7 +238,6 @@
             transform: scale(1.02);
         }
         
-        /* Footer */
         footer {
             background: var(--bg-card);
             border-top: 1px solid var(--border-subtle);
@@ -344,38 +253,11 @@
             gap: 3rem;
         }
         
-        .footer-brand p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-top: 1rem;
-            max-width: 300px;
-        }
-        
-        .footer-brand .network-link {
-            color: var(--gold);
-            text-decoration: none;
-        }
-        
-        .footer-col h4 {
-            color: var(--text-primary);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        .footer-col a {
-            display: block;
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            padding: 0.3rem 0;
-            transition: color 0.2s;
-        }
-        
-        .footer-col a:hover {
-            color: var(--gold);
-        }
+        .footer-brand p { color: var(--text-secondary); font-size: 0.9rem; margin-top: 1rem; max-width: 300px; }
+        .footer-brand .network-link { color: var(--gold); text-decoration: none; }
+        .footer-col h4 { color: var(--text-primary); font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .footer-col a { display: block; color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; padding: 0.3rem 0; transition: color 0.2s; }
+        .footer-col a:hover { color: var(--gold); }
         
         .footer-bottom {
             max-width: 1400px;
@@ -389,16 +271,9 @@
             color: var(--text-muted);
         }
         
-        .footer-bottom a {
-            color: var(--text-secondary);
-            text-decoration: none;
-        }
+        .footer-bottom a { color: var(--text-secondary); text-decoration: none; }
+        .footer-bottom a:hover { color: var(--gold); }
         
-        .footer-bottom a:hover {
-            color: var(--gold);
-        }
-        
-        /* Mobile CTA */
         .mobile-cta {
             display: none;
             position: fixed;
@@ -409,70 +284,27 @@
             z-index: 1000;
         }
         
-        .mobile-cta a {
-            display: block;
-            text-align: center;
-            padding: 1rem;
-            color: var(--bg-dark);
-            font-weight: 700;
-            text-decoration: none;
-        }
+        .mobile-cta a { display: block; text-align: center; padding: 1rem; color: var(--bg-dark); font-weight: 700; text-decoration: none; }
         
-        /* Responsive */
         @media (max-width: 1024px) {
-            .footer-inner {
-                grid-template-columns: 1fr 1fr;
-            }
+            .footer-inner { grid-template-columns: 1fr 1fr; }
         }
         
         @media (max-width: 768px) {
-            header {
-                padding: 0.75rem 1rem;
-            }
-            
-            .logo {
-                height: 50px;
-            }
-            
-            nav {
-                display: none;
-            }
-            
-            .hero {
-                padding: 120px 1rem 60px;
-            }
-            
-            .category-nav {
-                top: 82px;
-            }
-            
-            main {
-                padding: 2rem 1rem 6rem;
-            }
-            
-            .product-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-inner {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .footer-bottom {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-            
-            .mobile-cta {
-                display: block;
-            }
+            header { padding: 0.75rem 1rem; }
+            .logo { height: 50px; }
+            nav { display: none; }
+            .hero { padding: 120px 1rem 60px; }
+            .category-nav { top: 82px; }
+            main { padding: 2rem 1rem 6rem; }
+            .product-grid { grid-template-columns: 1fr; }
+            .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+            .mobile-cta { display: block; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="header-inner">
             <a href="https://floridateleprompter.com/">
@@ -488,7 +320,6 @@
         </div>
     </header>
     
-    <!-- Hero -->
     <section class="hero">
         <h1>Professional <span>Production Gear</span></h1>
         <p>Equipment trusted by our operators and recommended for productions of every scale. These are the tools we use and trust on set every day.</p>
@@ -497,7 +328,6 @@
         </div>
     </section>
     
-    <!-- Category Navigation -->
     <nav class="category-nav">
         <div class="category-nav-inner">
             <button class="category-btn active" onclick="scrollToCategory('teleprompters')">📺 Teleprompters</button>
@@ -511,9 +341,7 @@
         </div>
     </nav>
     
-    <!-- Main Content -->
     <main>
-        
         <!-- TELEPROMPTERS -->
         <section id="teleprompters" class="category-section">
             <div class="category-header">
@@ -525,10 +353,7 @@
             </div>
             <div class="product-grid">
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Best Value</span>
-                        <img src="https://m.media-amazon.com/images/I/71qVh2TXXEL._AC_SL1500_.jpg" alt="Glide Gear TMP100" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">📺</span><span class="product-badge">Best Value</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Glide Gear TMP100 Teleprompter</h3>
                         <div class="product-price">$100 - $200</div>
@@ -537,10 +362,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Pro Pick</span>
-                        <img src="https://m.media-amazon.com/images/I/61Z4j7wgURL._AC_SL1200_.jpg" alt="Ikan PT4500" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">📺</span><span class="product-badge">Pro Pick</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Ikan PT4500 Professional 15" Teleprompter</h3>
                         <div class="product-price">$500 - $800</div>
@@ -549,9 +371,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71kxPbHfLPL._AC_SL1500_.jpg" alt="NEEWER X12" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">📺</span></div>
                     <div class="product-content">
                         <h3 class="product-title">NEEWER X12 14" Aluminum Teleprompter</h3>
                         <div class="product-price">$200 - $300</div>
@@ -560,10 +380,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Popular</span>
-                        <img src="https://m.media-amazon.com/images/I/71nN5XPXWFL._AC_SL1500_.jpg" alt="Elgato Prompter" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">📺</span><span class="product-badge">Popular</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Elgato Prompter</h3>
                         <div class="product-price">$200 - $300</div>
@@ -572,9 +389,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/61Z4j7wgURL._AC_SL1200_.jpg" alt="Ikan PT4500-TK" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">📺</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Ikan PT4500-TK with Travel Case</h3>
                         <div class="product-price">$600 - $900</div>
@@ -583,10 +398,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Budget</span>
-                        <img src="https://m.media-amazon.com/images/I/71qVh2TXXEL._AC_SL1500_.jpg" alt="Glide Gear Combo" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">📺</span><span class="product-badge">Budget</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Glide Gear TMP 100 Combo Kit</h3>
                         <div class="product-price">$50 - $100</div>
@@ -595,9 +407,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71kxPbHfLPL._AC_SL1500_.jpg" alt="NEEWER X12 Remote" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">📺</span></div>
                     <div class="product-content">
                         <h3 class="product-title">NEEWER X12 with Bluetooth Remote</h3>
                         <div class="product-price">$220 - $280</div>
@@ -606,10 +416,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Broadcast</span>
-                        <img src="https://m.media-amazon.com/images/I/61Z4j7wgURL._AC_SL1200_.jpg" alt="Ikan SDI" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">📺</span><span class="product-badge">Broadcast</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Ikan PT4500-SDI-TK with 3G-SDI</h3>
                         <div class="product-price">$400 - $600</div>
@@ -618,9 +425,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71kxPbHfLPL._AC_SL1500_.jpg" alt="NEEWER 2-in-1" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">📺</span></div>
                     <div class="product-content">
                         <h3 class="product-title">NEEWER 2-in-1 with Monitor</h3>
                         <div class="product-price">$300 - $450</div>
@@ -629,10 +434,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Studio</span>
-                        <img src="https://m.media-amazon.com/images/I/61Z4j7wgURL._AC_SL1200_.jpg" alt="Ikan Interview" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">📺</span><span class="product-badge">Studio</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Ikan PT4500-P2P-TK Interview System</h3>
                         <div class="product-price">$2,000+</div>
@@ -641,9 +443,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/61Z4j7wgURL._AC_SL1200_.jpg" alt="Ikan Riser" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">📺</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Ikan PT-RISER-50 Riser Plate</h3>
                         <div class="product-price">$50 - $80</div>
@@ -652,10 +452,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Premium</span>
-                        <img src="https://m.media-amazon.com/images/I/61Z4j7wgURL._AC_SL1200_.jpg" alt="Ikan Pedestal" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">📺</span><span class="product-badge">Premium</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Ikan PT4500-PEDESTAL Turnkey</h3>
                         <div class="product-price">$3,000+</div>
@@ -664,9 +461,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71nN5XPXWFL._AC_SL1500_.jpg" alt="Elgato XL" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">📺</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Elgato Prompter XL</h3>
                         <div class="product-price">$400 - $600</div>
@@ -675,9 +470,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71qVh2TXXEL._AC_SL1500_.jpg" alt="Glide Gear Renewed" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">📺</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Glide Gear TMP100 Renewed</h3>
                         <div class="product-price">$100 - $150</div>
@@ -686,9 +479,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71kxPbHfLPL._AC_SL1500_.jpg" alt="NEEWER X12B" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">📺</span></div>
                     <div class="product-content">
                         <h3 class="product-title">NEEWER X12B Compact 12"</h3>
                         <div class="product-price">$150 - $250</div>
@@ -710,10 +501,7 @@
             </div>
             <div class="product-grid">
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Popular</span>
-                        <img src="https://m.media-amazon.com/images/I/61eSJiCgN1L._AC_SL1500_.jpg" alt="Sony A7 IV" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🎥</span><span class="product-badge">Popular</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Sony Alpha 7 IV Full-frame</h3>
                         <div class="product-price">$2,400 - $2,600</div>
@@ -722,9 +510,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/61eSJiCgN1L._AC_SL1500_.jpg" alt="Sony A7 IV Kit" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🎥</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Sony A7 IV with 28-70mm Kit</h3>
                         <div class="product-price">$2,800 - $3,200</div>
@@ -733,10 +519,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Pro Pick</span>
-                        <img src="https://m.media-amazon.com/images/I/71kSKRXz6aL._AC_SL1500_.jpg" alt="Canon R6 II" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🎥</span><span class="product-badge">Pro Pick</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Canon EOS R6 Mark II</h3>
                         <div class="product-price">$2,400 - $2,600</div>
@@ -745,10 +528,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Creator</span>
-                        <img src="https://m.media-amazon.com/images/I/61pyXVN3kbS._AC_SL1500_.jpg" alt="Sony ZV-E10" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🎥</span><span class="product-badge">Creator</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Sony ZV-E10 Vlog Camera</h3>
                         <div class="product-price">$700 - $900</div>
@@ -757,10 +537,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Cinema</span>
-                        <img src="https://m.media-amazon.com/images/I/71KdUU3VzFL._AC_SL1500_.jpg" alt="Canon R5" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🎥</span><span class="product-badge">Cinema</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Canon EOS R5 45MP 8K</h3>
                         <div class="product-price">$3,800 - $4,200</div>
@@ -769,9 +546,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/81sNPFFH7CL._AC_SL1500_.jpg" alt="BMPCC 4K" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🎥</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Blackmagic Pocket Cinema 4K</h3>
                         <div class="product-price">$1,300 - $1,500</div>
@@ -780,10 +555,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Cinema</span>
-                        <img src="https://m.media-amazon.com/images/I/61jcS5e1u7L._AC_SL1500_.jpg" alt="Sony FX3" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🎥</span><span class="product-badge">Cinema</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Sony FX3 Cinema Line</h3>
                         <div class="product-price">$3,700 - $4,000</div>
@@ -792,9 +564,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71RR6XfLxQL._AC_SL1500_.jpg" alt="Panasonic GH6" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🎥</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Panasonic LUMIX GH6</h3>
                         <div class="product-price">$2,000 - $2,300</div>
@@ -803,10 +573,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Broadcast</span>
-                        <img src="https://m.media-amazon.com/images/I/71pNmTCdKdL._AC_SL1500_.jpg" alt="Canon C70" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🎥</span><span class="product-badge">Broadcast</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Canon EOS C70 Cinema</h3>
                         <div class="product-price">$5,500 - $6,000</div>
@@ -815,9 +582,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71RR6XfLxQL._AC_SL1500_.jpg" alt="Panasonic S5 II" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🎥</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Panasonic LUMIX S5 II</h3>
                         <div class="product-price">$2,000 - $2,200</div>
@@ -839,10 +604,7 @@
             </div>
             <div class="product-grid">
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Pro Pick</span>
-                        <img src="https://m.media-amazon.com/images/I/71vPiCpKHHL._AC_SL1500_.jpg" alt="Sony 35mm GM" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🔭</span><span class="product-badge">Pro Pick</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Sony FE 35mm f/1.4 GM</h3>
                         <div class="product-price">$1,350 - $1,500</div>
@@ -851,10 +613,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Budget</span>
-                        <img src="https://m.media-amazon.com/images/I/61VgKzq-XGL._AC_SL1500_.jpg" alt="Canon 50mm" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🔭</span><span class="product-badge">Budget</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Canon RF 50mm f/1.8 STM</h3>
                         <div class="product-price">$180 - $220</div>
@@ -863,9 +622,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71DseSGdWHL._AC_SL1500_.jpg" alt="Sigma 18-35mm" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🔭</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Sigma 18-35mm f/1.8 DC HSM Art</h3>
                         <div class="product-price">$750 - $850</div>
@@ -874,10 +631,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Cinema</span>
-                        <img src="https://m.media-amazon.com/images/I/71QPD8fpWvL._AC_SL1500_.jpg" alt="Canon 15-35mm" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🔭</span><span class="product-badge">Cinema</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Canon RF 15-35mm f/2.8L IS USM</h3>
                         <div class="product-price">$2,200 - $2,400</div>
@@ -886,9 +640,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71vPiCpKHHL._AC_SL1500_.jpg" alt="Sony 24-70mm" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🔭</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Sony FE 24-70mm f/2.8 GM II</h3>
                         <div class="product-price">$2,200 - $2,400</div>
@@ -897,9 +649,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71DseSGdWHL._AC_SL1500_.jpg" alt="Sigma 24-70mm" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🔭</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Sigma 24-70mm f/2.8 DG DN Art</h3>
                         <div class="product-price">$1,000 - $1,100</div>
@@ -908,9 +658,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71vPiCpKHHL._AC_SL1500_.jpg" alt="Sony 70-200mm" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🔭</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Sony FE 70-200mm f/2.8 GM II</h3>
                         <div class="product-price">$2,700 - $2,900</div>
@@ -919,10 +667,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Popular</span>
-                        <img src="https://m.media-amazon.com/images/I/71DseSGdWHL._AC_SL1500_.jpg" alt="Sigma 50mm" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🔭</span><span class="product-badge">Popular</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Sigma 50mm f/1.4 DG DN Art</h3>
                         <div class="product-price">$850 - $950</div>
@@ -931,9 +676,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71QPD8fpWvL._AC_SL1500_.jpg" alt="Canon 24-105mm" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🔭</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Canon RF 24-105mm f/4L IS USM</h3>
                         <div class="product-price">$1,000 - $1,100</div>
@@ -942,9 +685,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71DseSGdWHL._AC_SL1500_.jpg" alt="Sigma 85mm" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🔭</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Sigma 85mm f/1.4 DG DN Art</h3>
                         <div class="product-price">$1,150 - $1,250</div>
@@ -966,10 +707,7 @@
             </div>
             <div class="product-grid">
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Pro Pick</span>
-                        <img src="https://m.media-amazon.com/images/I/61VYVhKISQL._AC_SL1000_.jpg" alt="Aputure 120D" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">💡</span><span class="product-badge">Pro Pick</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Aputure Light Storm 120D II</h3>
                         <div class="product-price">$600 - $750</div>
@@ -978,10 +716,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Budget</span>
-                        <img src="https://m.media-amazon.com/images/I/71g-wFKy0fL._AC_SL1500_.jpg" alt="NEEWER Bi-Color" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">💡</span><span class="product-badge">Budget</span></div>
                     <div class="product-content">
                         <h3 class="product-title">NEEWER 2-Pack Bi-Color LED</h3>
                         <div class="product-price">$80 - $120</div>
@@ -990,9 +725,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/61VYVhKISQL._AC_SL1000_.jpg" alt="Aputure 300D" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">💡</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Aputure Light Storm 300D II</h3>
                         <div class="product-price">$900 - $1,100</div>
@@ -1001,10 +734,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Portable</span>
-                        <img src="https://m.media-amazon.com/images/I/61VYVhKISQL._AC_SL1000_.jpg" alt="Aputure MC" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">💡</span><span class="product-badge">Portable</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Aputure MC RGBWW LED</h3>
                         <div class="product-price">$90 - $120</div>
@@ -1013,9 +743,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/61VYVhKISQL._AC_SL1000_.jpg" alt="Aputure 60D" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">💡</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Aputure Amaran 60D</h3>
                         <div class="product-price">$120 - $150</div>
@@ -1024,9 +752,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71g-wFKy0fL._AC_SL1500_.jpg" alt="GVM RGB" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">💡</span></div>
                     <div class="product-content">
                         <h3 class="product-title">GVM RGB LED 3-Light Kit</h3>
                         <div class="product-price">$300 - $400</div>
@@ -1035,10 +761,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Popular</span>
-                        <img src="https://m.media-amazon.com/images/I/71g-wFKy0fL._AC_SL1500_.jpg" alt="Elgato Key Light" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">💡</span><span class="product-badge">Popular</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Elgato Key Light</h3>
                         <div class="product-price">$180 - $200</div>
@@ -1047,9 +770,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71g-wFKy0fL._AC_SL1500_.jpg" alt="Godox SL-60W" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">💡</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Godox SL-60W LED</h3>
                         <div class="product-price">$120 - $150</div>
@@ -1058,9 +779,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71g-wFKy0fL._AC_SL1500_.jpg" alt="NEEWER Ring Light" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">💡</span></div>
                     <div class="product-content">
                         <h3 class="product-title">NEEWER 18" Ring Light</h3>
                         <div class="product-price">$80 - $100</div>
@@ -1069,9 +788,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/61VYVhKISQL._AC_SL1000_.jpg" alt="Aputure 600D" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">💡</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Aputure Light Storm 600D Pro</h3>
                         <div class="product-price">$1,600 - $1,800</div>
@@ -1093,10 +810,7 @@
             </div>
             <div class="product-grid">
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Pro Pick</span>
-                        <img src="https://m.media-amazon.com/images/I/71Nz5MkCJuL._AC_SL1500_.jpg" alt="Rode NTG5" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🎙️</span><span class="product-badge">Pro Pick</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Rode NTG5 Shotgun</h3>
                         <div class="product-price">$450 - $500</div>
@@ -1105,10 +819,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Popular</span>
-                        <img src="https://m.media-amazon.com/images/I/61zrP-Fr5uL._AC_SL1500_.jpg" alt="Rode Wireless GO II" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🎙️</span><span class="product-badge">Popular</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Rode Wireless GO II</h3>
                         <div class="product-price">$250 - $300</div>
@@ -1117,9 +828,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71Nz5MkCJuL._AC_SL1500_.jpg" alt="Sennheiser MKE 600" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🎙️</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Sennheiser MKE 600</h3>
                         <div class="product-price">$300 - $350</div>
@@ -1128,10 +837,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Budget</span>
-                        <img src="https://m.media-amazon.com/images/I/71Nz5MkCJuL._AC_SL1500_.jpg" alt="Rode VideoMic Pro" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🎙️</span><span class="product-badge">Budget</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Rode VideoMic Pro+</h3>
                         <div class="product-price">$250 - $300</div>
@@ -1140,9 +846,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/61zrP-Fr5uL._AC_SL1500_.jpg" alt="DJI Mic" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🎙️</span></div>
                     <div class="product-content">
                         <h3 class="product-title">DJI Mic 2 Wireless</h3>
                         <div class="product-price">$300 - $350</div>
@@ -1151,9 +855,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/61+XOKgMD3L._AC_SL1500_.jpg" alt="Zoom H6" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🎙️</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Zoom H6 Recorder</h3>
                         <div class="product-price">$300 - $350</div>
@@ -1162,9 +864,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71yN-X17SSL._AC_SL1500_.jpg" alt="Shure SM7B" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🎙️</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Shure SM7B</h3>
                         <div class="product-price">$400 - $450</div>
@@ -1173,9 +873,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/61zrP-Fr5uL._AC_SL1500_.jpg" alt="Sony UWP-D21" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🎙️</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Sony UWP-D21 Wireless</h3>
                         <div class="product-price">$500 - $600</div>
@@ -1184,9 +882,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/61+XOKgMD3L._AC_SL1500_.jpg" alt="Tascam DR-60D" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🎙️</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Tascam DR-60D MKII</h3>
                         <div class="product-price">$180 - $220</div>
@@ -1195,9 +891,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71Nz5MkCJuL._AC_SL1500_.jpg" alt="Rode NTG3" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🎙️</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Rode NTG3 Shotgun</h3>
                         <div class="product-price">$650 - $700</div>
@@ -1219,10 +913,7 @@
             </div>
             <div class="product-grid">
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Pro Pick</span>
-                        <img src="https://m.media-amazon.com/images/I/71-0PSRoJQL._AC_SL1500_.jpg" alt="Atomos Ninja V" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🖥️</span><span class="product-badge">Pro Pick</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Atomos Ninja V</h3>
                         <div class="product-price">$500 - $600</div>
@@ -1231,9 +922,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71x-m3h+e6L._AC_SL1500_.jpg" alt="SmallHD Focus" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🖥️</span></div>
                     <div class="product-content">
                         <h3 class="product-title">SmallHD Focus 5"</h3>
                         <div class="product-price">$350 - $400</div>
@@ -1242,10 +931,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Budget</span>
-                        <img src="https://m.media-amazon.com/images/I/71kA6Q9l0dL._AC_SL1500_.jpg" alt="Feelworld F6 Plus" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🖥️</span><span class="product-badge">Budget</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Feelworld F6 Plus 5.5"</h3>
                         <div class="product-price">$160 - $190</div>
@@ -1254,9 +940,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/61iBOBEPdFL._AC_SL1500_.jpg" alt="Lilliput A7S" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🖥️</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Lilliput A7S 7"</h3>
                         <div class="product-price">$120 - $150</div>
@@ -1265,9 +949,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71kA6Q9l0dL._AC_SL1500_.jpg" alt="Portkeys BM5" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🖥️</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Portkeys BM5 III 5.5"</h3>
                         <div class="product-price">$300 - $350</div>
@@ -1276,9 +958,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71-0PSRoJQL._AC_SL1500_.jpg" alt="Atomos Shinobi" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🖥️</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Atomos Shinobi 5.2"</h3>
                         <div class="product-price">$350 - $400</div>
@@ -1287,9 +967,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71kA6Q9l0dL._AC_SL1500_.jpg" alt="Neewer F100" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🖥️</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Neewer F100 7"</h3>
                         <div class="product-price">$100 - $130</div>
@@ -1298,9 +976,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71kA6Q9l0dL._AC_SL1500_.jpg" alt="Desview R5" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🖥️</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Desview R5 5.5"</h3>
                         <div class="product-price">$180 - $220</div>
@@ -1309,9 +985,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71kA6Q9l0dL._AC_SL1500_.jpg" alt="SmallRig Monitor" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🖥️</span></div>
                     <div class="product-content">
                         <h3 class="product-title">SmallRig 5" Ultra Bright</h3>
                         <div class="product-price">$130 - $160</div>
@@ -1320,10 +994,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Confidence</span>
-                        <img src="https://m.media-amazon.com/images/I/61iBOBEPdFL._AC_SL1500_.jpg" alt="Ikan VL7e" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🖥️</span><span class="product-badge">Confidence</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Ikan VL7e 7" LCD</h3>
                         <div class="product-price">$400 - $500</div>
@@ -1345,10 +1016,7 @@
             </div>
             <div class="product-grid">
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Pro Pick</span>
-                        <img src="https://m.media-amazon.com/images/I/71xQd9K8GVL._AC_SL1500_.jpg" alt="Manfrotto MVK502AM" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">📐</span><span class="product-badge">Pro Pick</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Manfrotto MVK502AM Video System</h3>
                         <div class="product-price">$340 - $380</div>
@@ -1357,9 +1025,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71xQd9K8GVL._AC_SL1500_.jpg" alt="Manfrotto MVH502A" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">📐</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Manfrotto MVH502A Pro Fluid</h3>
                         <div class="product-price">$420 - $480</div>
@@ -1368,9 +1034,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71xQd9K8GVL._AC_SL1500_.jpg" alt="Manfrotto 190X" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">📐</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Manfrotto 190X Video Tripod</h3>
                         <div class="product-price">$380 - $420</div>
@@ -1379,10 +1043,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Budget</span>
-                        <img src="https://m.media-amazon.com/images/I/61VHMqKI8TL._AC_SL1500_.jpg" alt="Neewer Tripod" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">📐</span><span class="product-badge">Budget</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Neewer Professional Video Tripod</h3>
                         <div class="product-price">$90 - $120</div>
@@ -1391,10 +1052,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Carbon</span>
-                        <img src="https://m.media-amazon.com/images/I/61VHMqKI8TL._AC_SL1500_.jpg" alt="SmallRig AD-100" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">📐</span><span class="product-badge">Carbon</span></div>
                     <div class="product-content">
                         <h3 class="product-title">SmallRig AD-100 Carbon Fiber</h3>
                         <div class="product-price">$450 - $500</div>
@@ -1403,9 +1061,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/61VHMqKI8TL._AC_SL1500_.jpg" alt="SIRUI SVS75" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">📐</span></div>
                     <div class="product-content">
                         <h3 class="product-title">SIRUI SVS75 Carbon Fiber</h3>
                         <div class="product-price">$380 - $420</div>
@@ -1414,9 +1070,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/61VHMqKI8TL._AC_SL1500_.jpg" alt="Cayer BV30L" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">📐</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Cayer BV30L Video System</h3>
                         <div class="product-price">$130 - $160</div>
@@ -1425,9 +1079,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/61VHMqKI8TL._AC_SL1500_.jpg" alt="Magnus VT-4000" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">📐</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Magnus VT-4000</h3>
                         <div class="product-price">$180 - $220</div>
@@ -1436,10 +1088,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Broadcast</span>
-                        <img src="https://m.media-amazon.com/images/I/71xQd9K8GVL._AC_SL1500_.jpg" alt="Sachtler Ace M" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">📐</span><span class="product-badge">Broadcast</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Sachtler Ace M Fluid Head</h3>
                         <div class="product-price">$700 - $800</div>
@@ -1448,9 +1097,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/61VHMqKI8TL._AC_SL1500_.jpg" alt="E-Image EG03A2" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">📐</span></div>
                     <div class="product-content">
                         <h3 class="product-title">E-Image EG03A2 with GH03</h3>
                         <div class="product-price">$280 - $320</div>
@@ -1472,9 +1119,7 @@
             </div>
             <div class="product-grid">
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/61Vp-1JMQPL._AC_SL1500_.jpg" alt="OREI HDMI Splitter" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🔌</span></div>
                     <div class="product-content">
                         <h3 class="product-title">OREI 1x4 HDMI Splitter</h3>
                         <div class="product-price">$30 - $50</div>
@@ -1483,10 +1128,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Broadcast</span>
-                        <img src="https://m.media-amazon.com/images/I/61RYiEH-yML._AC_SL1500_.jpg" alt="Blackmagic SDI" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🔌</span><span class="product-badge">Broadcast</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Blackmagic SDI to HDMI 3G</h3>
                         <div class="product-price">$80 - $100</div>
@@ -1495,9 +1137,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/61Vp-1JMQPL._AC_SL1500_.jpg" alt="HDMI Cable 50ft" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🔌</span></div>
                     <div class="product-content">
                         <h3 class="product-title">AmazonBasics Active HDMI 50ft</h3>
                         <div class="product-price">$35 - $50</div>
@@ -1506,9 +1146,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/61Vp-1JMQPL._AC_SL1500_.jpg" alt="Anker USB-C" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">🔌</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Anker USB-C to HDMI</h3>
                         <div class="product-price">$15 - $25</div>
@@ -1517,10 +1155,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Essential</span>
-                        <img src="https://m.media-amazon.com/images/I/81EqvN0j8HL._AC_SL1500_.jpg" alt="Pelican 1510" loading="lazy">
-                    </div>
+                    <div class="product-image"><span class="icon">💼</span><span class="product-badge">Essential</span></div>
                     <div class="product-content">
                         <h3 class="product-title">Pelican 1510 Hard Case</h3>
                         <div class="product-price">$150 - $250</div>
@@ -1530,10 +1165,8 @@
                 </div>
             </div>
         </section>
-        
     </main>
     
-    <!-- Footer -->
     <footer>
         <div class="footer-inner">
             <div class="footer-brand">
@@ -1573,12 +1206,10 @@
         </div>
     </footer>
     
-    <!-- Mobile CTA -->
     <div class="mobile-cta">
         <a href="tel:727-623-2652">Call Now: 727-623-2652</a>
     </div>
     
-    <!-- Category Navigation Script -->
     <script>
         function scrollToCategory(id) {
             const element = document.getElementById(id);
@@ -1589,7 +1220,6 @@
             }
         }
         
-        // Highlight active category on scroll
         const sections = document.querySelectorAll('.category-section');
         const navButtons = document.querySelectorAll('.category-btn');
         
