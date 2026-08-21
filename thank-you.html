@@ -22,162 +22,200 @@
 
     <style>
         :root {
-            --gold: #F5B84C;
-            --gold-dark: #D4A03C;
-            --bg-dark: #0a0a0c;
-            --bg-card: #141416;
-            --text-primary: #FFFFFF;
-            --text-secondary: rgba(255,255,255,0.8);
-            --text-muted: rgba(255,255,255,0.6);
-            --font-display: Arial, 'Helvetica Neue', sans-serif;
-            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --gold:#00E5FD;
+            --gold-dark:#00B9CC;
+            --bg-dark:#0B0D10;
+            --bg-card:#141416;
+            --text-primary:#FFFFFF;
+            --text-secondary:rgba(255,255,255,0.8);
+            --text-muted:rgba(255,255,255,0.6);
+            --font-display:Arial, 'Helvetica Neue', sans-serif;
+            --font-body:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin:0; padding:0; box-sizing:border-box; }
 
         body {
-            font-family: var(--font-body);
-            background: var(--bg-dark);
-            color: var(--text-primary);
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            font-family:var(--font-body);
+            background:var(--bg-dark);
+            color:var(--text-primary);
+            line-height:1.6;
+            min-height:100vh;
+            display:flex;
+            flex-direction:column;
         }
 
         .header {
-            padding: 1rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding:1rem 1.5rem;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            border-bottom:1px solid rgba(255,255,255,0.1);
         }
 
-        .logo-img { height: 50px; }
+        .logo-img { height:50px; }
 
         .header-phone {
-            color: var(--gold);
-            font-weight: 700;
-            font-size: 1.1rem;
-            text-decoration: none;
+            color:var(--gold);
+            font-weight:700;
+            font-size:1.1rem;
+            text-decoration:none;
         }
 
-        .header-phone:hover { color: var(--gold-dark); }
+        .header-phone:hover { color:var(--gold-dark); }
 
         .main {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 3rem 1.5rem;
-            text-align: center;
+            flex:1;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:3rem 1.5rem;
+            text-align:center;
         }
 
         .content {
-            max-width: 600px;
+            max-width:600px;
         }
 
         .checkmark {
-            width: 80px;
-            height: 80px;
-            background: rgba(245, 184, 76, 0.15);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 2rem;
+            width:80px;
+            height:80px;
+            background:rgba(255,255,255,.08);
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            margin:0 auto 2rem;
         }
 
         .checkmark svg {
-            width: 40px;
-            height: 40px;
-            color: var(--gold);
+            width:40px;
+            height:40px;
+            color:var(--gold);
         }
 
         h1 {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
+            font-family:var(--font-display);
+            font-size:2rem;
+            font-weight:700;
+            margin-bottom:1rem;
         }
 
         h1 span {
-            color: var(--gold);
+            color:var(--gold);
         }
 
         .message {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
+            color:var(--text-secondary);
+            font-size:1.1rem;
+            margin-bottom:2rem;
         }
 
         .next-steps {
-            background: var(--bg-card);
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: left;
-            margin-bottom: 2rem;
+            background:var(--bg-card);
+            padding:1.5rem;
+            border-radius:8px;
+            text-align:left;
+            margin-bottom:2rem;
         }
 
         .next-steps h2 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--gold);
+            font-size:1rem;
+            font-weight:600;
+            margin-bottom:1rem;
+            color:var(--gold);
         }
 
         .next-steps p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
+            color:var(--text-secondary);
+            font-size:0.95rem;
+            margin-bottom:0.5rem;
         }
 
         .cta-phone {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            color: var(--gold);
-            font-weight: 600;
-            font-size: 1.25rem;
-            text-decoration: none;
-            margin-top: 1rem;
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            gap:0.5rem;
+            color:var(--gold);
+            font-weight:600;
+            font-size:1.25rem;
+            text-decoration:none;
+            margin-top:1rem;
         }
 
         .cta-phone:hover {
-            color: var(--gold-dark);
+            color:var(--gold-dark);
         }
 
         .cta-phone svg {
-            width: 20px;
-            height: 20px;
+            width:20px;
+            height:20px;
         }
 
         .footer {
-            padding: 2rem 1.5rem;
-            text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            padding:2rem 1.5rem;
+            text-align:center;
+            border-top:1px solid rgba(255,255,255,0.1);
         }
 
         .footer-text {
-            color: var(--text-muted);
-            font-size: 0.85rem;
+            color:var(--text-muted);
+            font-size:0.85rem;
         }
 
         .footer-text a {
-            color: var(--text-secondary);
+            color:var(--text-secondary);
         }
 
-        @media (max-width: 480px) {
-            h1 { font-size: 1.5rem; }
-            .message { font-size: 1rem; }
+        @media (max-width:480px) {
+            h1 { font-size:1.5rem; }
+            .message { font-size:1rem; }
         }
     </style>
+<link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#0B0D10">
+<style id="ntn-brand">
+:root{
+--accent:#00E5FD;--accent-dim:#00B9CC;--accent-ink:#04202A;
+--gold:#00E5FD;--gold-light:#7CF1FF;--gold-dark:#00E5FD;
+--bg-main:#0B0D10;--bg-void:#0B0D10;--bg-dark:#0B0D10;--dark:#0B0D10;--darker:#07090B;
+--bg-section:#12161B;--bg-card:#12161B;--bg-elevated:#171C22;--bg-deep:#07090B;
+--bg-card-hover:#171C22;--bg-glass:rgba(255,255,255,.03);
+--text-primary:#F2F4F7;--text:#F2F4F7;--text-secondary:rgba(242,244,247,.64);
+--text-muted:rgba(242,244,247,.42);--gray:rgba(242,244,247,.64);--light-gray:rgba(242,244,247,.42);
+--border-subtle:rgba(255,255,255,.08);--border-gold:rgba(255,255,255,.08);--border-active:#00E5FD;
+--spot-gold:rgba(0,229,253,.14);--spot-orange:rgba(0,229,253,.10);
+--sunset-orange:#00C9E0;--sunset-red:#00B9CC;
+--font-display:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;
+--font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+}
+html,body{background:#0B0D10;color:#F2F4F7}
+h1,h2,h3,h4{color:var(--text-primary)}
+a{color:#00E5FD}
+.header,header.header{background:rgba(11,13,16,.9);border-bottom:1px solid rgba(255,255,255,.05);box-shadow:none}
+.logo-img{height:38px;width:auto;max-width:none}
+.nav-links a{color:rgba(242,244,247,.64)}
+.nav-links a:hover{color:#F2F4F7}
+.nav-phone,.header-phone{color:#00E5FD}
+.nav-cta,.cta-button,.btn-primary,button[type=submit],input[type=submit]{background:#00E5FD;color:#04202A;border-color:#00E5FD}
+.nav-cta:hover,.cta-button:hover,.btn-primary:hover{background:#7CF1FF;color:#04202A}
+.cta-box,.card,.service-card,.testimonial-card,.product-card{background:#12161B;border:1px solid rgba(255,255,255,.08);box-shadow:none}
+.article-header{background:#12161B}
+.article-content h1,.article-content h2,.article-content h3,.article-content h4{color:#F2F4F7}
+.article-content p,.article-content li{color:rgba(242,244,247,.64)}
+.footer,footer.footer,footer{background:#0B0D10;border-top:1px solid rgba(255,255,255,.05)}
+.footer p,footer p{color:rgba(242,244,247,.42)}
+.footer a,footer a{color:rgba(242,244,247,.42)}
+.footer a:hover,footer a:hover{color:#00E5FD}
+input,textarea,select{background:#12161B;color:#F2F4F7;border:1px solid rgba(255,255,255,.08)}
+input::placeholder,textarea::placeholder{color:rgba(242,244,247,.42)}
+hr{border-color:rgba(255,255,255,.08)}
+</style>
 </head>
 <body>
 
     <header class="header">
-        <img src="logo.png" alt="Florida Teleprompter" class="logo-img">
+        <img src="logo-header.png" alt="Florida Teleprompter" class="logo-img">
         <a href="tel:727-623-2652" class="header-phone">727-623-2652</a>
     </header>
 
