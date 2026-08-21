@@ -210,6 +210,81 @@
         .mobile-toggle.active span:nth-child(2) { opacity: 0; }
         .mobile-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+
+        /* ---------- hero background: beamsplitter + prompter roll ---------- */
+        .hero { position: relative; overflow: hidden; isolation: isolate; }
+        .hero > .wrap { position: relative; z-index: 2; }
+
+        .hero-bg {
+            position: absolute; inset: 0; z-index: 0;
+            pointer-events: none; overflow: hidden;
+            contain: paint;
+            -webkit-mask-image: linear-gradient(180deg, transparent, #000 18%, #000 82%, transparent);
+                    mask-image: linear-gradient(180deg, transparent, #000 18%, #000 82%, transparent);
+        }
+        .hero-roll {
+            position: absolute; left: 50%; top: 0;
+            width: min(1180px, 94vw);
+            transform: translate3d(-50%, 0, 0);
+            animation: heroRoll 54s linear infinite;
+            will-change: transform;
+        }
+        .hero-roll span {
+            display: block; text-align: center; white-space: nowrap;
+            font-family: var(--font-display);
+            font-weight: 800; letter-spacing: -.02em; line-height: 1.62;
+            font-size: clamp(1.5rem, 4.2vw, 2.9rem);
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .042);
+        }
+        .hero-roll span:nth-child(3n+2) { color: rgba(255, 255, 255, .030); }
+        .hero-roll span:nth-child(4n+3) { color: rgba(255, 255, 255, .055); }
+
+        /* the copy has to own the middle, so the texture sinks behind it */
+        .hero-bg::after {
+            content: ""; position: absolute; inset: 0;
+            background: radial-gradient(ellipse 64% 54% at 50% 50%,
+                rgba(11, 13, 16, .93) 0%,
+                rgba(11, 13, 16, .58) 46%,
+                rgba(11, 13, 16, 0) 78%);
+        }
+
+        /* the glass itself: angled pane, one lit edge */
+        .hero-glass {
+            position: absolute; top: -12%; bottom: -12%;
+            left: 50%; width: min(720px, 74vw);
+            transform: translateX(-50%) skewX(-13deg);
+            background:
+                linear-gradient(102deg,
+                    rgba(255,255,255,.030) 0%,
+                    rgba(255,255,255,.010) 42%,
+                    rgba(255,255,255,.022) 100%);
+            border-left: 1px solid rgba(0, 229, 253, .30);
+            border-right: 1px solid rgba(0, 229, 253, .14);
+        }
+
+        @keyframes heroRoll {
+            from { transform: translate3d(-50%, 0, 0); }
+            to   { transform: translate3d(-50%, -50%, 0); }
+        }
+
+        @media (max-width: 760px) {
+            .hero-roll { width: 128vw; }
+            /* narrower viewport means the copy sits closer to the texture */
+            .hero-bg::after {
+                background: radial-gradient(ellipse 96% 46% at 50% 50%,
+                    rgba(11, 13, 16, .95) 0%,
+                    rgba(11, 13, 16, .72) 52%,
+                    rgba(11, 13, 16, 0) 88%);
+            }
+            .hero-roll span { font-size: clamp(1.15rem, 6.4vw, 1.7rem); line-height: 1.7; }
+            .hero-glass { width: 96vw; transform: translateX(-50%) skewX(-11deg); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-roll { animation: none; transform: translate3d(-50%, -12%, 0); }
+        }
+
         /* ---------- hero ---------- */
         .hero {
             padding: clamp(72px, 10vw, 120px) 0 clamp(68px, 9vw, 108px);
@@ -500,6 +575,31 @@
 
     <!-- Hero -->
     <section class="hero">
+        <div class="hero-bg" aria-hidden="true">
+            <div class="hero-roll">
+                <span>Powering Outstanding Performances</span>
+                <span>An experienced operator</span>
+                <span>comes with every prompter</span>
+                <span>25+ years on set</span>
+                <span>Broadcast-grade gear</span>
+                <span>Not one missed cue</span>
+                <span>Thousands of shows &middot; zero do-overs</span>
+                <span>Tampa &middot; Orlando &middot; Miami</span>
+                <span>Live events &middot; broadcast &middot; corporate video</span>
+                <span>Based in Tampa Bay</span>
+                <span>Powering Outstanding Performances</span>
+                <span>An experienced operator</span>
+                <span>comes with every prompter</span>
+                <span>25+ years on set</span>
+                <span>Broadcast-grade gear</span>
+                <span>Not one missed cue</span>
+                <span>Thousands of shows &middot; zero do-overs</span>
+                <span>Tampa &middot; Orlando &middot; Miami</span>
+                <span>Live events &middot; broadcast &middot; corporate video</span>
+                <span>Based in Tampa Bay</span>
+            </div>
+            <div class="hero-glass"></div>
+        </div>
         <div class="wrap">
             <p class="hero-tagline">Powering Outstanding Performances</p>
             <h1>Teleprompter Rental in Tampa &amp; Across Florida</h1>
