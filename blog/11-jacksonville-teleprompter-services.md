@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Jacksonville Teleprompter Rental & Professional Services | Northeast Florida"
+description: "Serving Jacksonville, St. Augustine, Ponte Vedra, and Northeast Florida, Florida Teleprompter provides professional teleprompter services for corporate…"
+---
 # Jacksonville Teleprompter Rental & Professional Services | Northeast Florida
 
 ## Jacksonville's Trusted Teleprompter Partner

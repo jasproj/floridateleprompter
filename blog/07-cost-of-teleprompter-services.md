@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Cost of Professional Teleprompter Services: Complete Pricing Guide 2026"
+description: "You need a professional teleprompter for your event, and your first question is: How much is this going to cost?"
+---
 # Cost of Professional Teleprompter Services: Complete Pricing Guide 2026
 
 ## Introduction

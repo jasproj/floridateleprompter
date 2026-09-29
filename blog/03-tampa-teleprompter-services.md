@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Tampa Teleprompter Rental & Professional Services | Local Expert Operators"
+description: "Based right here in Tampa Bay, Florida Teleprompter has been providing professional teleprompter services to Tampa events, corporate communications, and…"
+---
 # Tampa Teleprompter Rental & Professional Services | Local Expert Operators
 
 ## Tampa's Trusted Teleprompter Partner Since 1999

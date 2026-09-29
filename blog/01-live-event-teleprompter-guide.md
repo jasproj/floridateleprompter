@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Complete Guide to Live Event Teleprompter Services: Master Your Speaking Performance"
+description: "When you're standing on stage in front of 500 people—or a presidential rally with 5,000—the last thing you need is to worry about remembering your speech.…"
+---
 # Complete Guide to Live Event Teleprompter Services: Master Your Speaking Performance
 
 ## Introduction

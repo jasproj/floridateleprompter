@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Professional Teleprompter FAQ: Your Questions Answered"
+description: "A: A teleprompter is a device that displays text (your script) on a visible display while you're speaking. The text is positioned so you can read it while…"
+---
 # Professional Teleprompter FAQ: Your Questions Answered
 
 ## General Teleprompter Questions

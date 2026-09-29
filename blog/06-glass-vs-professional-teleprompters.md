@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Glass Teleprompter vs Professional Monitor: Which System is Right for You?"
+description: "You're planning an event and you've narrowed it down to two main options: a glass teleprompter system or a professional monitor-based system. But you're not…"
+---
 # Glass Teleprompter vs Professional Monitor: Which System is Right for You?
 
 ## The Question
