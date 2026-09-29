@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Miami Beach & South Florida Teleprompter Services | Luxury & Corporate Hub"
+description: "Professional teleprompter services for Miami Beach, South Florida's luxury events, corporate communications, and business sector"
+---
 # Miami Beach & South Florida Teleprompter Services | Luxury & Corporate Hub
 
 Professional teleprompter services for Miami Beach, South Florida's luxury events, corporate communications, and business sector.

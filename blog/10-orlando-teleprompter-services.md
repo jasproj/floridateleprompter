@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Orlando Teleprompter Rental & Professional Services | Central Florida Expert"
+description: "Serving Orlando, Kissimmee, Winter Park, and Central Florida, Florida Teleprompter provides professional teleprompter services for corporate events,…"
+---
 # Orlando Teleprompter Rental & Professional Services | Central Florida Expert
 
 ## Orlando's Premier Teleprompter Partner

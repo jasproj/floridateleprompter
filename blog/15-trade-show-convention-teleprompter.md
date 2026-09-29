@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Professional Teleprompter Services for Trade Shows & Conventions"
+description: "A major trade convention brings 500-2,000 industry professionals together for 2-3 days. Your keynote speaker is opening the event. Your panel moderator is…"
+---
 # Professional Teleprompter Services for Trade Shows & Conventions
 
 ## Introduction

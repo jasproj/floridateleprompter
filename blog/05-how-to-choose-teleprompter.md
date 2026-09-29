@@ -1,3 +1,8 @@
+---
+layout: default
+title: "How to Choose a Teleprompter for Your Event: Complete Decision Guide"
+description: "You've got an important event coming up. You know a teleprompter would help your speaker deliver with confidence. But there are so many options—glass…"
+---
 # How to Choose a Teleprompter for Your Event: Complete Decision Guide
 
 ## Introduction

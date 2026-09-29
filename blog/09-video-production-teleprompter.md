@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Complete Guide to Video Production Teleprompter Services: Professional On-Camera Performance"
+description: "You're filming a commercial, and your talent needs to deliver a 2-minute product pitch flawlessly. You're recording a corporate video where the CEO needs to…"
+---
 # Complete Guide to Video Production Teleprompter Services: Professional On-Camera Performance
 
 ## Introduction

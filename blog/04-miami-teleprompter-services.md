@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Miami Teleprompter Rental & Professional Services | South Florida Expert"
+description: "Serving Miami, Fort Lauderdale, Boca Raton, and South Florida, Florida Teleprompter provides professional teleprompter services for corporate events,…"
+---
 # Miami Teleprompter Rental & Professional Services | South Florida Expert
 
 ## Miami's Premier Teleprompter Service Provider

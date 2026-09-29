@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Complete Guide to Broadcast Teleprompter Services: Professional TV & News Standards"
+description: "For broadcast television, news production, and live studio environments, teleprompter systems aren't optional—they're essential infrastructure. A news…"
+---
 # Complete Guide to Broadcast Teleprompter Services: Professional TV & News Standards
 
 ## Introduction
