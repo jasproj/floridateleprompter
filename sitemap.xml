@@ -62,6 +62,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://floridateleprompter.com/teleprompter-clearwater.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://floridateleprompter.com/teleprompter-fort-lauderdale.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://floridateleprompter.com/teleprompter-fort-myers.html</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
@@ -106,6 +118,12 @@
   <url>
     <loc>https://floridateleprompter.com/teleprompter-sarasota.html</loc>
     <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://floridateleprompter.com/teleprompter-st-petersburg.html</loc>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

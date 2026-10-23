@@ -14,6 +14,8 @@ Email: jason@floridateleprompter.com
 
 ## City pages
 - Boca Raton
+- Clearwater
+- Fort Lauderdale
 - Fort Myers
 - Gainesville
 - Jacksonville
@@ -22,5 +24,6 @@ Email: jason@floridateleprompter.com
 - Naples
 - Orlando
 - Sarasota
+- St. Petersburg
 - Tallahassee
 - West Palm Beach
