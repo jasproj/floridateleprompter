@@ -65,7 +65,6 @@
             {"@type": "City", "name": "Jacksonville"}
         ],
         "foundingDate": "1999",
-        "priceRange": "$$",
         "openingHours": "Mo-Su 00:00-23:59",
         "sameAs": [
             "https://nationalteleprompter.com",
@@ -91,7 +90,7 @@
 
             --text:          #F2F4F7;
             --text-dim:      rgba(242, 244, 247, 0.64);
-            --text-mute:     rgba(242, 244, 247, 0.42);
+            --text-mute:     rgba(242, 244, 247, 0.60);
 
             --line:          rgba(255, 255, 255, 0.08);
             --line-soft:     rgba(255, 255, 255, 0.05);
@@ -534,7 +533,56 @@
             html { scroll-behavior: auto; }
             * { transition: none !important; animation: none !important; }
         }
-    </style>
+            /* ---------- hero quick-quote form ---------- */
+        .hero-form {
+            margin: clamp(34px, 5vw, 48px) auto 0; max-width: 880px; text-align: left;
+            background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.1);
+            border-radius: 4px; padding: clamp(16px, 3vw, 24px);
+        }
+        .hero-form-title {
+            margin: 0 0 14px; font-family: var(--font-display); font-weight: 700;
+            font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim);
+        }
+        .hero-form-grid { display: grid; gap: 10px; grid-template-columns: repeat(4, 1fr) auto; }
+        .hero-form input {
+            width: 100%; padding: 15px 14px; background: var(--bg); color: var(--text);
+            border: 1px solid rgba(255,255,255,.16); border-radius: 3px; font: inherit; font-size: .95rem;
+        }
+        .hero-form input:focus { border-color: var(--accent); outline: none; }
+        .hero-form .btn { padding: 15px 26px; }
+        @media (max-width: 900px) { .hero-form-grid { grid-template-columns: 1fr 1fr; } .hero-form .btn { grid-column: 1 / -1; } }
+        @media (max-width: 520px) { .hero-form-grid { grid-template-columns: 1fr; } }
+
+        .hero { padding-top: clamp(44px, 6vw, 72px); padding-bottom: clamp(44px, 6vw, 72px); }
+        .hero h1 { font-size: clamp(2.05rem, 5.2vw, 3.7rem); max-width: 22ch; margin-left: auto; margin-right: auto; }
+        .hero-ctas { margin-top: 28px; }
+        /* ---------- accessibility + conversion pass ---------- */
+        .eyebrow, .proof-stats span, .svc-types { font-size: .75rem; }
+        .hero-tagline { font-size: clamp(.75rem, 2.1vw, .8rem); font-weight: 400; }
+        .hero-vp, .svc-desc, .quote p, .sec-sub { text-wrap: pretty; }
+        .hero-form input, .contact-form input, .contact-form textarea { font-size: 1rem; }
+        .hero-form input { padding: 16px 14px; color-scheme: dark; }
+        .hero-form input:focus, .contact-form input:focus, .contact-form textarea:focus {
+            border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0, 229, 253, .35);
+        }
+        .mobile-toggle { padding: 10px 12px; min-width: 44px; min-height: 44px; }
+        .nav-links a { display: inline-block; padding: 12px 0; }
+        .cities a { display: block; padding: 11px 0; }
+        .cities > *:hover { transform: none; }
+        .foot-col a { display: inline-block; padding: 7px 0; }
+        .foot-cities-links a, .foot-compare-links a { display: inline-block; padding: 8px 0; }
+        .gal-item:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+        .lightbox-close { width: 44px; height: 44px; display: grid; place-items: center; }
+        .lightbox-close:focus-visible { outline: 2px solid var(--accent); }
+        .form-msg { margin: 12px 0 0; font-size: .95rem; color: var(--accent); }
+        .form-msg.err { color: #ff8a8a; }
+        @media (max-width: 760px) {
+            .hero-ctas .btn-secondary { display: none; }
+            .hero { padding-top: 36px; }
+            .hero-vp { max-width: 46ch; }
+            .nav-links a { display: block; }
+        }
+</style>
 </head>
 <body>
 
@@ -594,6 +642,18 @@
                 <a href="#contact" class="btn btn-primary">Get a Quote</a>
                 <a href="tel:727-623-2652" class="btn btn-secondary">Call 727-623-2652</a>
             </div>
+            <form class="hero-form" data-ajax action="https://formspree.io/f/mjgkzzrq" method="POST">
+                <p class="hero-form-title">Check your date &mdash; same business day reply</p>
+                <input type="hidden" name="_subject" value="Florida Teleprompter - Hero Quick Quote">
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <div class="hero-form-grid">
+                    <input type="text" name="name" placeholder="Name" aria-label="Name" required autocomplete="name">
+                    <input type="text" name="contact" placeholder="Phone or email" aria-label="Phone or email" required autocomplete="email">
+                    <input type="date" name="date" aria-label="Event date" required>
+                    <input type="text" name="venue" placeholder="City or venue" aria-label="City or venue" required>
+                    <button type="submit" class="btn btn-primary">Check Availability</button>
+                </div>
+            </form>
         </div>
     </section>
 
@@ -697,18 +757,18 @@
                 <h2 class="sec-title">Gallery</h2>
             </div>
             <div class="gal-grid">
-                <div class="gal-item" onclick="openLightbox(this)"><img src="gallery-01.jpg" alt="Teleprompter setup" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="gallery-02.jpg" alt="Corporate event" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="gallery-03.jpg" alt="Live event" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="gallery-04.jpg" alt="Ballroom setup" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="gallery-05.jpg" alt="Conference" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="gallery-06.jpg" alt="Stage production" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="gallery-07.jpg" alt="Video production" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="gallery-08.jpg" alt="Operator station" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="gallery-09.jpg" alt="Presidential prompter" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="gallery-10.jpg" alt="Gala event" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="gallery-11.jpg" alt="Broadcast studio prompter" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="gallery-12.jpg" alt="Awards show prompter" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="gallery-01.jpg" alt="Teleprompter setup" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="gallery-02.jpg" alt="Corporate event" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="gallery-03.jpg" alt="Live event" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="gallery-04.jpg" alt="Ballroom setup" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="gallery-05.jpg" alt="Conference" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="gallery-06.jpg" alt="Stage production" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="gallery-07.jpg" alt="Video production" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="gallery-08.jpg" alt="Operator station" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="gallery-09.jpg" alt="Presidential prompter" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="gallery-10.jpg" alt="Gala event" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="gallery-11.jpg" alt="Broadcast studio prompter" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="gallery-12.jpg" alt="Awards show prompter" loading="lazy"></div>
             </div>
         </div>
     </section>
@@ -721,27 +781,27 @@
                 <h2 class="sec-title">On Location Across Florida</h2>
             </div>
             <div class="gal-grid">
-                <div class="gal-item" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_9649.jpg" alt="Poynter 50th anniversary stage with presidential teleprompter glass" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_1237.jpg" alt="City of Tampa podium with presidential teleprompter during rehearsal" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_0747.jpg" alt="Mayor Jane Castor 2026 State of the City address, operator station view" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_1252.jpg" alt="First Southern Bank commercial shoot with camera-mount teleprompter" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_9546.jpg" alt="Annual conference keynote stage in Tampa with presidential teleprompter" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_0125.jpg" alt="Gala stage with podium teleprompter and live band" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_1361.jpg" alt="Podcast studio camera-mount teleprompter setup" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_0343.jpg" alt="Valspar Championship PGA Tour broadcast shoot" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_0818.jpg" alt="Florida's Sports Coast Tourism Banquet, operator script view" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_0820.jpg" alt="Florida's Sports Coast Tourism Banquet operator station" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_9421.jpg" alt="Camera jib on location for a retail commercial shoot" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_1245.jpg" alt="City of Tampa press conference set with presidential teleprompter" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_0088.jpg" alt="Ibis Healthcare and Cove Behavioral Health event AV and teleprompter station" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_0337.jpg" alt="ARRI cinema camera with teleprompter at the Valspar Championship" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_9513.jpg" alt="Presidential teleprompter glass on a conference stage" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_9545.jpg" alt="Conference keynote stage with presidential teleprompter glass" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_9581.jpg" alt="Presidential teleprompter at an outdoor LED-wall stage at dusk" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_9582.jpg" alt="Outdoor LED-wall stage at dusk with presidential teleprompter glass" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_9648.jpg" alt="Gala podium with presidential teleprompter glass" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_9579.jpg" alt="Convention venue exterior in Tampa" loading="lazy"></div>
-                <div class="gal-item" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_9588.jpg" alt="Gala ballroom with teleprompter for a live auction" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_9649.jpg" alt="Poynter 50th anniversary stage with presidential teleprompter glass" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_1237.jpg" alt="City of Tampa podium with presidential teleprompter during rehearsal" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_0747.jpg" alt="Mayor Jane Castor 2026 State of the City address, operator station view" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_1252.jpg" alt="First Southern Bank commercial shoot with camera-mount teleprompter" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_9546.jpg" alt="Annual conference keynote stage in Tampa with presidential teleprompter" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_0125.jpg" alt="Gala stage with podium teleprompter and live band" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_1361.jpg" alt="Podcast studio camera-mount teleprompter setup" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_0343.jpg" alt="Valspar Championship PGA Tour broadcast shoot" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_0818.jpg" alt="Florida's Sports Coast Tourism Banquet, operator script view" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_0820.jpg" alt="Florida's Sports Coast Tourism Banquet operator station" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_9421.jpg" alt="Camera jib on location for a retail commercial shoot" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_1245.jpg" alt="City of Tampa press conference set with presidential teleprompter" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_0088.jpg" alt="Ibis Healthcare and Cove Behavioral Health event AV and teleprompter station" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_0337.jpg" alt="ARRI cinema camera with teleprompter at the Valspar Championship" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_9513.jpg" alt="Presidential teleprompter glass on a conference stage" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_9545.jpg" alt="Conference keynote stage with presidential teleprompter glass" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_9581.jpg" alt="Presidential teleprompter at an outdoor LED-wall stage at dusk" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_9582.jpg" alt="Outdoor LED-wall stage at dusk with presidential teleprompter glass" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_9648.jpg" alt="Gala podium with presidential teleprompter glass" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_9579.jpg" alt="Convention venue exterior in Tampa" loading="lazy"></div>
+                <div class="gal-item" role="button" tabindex="0" onclick="openLightbox(this)"><img src="img/gallery/2026-batch/IMG_9588.jpg" alt="Gala ballroom with teleprompter for a live auction" loading="lazy"></div>
             </div>
         </div>
     </section>
@@ -868,7 +928,7 @@
                     <p class="contact-meta">or email <a href="mailto:jason@floridateleprompter.com">jason@floridateleprompter.com</a></p>
                     <p class="contact-loc">Based in Tampa Bay, Florida • Serving Florida &amp; Nationwide</p>
                 </div>
-                <form class="contact-form" action="https://formspree.io/f/mjgkzzrq" method="POST">
+                <form class="contact-form" data-ajax action="https://formspree.io/f/mjgkzzrq" method="POST">
                     <p class="form-note">Same business day response. Last-minute events welcome.</p>
                     <input type="hidden" name="_subject" value="Florida Teleprompter - New Inquiry">
                     <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -971,7 +1031,7 @@
     </footer>
 
     <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
         <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">×</button>
         <img src="" alt="" id="lightboxImg">
     </div>
@@ -1023,6 +1083,41 @@
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') closeLightbox();
         });
+
+            // Lightbox focus + keyboard on gallery tiles
+        (function () {
+            var last = null, lb = document.getElementById('lightbox');
+            var origOpen = openLightbox, origClose = closeLightbox;
+            openLightbox = function (el) { last = el; origOpen(el); var c = lb.querySelector('.lightbox-close'); if (c) c.focus(); };
+            closeLightbox = function () { origClose(); if (last && last.focus) last.focus(); };
+            document.addEventListener('keydown', function (e) {
+                if ((e.key === 'Enter' || e.key === ' ') && e.target.classList && e.target.classList.contains('gal-item')) {
+                    e.preventDefault(); openLightbox(e.target);
+                }
+            });
+        })();
+
+        // Forms: submit in place, fall back to a normal POST on any failure
+        (function () {
+            document.querySelectorAll('form[data-ajax]').forEach(function (f) {
+                f.addEventListener('submit', function (e) {
+                    if (!window.fetch || !window.FormData) return;
+                    e.preventDefault();
+                    var btn = f.querySelector('button[type=submit]'), old = btn ? btn.textContent : '';
+                    var msg = f.querySelector('.form-msg');
+                    if (!msg) { msg = document.createElement('p'); msg.className = 'form-msg'; msg.setAttribute('role', 'status'); f.appendChild(msg); }
+                    msg.className = 'form-msg'; msg.textContent = '';
+                    if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+                    fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
+                        .then(function (r) {
+                            if (!r.ok) throw new Error('bad');
+                            f.reset(); msg.textContent = 'Thanks. We will reply the same business day.';
+                        })
+                        .catch(function () { f.submit(); })
+                        .then(function () { if (btn) { btn.disabled = false; btn.textContent = old; } });
+                });
+            });
+        })();
 
     </script>
 </body>
