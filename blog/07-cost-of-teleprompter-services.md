@@ -22,9 +22,8 @@ Most clients ask the same first question: what will a teleprompter cost for my e
 ## What Changes the Price
 
 - **Multi-day events (3+ days):** 10% off the day rate.
-- **Weekends and holidays:** +25%.
 - **Rush bookings (under 48 hours' notice):** +50%.
-- **Travel:** we are based in Tampa Bay. Jobs within 50 miles carry no mileage; beyond that we bill mileage, plus a per diem on overnight trips. Travel is listed separately and never folded into the day rate.
+- **Travel:** we are based in Tampa Bay. Jobs within 40 miles carry no mileage; beyond that we bill mileage, plus a per diem on overnight trips. Travel is listed separately and never folded into the day rate.
 - **Equipment:** a camera-mount prompter for a video shoot costs less than presidential glass, confidence monitors and a stage setup for a keynote.
 
 ## What Is Included
@@ -39,7 +38,7 @@ Most clients ask the same first question: what will a teleprompter cost for my e
 
 1. Send the date, venue, number of speakers and the setup you need.
 2. We send a written quote that lists operator, equipment, travel and any overtime terms.
-3. A 30–50% deposit holds the date. The balance is invoiced after the event.
+3. A 50% deposit holds the date. The balance is invoiced after the event.
 
 ## Ways to Keep Costs Down
 
